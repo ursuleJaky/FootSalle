@@ -78,13 +78,16 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 
-								<h1>Inscription</h1>
-<<<<<<< HEAD
+								<h1>Soumettre annonce</h1>
 
 								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 
+								
 									<div class="form-group">
-										<div class="col-md-8"><input name="nom" placeholder="Nom" class="form-control" type="text" id="UserUsername"/></div>
+										<div class="col-md-8">
+											<span style="color:#AAA; font-size:12px">participants</span>
+											<input name="nom" placeholder="Nom" class="form-control" type="number" id="UserUsername"/>
+										</div>
 									</div> 
 
 									<div class="form-group">
@@ -106,57 +109,18 @@
 									<div class="form-group">
 										<label class="radio-inline">
 											<input id="inscription_femme" type="radio" value=""/> Homme
-											<input id="inscription_" type="radio" value=""/> Femme 
+										</label>
+										<label class="radio-inline">
+											<input id="inscription_femme" type="radio" value=""/> Femme 
 										</label>
 									</div>
-									
+
 									<div class="form-group">
 										<div class="col-md-8">
 											<input id="inscription_mdp" name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
 										</div>
 									</div> 
 
-=======
-								
-								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
-
-									<div class="form-group">
-										<div class="col-md-8"><input name="nom" placeholder="Nom" class="form-control" type="text" id="UserUsername"/></div>
-									</div> 
-
-									<div class="form-group">
-										<div class="col-md-8"><input name="prenom" placeholder="Prénom" class="form-control" type="text" id="UserPassword"/></div>
-									</div> 
-									
-									<div class="form-group">
-										<div class="col-md-8"><input name="date naissance" placeholder="date de naissance" class="form-control" type="date" id="UserPassword"/></div>
-									</div> 
-									
-								<!--	<div class="form-group">
-										<div class="col-md-8"><input name="a" placeholder="Adresse" class="form-control" type="text" id="UserPassword"/></div>
-									</div> -->
-									
-									<div class="form-group">
-										<div class="col-md-8"><input name="mail" placeholder="Adresse mail" class="form-control" type="mail" id="UserPassword"/></div>
-									</div> 
-									
-									
-									<div class="btn-group-toggle form-group" data-toggle="buttons" style="margin:10px">
-										<label class="btn btn-secondary active ">
-											<input id="homme" type="checkbox" checked autocomplete="off"> Super Man
-										</label>
-										<label class="btn btn-secondary active">
-											<input id="inscription_femme" type="checkbox" checked autocomplete="off"> Super Woman
-										</label>
-									</div>
-									
-									<div class="form-group">
-										<div class="col-md-8">
-											<input id="inscription_mdp" name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
-										</div>
-									</div> 
-									
->>>>>>> branch 'dev' of https://github.com/ursuleJaky/FootSalle.git
 									<div class="form-group">
 										<div class="col-md-8">
 											<input id="inscription_mdp_confirmation" name="password_confirmation" placeholder="Confirmez votre mot de passe" class="form-control" type="password" id="UserPassword"/>
@@ -166,7 +130,7 @@
 									<div>
 										<div class="form-group">
 											<div class="col-md-offset-0 col-md-8">
-												<input id="inscription_rejoindre" class="btn btn-success btn btn-success" type="submit" value="Nous rejoindre"/>
+												<input id="annonce_soumettre" class="btn btn-success btn btn-success" type="submit" value="Soumettre"/>
 											</div>
 
 										</div>
@@ -183,14 +147,6 @@
 				</div>
 			</div>
 		</div>
-
-		<section class="container relative">
-			<div class="top-left z-index-10">
-				<div class="bg-white p-l-20 p-r-20 p-t-20 p-b-20">
-					<img src="img/logo_b.png" data-src-retina="img/logo_b_2x.png" class="" alt="" width="17" height="20">
-				</div>
-			</div>
-		</section>
 
 
 
