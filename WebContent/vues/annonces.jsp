@@ -49,7 +49,6 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="annonces.html">Annonces <span class="sr-only">(current)</span></a></li>
 
-
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Link</a></li>
@@ -74,7 +73,7 @@
 
 					<div class="main">
 
-						<div class="row">
+				"/Users/davy/git/FootSalle"		<div class="row">
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 
 								<h1>Soumettre annonce</h1>
