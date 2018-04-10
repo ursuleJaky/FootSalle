@@ -1,12 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>FootSalle</title>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 		<meta charset="utf-8" />
-		<title>S'inscrire</title>
 
-		<meta content="Charte Graphique" name="description" />
+		<title>Se connecter</title>
+
 		<meta content="Davy NANA" name="author" />
 
 		<!-- stylesheet -->
@@ -28,8 +29,7 @@
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNDFsPWL9fW9OFIzR0QQs_H8pCsmlP4DU&callback=myMap"></script>
 
 	</head>
-
-	<body class="pace-black">
+<body class="pace-black">
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -49,6 +49,7 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="annonces.html">Annonces <span class="sr-only">(current)</span></a></li>
 
+
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Link</a></li>
@@ -58,14 +59,24 @@
 							<ul class="dropdown-menu">
 								<li><a href="mes_annonces.html">Mes annonces</a></li>
 								<li><a href="profil.html">Mon profil</a></li>
-								<li><a href="preference.html">préférences</a></li>
-								<li><a href="index.html">Déconnexion</a></li>
+								<li><a href="preference.html">prÃ©fÃ©rences</a></li>
+								<li><a href="index.html">DÃ©connexion</a></li>
 							</ul>
 						</li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
+	
+	</body>
+	
+	<footer>
+		
+		
+		
+	</footer>
+=======
+
 
 		<div class="container">
 			<div class="row">
@@ -73,84 +84,55 @@
 
 					<div class="main">
 
-				"/Users/davy/git/FootSalle"		<div class="row">
+						<div class="row">
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 
 								<h1>Soumettre annonce</h1>
 
 								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 
+								
 									<div class="form-group">
-										<div class="col-xs-12">
-											<label for="annonce_nom">Nom de l'evenement</label>
-											<input name="prenom" placeholder="Nom de l'evenement" class="form-control" type="text" id="annonce_nom"/>
+										<div class="col-md-8">
+											<span style="color:#AAA; font-size:12px">participants</span>
+											<input name="nom" placeholder="Nom" class="form-control" type="number" id="UserUsername"/>
 										</div>
 									</div> 
 
 									<div class="form-group">
-										<div class="col-xs-12">
-											<label for="annonce_nbre">nombre de participants participants</label>
-											<input name="nom" placeholder="nombre de participants participants" class="form-control" type="number" id="annonce_nbre"/>
-										</div>
+										<div class="col-md-8"><input name="prenom" placeholder="PrÃ©nom" class="form-control" type="text" id="UserPassword"/></div>
 									</div> 
 
 									<div class="form-group">
+										<div class="col-md-8"><input name="date naissance" placeholder="date de naissance" class="form-control" type="date" id="UserPassword"/></div>
+									</div> 
 
-									</div> 
-									
+									<!--	<div class="form-group">
+<div class="col-md-8"><input name="a" placeholder="Adresse" class="form-control" type="text" id="UserPassword"/></div>
+</div> -->
+
 									<div class="form-group">
-										<div class="col-xs-6">
-											<label for="annonce_date">date de l'évenement</label>
-											<input name="prenom" placeholder="Prénom" class="form-control" type="date" id="annonce_date"/>
-										</div>
-										
-										<div class="col-xs-6">
-											<label for="annonce_date">limite de date de confirmation</label>
-											<input name="prenom" placeholder="Prénom" class="form-control" type="date" id="annonce_date_conformation"/>
-										</div>
+										<div class="col-md-8"><input name="mail" placeholder="Adresse mail" class="form-control" type="mail" id="UserPassword"/></div>
 									</div> 
-									
-									<div class="row form-group">
-										<div class="col-xs-6">
-											<label for="annonce_heure_debut"> heure debut</label>
-											<input name="heure debut" placeholder="heure debut" class="form-control" type="time" id="annonce_heure_debut"/>
-										</div>
-										<div class="col-xs-6">
-											<label for="annonce_heure_fin"> heure fin</label>
-											<input name="heure fin" placeholder="heure fin" class="form-control" type="time" id="annonce_heure_fin"/>
-										</div>
+
+									<div class="form-group">
+										<label class="radio-inline">
+											<input id="inscription_femme" type="radio" value=""/> Homme
+										</label>
+										<label class="radio-inline">
+											<input id="inscription_femme" type="radio" value=""/> Femme 
+										</label>
 									</div>
 
-
 									<div class="form-group">
 										<div class="col-md-8">
-											<span style="color:#AAA; font-size:12px">Participants (bouton ajouter un participant)</span>
-											<input id="annonce_soumettre" class="btn btn-success btn btn-success" value="Ajouter participant"/>
-										</div>
-									</div> 
-
-									<!-- le pays est déjà renseigné dans le profil de l'utilisateur, c'est le genre d'information qui ne change pas tous les jours  -->
-
-									<div class="form-group">
-										<div class="col-xs-12">
-											<label for="annonce_heure_fin">adresse</label>
-											<input name="adresse" placeholder="Adresse" class="form-control" type="text" id="annonce_adresse"/>
-										</div>
-										<div class="col-xs-6">
-											<label for="annonce_heure_fin">code postal</label>
-											<input name="code" placeholder="code" class="form-control" type="number" id="annonce_code"/>
-										</div>
-										<div class="col-xs-6">
-											<label for="annonce_heure_fin">ville</label>
-											<input name="code" placeholder="ville" class="form-control" type="text" id="annonce_ville"/>
+											<input id="inscription_mdp" name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
 										</div>
 									</div> 
 
 									<div class="form-group">
 										<div class="col-md-8">
-											<label for="annonce_description">description</label>
-											<textarea id="annonce_limite" name="description" placeholder="entrez la description de l'annonce" class="form-control" type="text" id="annonce_description">
-											</textarea>
+											<input id="inscription_mdp_confirmation" name="password_confirmation" placeholder="Confirmez votre mot de passe" class="form-control" type="password" id="UserPassword"/>
 										</div>
 									</div> 
 
