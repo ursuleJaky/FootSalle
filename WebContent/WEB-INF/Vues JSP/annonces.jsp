@@ -5,13 +5,9 @@
 		<title>FootSalle</title>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 		<meta charset="utf-8" />
-<<<<<<< HEAD
-		<title>Se connecter</title>
-=======
-		<title>S'inscrire</title>
->>>>>>> e1c7f43e447deb478bbd259b4d76b592c6df1a5a
 
-		<meta content="Charte Graphique" name="description" />
+		<title>Se connecter</title>
+
 		<meta content="Davy NANA" name="author" />
 
 		<!-- stylesheet -->
@@ -33,12 +29,7 @@
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNDFsPWL9fW9OFIzR0QQs_H8pCsmlP4DU&callback=myMap"></script>
 
 	</head>
-<<<<<<< HEAD
-	
-=======
->>>>>>> e1c7f43e447deb478bbd259b4d76b592c6df1a5a
-
-	<body class="pace-black">
+<body class="pace-black">
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -76,9 +67,7 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
-<<<<<<< HEAD
 	
-		
 	</body>
 	
 	<footer>
@@ -182,5 +171,4 @@
 
 
 
->>>>>>> e1c7f43e447deb478bbd259b4d76b592c6df1a5a
 </html>
