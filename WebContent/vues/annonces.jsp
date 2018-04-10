@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -50,7 +49,6 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="annonces.html">Annonces <span class="sr-only">(current)</span></a></li>
 
-
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Link</a></li>
@@ -60,8 +58,8 @@
 							<ul class="dropdown-menu">
 								<li><a href="mes_annonces.html">Mes annonces</a></li>
 								<li><a href="profil.html">Mon profil</a></li>
-								<li><a href="preference.html">pr√©f√©rences</a></li>
-								<li><a href="index.html">D√©connexion</a></li>
+								<li><a href="preference.html">prÈfÈrences</a></li>
+								<li><a href="index.html">DÈconnexion</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -69,92 +67,97 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 
 					<div class="main">
 
-						<div class="row">
+				"/Users/davy/git/FootSalle"		<div class="row">
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 
-								<h1>Inscription</h1>
+								<h1>Soumettre annonce</h1>
 
 								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 
 									<div class="form-group">
-										<div class="col-md-8">
-											<label for="inscription_nom">Nom</label>
-											<input name="nom" placeholder="Nom" class="form-control" type="text" id="inscription_nom"/>
+										<div class="col-xs-12">
+											<label for="annonce_nom">Nom de l'evenement</label>
+											<input name="prenom" placeholder="Nom de l'evenement" class="form-control" type="text" id="annonce_nom"/>
 										</div>
 									</div> 
 
 									<div class="form-group">
-										<div class="col-md-8">
-											<label for="">Pr√©nom</label>
-											<input name="prenom" placeholder="Pr√©nom" class="form-control" type="text" id="UserPassword"/>
+										<div class="col-xs-12">
+											<label for="annonce_nbre">nombre de participants participants</label>
+											<input name="nom" placeholder="nombre de participants participants" class="form-control" type="number" id="annonce_nbre"/>
 										</div>
 									</div> 
 
 									<div class="form-group">
-										<div class="col-md-8">
-											<label for="">Date de naissance</label>
-											<input name="date naissance" placeholder="date de naissance" class="form-control" type="date" id="inscription_dn"/>
-										</div>
-									</div> 
 
-									<div class="form-group">
-										<div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-											<label for="">Adresse mail</label>
-											<input name="mail" placeholder="Adresse mail" class="form-control" type="mail" id="inscription_am"/>
-										</div>
-										<div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-											<label for="">Adresse mail</label>
-											<input name="mail" placeholder="Adresse mail" class="form-control" type="mail" id="inscription_am"/>
-										</div>
 									</div> 
 									
 									<div class="form-group">
-										<div class="col-md-8">
-											<label for="">T√©l√©phone</label>
-											<input name="mail" placeholder="num√©ro de t√©l√©phone" class="form-control" type="number" id="inscription_phone"/>
+										<div class="col-xs-6">
+											<label for="annonce_date">date de l'Èvenement</label>
+											<input name="prenom" placeholder="PrÈnom" class="form-control" type="date" id="annonce_date"/>
+										</div>
+										
+										<div class="col-xs-6">
+											<label for="annonce_date">limite de date de confirmation</label>
+											<input name="prenom" placeholder="PrÈnom" class="form-control" type="date" id="annonce_date_conformation"/>
 										</div>
 									</div> 
-
-									<div class="form-group col-md-12">
-										<label for="inscription_sexe">Sexe/Genre</label>
-										<div class="" id="inscription_sexe" >
-											<label class="radio-inline">
-												<input name="sexe" type="radio" value=""/> Homme
-											</label>
-											<label class="radio-inline">
-												<input name="sexe" type="radio" value=""/> Femme 
-											</label>
-											<label class="radio-inline">
-												<input name="sexe" type="radio" value=""/> Aucun 
-											</label>
+									
+									<div class="row form-group">
+										<div class="col-xs-6">
+											<label for="annonce_heure_debut"> heure debut</label>
+											<input name="heure debut" placeholder="heure debut" class="form-control" type="time" id="annonce_heure_debut"/>
+										</div>
+										<div class="col-xs-6">
+											<label for="annonce_heure_fin"> heure fin</label>
+											<input name="heure fin" placeholder="heure fin" class="form-control" type="time" id="annonce_heure_fin"/>
 										</div>
 									</div>
 
+
 									<div class="form-group">
 										<div class="col-md-8">
-											<label for="inscription_sexe">Mot de passe</label>
-											<input id="inscription_mdp" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
+											<span style="color:#AAA; font-size:12px">Participants (bouton ajouter un participant)</span>
+											<input id="annonce_soumettre" class="btn btn-success btn btn-success" value="Ajouter participant"/>
+										</div>
+									</div> 
+
+									<!-- le pays est dÈj‡ renseignÈ dans le profil de l'utilisateur, c'est le genre d'information qui ne change pas tous les jours  -->
+
+									<div class="form-group">
+										<div class="col-xs-12">
+											<label for="annonce_heure_fin">adresse</label>
+											<input name="adresse" placeholder="Adresse" class="form-control" type="text" id="annonce_adresse"/>
+										</div>
+										<div class="col-xs-6">
+											<label for="annonce_heure_fin">code postal</label>
+											<input name="code" placeholder="code" class="form-control" type="number" id="annonce_code"/>
+										</div>
+										<div class="col-xs-6">
+											<label for="annonce_heure_fin">ville</label>
+											<input name="code" placeholder="ville" class="form-control" type="text" id="annonce_ville"/>
 										</div>
 									</div> 
 
 									<div class="form-group">
 										<div class="col-md-8">
-											<label for="inscription_sexe">Confirmation mot de passe</label>
-											<input id="inscription_mdp_confirmation" name="password_confirmation" placeholder="Confirmez votre mot de passe" class="form-control" type="password" id="inscription_mdp_confirmation"/>
+											<label for="annonce_description">description</label>
+											<textarea id="annonce_limite" name="description" placeholder="entrez la description de l'annonce" class="form-control" type="text" id="annonce_description">
+											</textarea>
 										</div>
 									</div> 
 
 									<div>
 										<div class="form-group">
 											<div class="col-md-offset-0 col-md-8">
-												<input id="inscription_rejoindre" class="btn btn-success btn btn-success" type="submit" value="Nous rejoindre"/>
+												<input id="annonce_soumettre" class="btn btn-success btn btn-success" type="submit" value="Soumettre"/>
 											</div>
 
 										</div>
@@ -177,9 +180,13 @@
 	</body>
 
 
+
 	<footer>
 
+
 	</footer>
+
+
 
 
 </html>

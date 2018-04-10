@@ -75,27 +75,34 @@
 				<div class="col-xs-12">
 
 					<div class="main">
-
+						
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 
 								<h1>Connexion</h1>
-								<h2></h2>
 
 								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 
 									<div class="form-group">
-										<div class="col-md-8"><input name="username" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername"/></div>
+										<div class="col-md-8">
+											<label for="">Adresse mail</label>
+											<input name="username" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername"/>
+										</div>
 									</div> 
 
 									<div class="form-group">
-										<div class="col-md-8"><input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/></div>
+										<div class="col-md-8">
+											<label for="">Mot de passe</label>
+											<input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
+										</div>
 									</div> 
 
 									<div>
 										<div class="form-group">
-											<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" type="submit" value="Connexion"/>
-
+											<div class="col-md-offset-0 col-xs-6">
+												<input  class="btn btn-success btn btn-success" type="submit" value="Connexion"/>
+											</div>
+											<div class="col-md-offset-0 col-xs-6">
 												<input  class="btn btn-success btn btn-success" type="submit" value="Inscription"/>
 											</div>
 
@@ -110,7 +117,6 @@
 										https://www.google.com" target="_blanck">Mot de passe oublié</a>
 									</div>
 								</div>
-								<p class="credits">Développé par <a href="http://www.monsite.com" target="_blank">une super agence</a>.</p>
 
 							</div>
 						</div>
@@ -120,14 +126,6 @@
 				</div>
 			</div>
 		</div>
-
-		<section class="container relative">
-			<div class="top-left z-index-10">
-				<div class="bg-white p-l-20 p-r-20 p-t-20 p-b-20">
-					<img src="img/logo_b.png" data-src-retina="img/logo_b_2x.png" class="" alt="" width="17" height="20">
-				</div>
-			</div>
-		</section>
 
 
 
