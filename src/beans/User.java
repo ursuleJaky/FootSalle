@@ -47,6 +47,12 @@ public class User {
 	}
 	
 	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -214,6 +220,17 @@ public class User {
 	public void setNombreNotes(int nombreNotes) {
 		this.nombreNotes = nombreNotes;
 	}
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", genre=" + genre + ", statut=" + statut
+				+ ", tel=" + tel + ", email=" + email + ", dateNaissance=" + dateNaissance + ", adresse=" + adresse
+				+ ", ville=" + ville + ", codePostal=" + codePostal + ", noteGlobale=" + noteGlobale + ", nombreNotes="
+				+ nombreNotes + ", descriptionUtilisateur=" + descriptionUtilisateur + ", identifiantUtilisateur="
+				+ identifiantUtilisateur + ", pseudoUtilisateur=" + pseudoUtilisateur + "]";
+	}
+
+
 	
 }
 
