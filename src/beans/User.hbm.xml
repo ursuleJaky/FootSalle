@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   
+<hibernate-mapping>
+<class name="beans.User" table="public.User">
+	<id name="id" column="id_user">
+	<generator class="increment"></generator>
+	</id>
+	
+	<property name="prenom" column="FirstName"></property>
+	<property name="nom" column="LastName"></property>
+	<property name="genre" column="Gender"></property>
+	<property name="statut" column="Statut"></property>
+	<property name="tel" column="PhoneNumber"></property>
+	<property name="email" column="Email"></property>
+	<property name="dateNaissance" column="Birthday"></property>
+	<property name="adresse" column="Address"></property>
+	<property name="ville" column="City"></property>
+	<property name="codePostal" column="Zipcode"></property>
+	<property name="noteGlobale" column="OverallRating"></property>
+	<property name="nombreNotes" column="RatingNumber"></property>
+	<property name="descriptionUtilisateur" column="UserDescription"></property>
+	<property name="identifiantUtilisateur" column="UserLogin"></property>
+	<property name="motDePasseUtilisateur" column="UserPassword"></property>
+	<property name="pseudoUtilisateur" column="UserNickname"></property>
+	
+	
+	
+	
+	</class>
+</hibernate-mapping>

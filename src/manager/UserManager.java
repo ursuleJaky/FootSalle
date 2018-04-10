@@ -1,0 +1,55 @@
+package manager;
+
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import beans.User;
+import utils.HibernateUtils;
+
+public class UserManager {
+
+	
+	
+	/** DB Methods **/
+	public void ajouterUtilisateur( User p) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		session.save(p);	
+		session.getTransaction().commit();
+	}
+	
+	
+	public void supprimerUtilisateur(int id) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		User p = (User)session.load(User.class, id);
+		session.delete(p);
+		session.getTransaction().commit();
+		
+	}
+	
+	
+	public User SelectInfoUtilisateur(int id_user) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		
+		String hql = "from User where Id_user="+id_user;
+	    Query query =session.createQuery(hql);
+	    User user = (User)query.uniqueResult(); 
+	     
+	    //System.out.println(user);
+	       
+		session.getTransaction().commit();
+		
+		return user;
+	}
+
+
+}
