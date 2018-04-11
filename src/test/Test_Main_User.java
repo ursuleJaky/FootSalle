@@ -15,6 +15,8 @@ public class Test_Main_User {
 		/* construction de l'objet à faire par variables*/
 		User p = new User("toto","titi","M","complete","0630733636","ruru@gmail.com",dt,"rue uhbhbhb","bygygygygygdcdcd","64000",5,5,"je suis fort  aux jeux video genre FPS courses etc! TROP FORT QUOI LE MEILLEUR. Plus fort que Etienne Diouf sur tekken qui prend des perfects avec des filles.", "ruben12","1234","Rubencito");
 		
+		User p1 = new User("toto","tata","M","complete","000000000","ruru@gmail.com",dt,"rue uhbhbhb","bygygygygygdcdcd","64000",5,5,"je suis fort  aux jeux video genre FPS courses etc! TROP FORT QUOI LE MEILLEUR. Plus fort que Etienne Diouf sur tekken qui prend des perfects avec des filles.", "ruben12","1234","Rubencito");
+
 		/* Implémentation de la classe Usermanager*/
 		UserManager pm = new UserManager();
 		pm.ajouterUtilisateur(p);
@@ -23,7 +25,7 @@ public class Test_Main_User {
 		pm.SelectInfoUtilisateur(6);
 		//pm.SelectInfoUtilisateur(6).getPrenom();
 		
-		
+		pm.UpdateInfoUtilisateur(101, p1);
 		HibernateUtils.sessionFactory.close();
 		
 		
