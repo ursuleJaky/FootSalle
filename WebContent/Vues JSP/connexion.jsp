@@ -32,7 +32,6 @@
 
 	<header> <%@ include file="header.jsp" %> </header>
 	
-	
 	<body class="pace-black space1">
 
 		<div class="container">
