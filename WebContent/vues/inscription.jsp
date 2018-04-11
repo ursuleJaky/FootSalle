@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -79,16 +80,8 @@
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 
 								<h1>Inscription</h1>
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-								
-=======
-
->>>>>>> e1c7f43e447deb478bbd259b4d76b592c6df1a5a
->>>>>>> 3ffd10569fc2d47390d054aa355fffce4815f5a3
-								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
+								<form action="/controleursInscription" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 
 									<div class="form-group">
 										<div class="col-md-8">
@@ -103,12 +96,7 @@
 											<input name="prenom" placeholder="Prénom" class="form-control" type="text" id="UserPassword"/>
 										</div>
 									</div> 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-									
->>>>>>> 3ffd10569fc2d47390d054aa355fffce4815f5a3
 									<div class="form-group">
 										<div class="col-md-8">
 											<label for="">Date de naissance</label>
@@ -117,13 +105,16 @@
 									</div> 
 
 									<div class="form-group">
-										<div class="col-md-8">
+										<div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+											<label for="">Adresse mail</label>
+											<input name="mail" placeholder="Adresse mail" class="form-control" type="mail" id="inscription_am"/>
+										</div>
+										<div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
 											<label for="">Adresse mail</label>
 											<input name="mail" placeholder="Adresse mail" class="form-control" type="mail" id="inscription_am"/>
 										</div>
 									</div> 
 									
-<<<<<<< HEAD
 									<div class="form-group">
 										<div class="col-md-8">
 											<label for="">Téléphone</label>
@@ -133,46 +124,17 @@
 
 									<div class="form-group col-md-12">
 										<label for="inscription_sexe">Sexe/Genre</label>
-										<div class="" id="inscription_sexe">
+										<div class="" id="inscription_sexe" >
 											<label class="radio-inline">
-												<input type="radio" value=""/> Homme
+												<input name="sexe" type="radio" value=""/> Homme
 											</label>
 											<label class="radio-inline">
-												<input type="radio" value=""/> Femme 
+												<input name="sexe" type="radio" value=""/> Femme 
 											</label>
 											<label class="radio-inline">
-												<input type="radio" value=""/> Aucun 
+												<input name="sexe" type="radio" value=""/> Aucun 
 											</label>
 										</div>
-=======
-									
-									<div class="btn-group-toggle form-group" data-toggle="buttons" style="margin:10px">
-										<label class="btn btn-secondary active ">
-											<input id="homme" type="checkbox" checked autocomplete="off"> Super Man
-										</label>
-										<label class="btn btn-secondary active">
-											<input id="inscription_femme" type="checkbox" checked autocomplete="off"> Super Woman
-=======
-
-									<div class="form-group">
-										<div class="col-md-8"><input name="date naissance" placeholder="date de naissance" class="form-control" type="date" id="UserPassword"/></div>
-									</div> 
-
-									<!--	<div class="form-group">
-<div class="col-md-8"><input name="a" placeholder="Adresse" class="form-control" type="text" id="UserPassword"/></div>
-</div> -->
-
-									<div class="form-group">
-										<div class="col-md-8"><input name="mail" placeholder="Adresse mail" class="form-control" type="mail" id="UserPassword"/></div>
-									</div> 
-
-									<div class="form-group">
-										<label class="radio-inline">
-											<input id="inscription_femme" type="radio" value=""/> Homme
-											<input id="inscription_" type="radio" value=""/> Femme 
->>>>>>> e1c7f43e447deb478bbd259b4d76b592c6df1a5a
-										</label>
->>>>>>> 3ffd10569fc2d47390d054aa355fffce4815f5a3
 									</div>
 
 									<div class="form-group">
@@ -181,15 +143,7 @@
 											<input id="inscription_mdp" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
 										</div>
 									</div> 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-									
-=======
-
->>>>>>> e1c7f43e447deb478bbd259b4d76b592c6df1a5a
->>>>>>> 3ffd10569fc2d47390d054aa355fffce4815f5a3
 									<div class="form-group">
 										<div class="col-md-8">
 											<label for="inscription_sexe">Confirmation mot de passe</label>
@@ -223,13 +177,9 @@
 	</body>
 
 
-
 	<footer>
 
-
 	</footer>
-
-
 
 
 </html>

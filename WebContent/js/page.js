@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> branch 'dev' of https://github.com/ursuleJaky/FootSalle.git
 $(document).ready(function(){
     $(".dropdown-toggle").dropdown("toggle");
 });
@@ -48,4 +51,8 @@ function myMap() {
     var map = new google.maps.Map(mapCanvas, mapOptions);
     var marker = new google.maps.Marker({position:myCenter});
     marker.setMap(map);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch 'dev' of https://github.com/ursuleJaky/FootSalle.git
