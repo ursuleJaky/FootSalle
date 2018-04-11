@@ -81,7 +81,7 @@
 
 								<h1>Inscription</h1>
 
-								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
+								<form action="/controleursInscription" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 
 									<div class="form-group">
 										<div class="col-md-8">
