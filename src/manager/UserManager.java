@@ -44,12 +44,21 @@ public class UserManager {
 	    Query query =session.createQuery(hql);
 	    User user = (User)query.uniqueResult(); 
 	     
-	    //System.out.println(user);
+	    System.out.println(user);
 	       
 		session.getTransaction().commit();
+		HibernateUtils.sessionFactory.close();
 		
 		return user;
 	}
 
-
+	public void UpdateInfoUtilisateur (int id, User p1) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		User p = (User) session.load(User.class, id);
+		p = p1;
+		session.update(p);
+		session.getTransaction().commit();
+	}
 }

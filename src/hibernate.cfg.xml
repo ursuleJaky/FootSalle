@@ -8,10 +8,10 @@
             jdbc:postgresql://localhost/postgres
         </property>
         <property name="connection.username">
-            postgres
+           admin1
         </property>
         <property name="connection.password">
-    212324
+    admin1
     </property>
         <property name="connection.driver_class">
             org.postgresql.Driver
@@ -24,7 +24,8 @@
             thread
         </property>
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         <mapping resource = "beans/Personne.hbm.xml"/>
+        <mapping resource = "beans/User.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
