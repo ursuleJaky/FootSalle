@@ -1,15 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>FootSalle</title>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<meta charset="utf-8" />
-		<title>Se connecter</title>
-
-		<meta content="Charte Graphique" name="description" />
-		<meta content="Davy NANA" name="author" />
-
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--  <title>Insert title here</title> -->
+		
+		
 		<!-- stylesheet -->
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 
@@ -27,11 +24,9 @@
 		<script type="text/javascript" src="../js/page.js"></script>
 
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNDFsPWL9fW9OFIzR0QQs_H8pCsmlP4DU&callback=myMap"></script>
-
+		
 	</head>
-
-	<body class="pace-black">
-
+	<body>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -68,77 +63,5 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
-
-
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-
-					<div class="main">
-						
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
-
-								<h1>Connexion</h1>
-
-								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
-
-									<div class="form-group">
-										<div class="col-md-8">
-											<label for="">Adresse mail</label>
-											<input name="username" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername"/>
-										</div>
-									</div> 
-
-									<div class="form-group">
-										<div class="col-md-8">
-											<label for="">Mot de passe</label>
-											<input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
-										</div>
-									</div> 
-
-									<div>
-										<div class="form-group">
-											<div class="col-md-offset-0 col-xs-6">
-												<input  class="btn btn-success btn btn-success" type="submit" value="Connexion"/>
-											</div>
-											<div class="col-md-offset-0 col-xs-6">
-												<input  class="btn btn-success btn btn-success" type="submit" value="Inscription"/>
-											</div>
-
-										</div>
-
-									</div>
-
-								</form>
-
-								<div class="form-group">
-									<div><a href="
-										https://www.google.com" target="_blanck">Mot de passe oublié</a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-
 	</body>
-
-
-
-	<footer>
-
-
-	</footer>
-
-
-
-
 </html>
