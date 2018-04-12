@@ -56,9 +56,13 @@ public class UserManager {
 		
 		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		User p = (User) session.load(User.class, id);
+		User p = (User) session.load(User.class, id); //Chargement de l'utilisateur de la BDD à l'objet User
+		//System.out.println(p); //vérification de l'utilisateur sélectionné en BDD
 		p = p1;
-		session.update(p);
+		p.setId(id);
+		p = (User) session.merge(p1);
+		//System.out.println(p); //vérification de l'update du User dans la BDD
 		session.getTransaction().commit();
 	}
+	
 }

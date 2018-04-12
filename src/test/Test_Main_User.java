@@ -22,10 +22,10 @@ public class Test_Main_User {
 		pm.ajouterUtilisateur(p);
 		
 		/* id à passer en varibale - Récupérer les infos du User avec les getters de la classe User*/
-		pm.SelectInfoUtilisateur(6);
+		pm.SelectInfoUtilisateur(1);
 		//pm.SelectInfoUtilisateur(6).getPrenom();
 		
-		pm.UpdateInfoUtilisateur(101, p1);
+		pm.UpdateInfoUtilisateur(1, p1);
 		HibernateUtils.sessionFactory.close();
 		
 		
