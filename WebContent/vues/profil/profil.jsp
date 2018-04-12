@@ -584,6 +584,3 @@
 
 
 <jsp:include page="/vues/footer.jsp"/>
-
-
-
