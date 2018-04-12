@@ -47,12 +47,40 @@ public class User {
 	}
 	
 	
+	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
 	
+	public User(String pseudo, String email2, String motDePasse) {
+		
+		this.email = email2;
+		this.pseudoUtilisateur = pseudo;
+		this.motDePasseUtilisateur = motDePasse;
+		
+		this.nom = " ";
+		this.prenom = " ";
+		this.genre = " ";
+		this.statut = " ";
+		this.tel = " ";
+
+		Date temp = new Date (99,99,9999);
+		this.dateNaissance = temp;
+		this.adresse = " ";
+		this.ville = " ";
+		this.codePostal = " ";
+		this.noteGlobale = 0;
+		this.nombreNotes = 0;
+		this.descriptionUtilisateur = " ";
+		this.identifiantUtilisateur = " ";
+		
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

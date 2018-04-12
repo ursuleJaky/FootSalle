@@ -58,7 +58,7 @@
 			
 											<h3>Inscription</h3>
 			
-											<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
+											<form action="controleInscription" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 											
 											
 												<div class="form-group">
@@ -80,7 +80,7 @@
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="inscription_mdp">MOT DE PASSE</label>
-														<input id="inscription_mdp" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
+														<input id="motDePasse" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
 													</div>
 												</div> 
 			
