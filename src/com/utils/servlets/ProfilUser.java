@@ -24,7 +24,7 @@ public class ProfilUser extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserManager um = new UserManager();
-		User user = (User) um.SelectInfoUtilisateur(2);
+		User user = (User) um.SelectInfoUtilisateur(2); //TODO récupérer l'id de la session en cours
 
 		request.setAttribute("nom", ((beans.User) user).getNom());
 		request.setAttribute("prenom", ((beans.User) user).getPrenom());
@@ -46,11 +46,7 @@ public class ProfilUser extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/vues/profil/profil.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
