@@ -1,12 +1,8 @@
 package manager;
 
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
+
 import beans.User;
 import utils.HibernateUtils;
 

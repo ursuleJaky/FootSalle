@@ -1,9 +1,8 @@
 package test;
 
+import beans.User;
 import manager.UserManager;
 import utils.HibernateUtils;
-import java.sql.Date;
-import beans.User;
 public class Test_Main_User {
 
 	public static void main(String[] args) {

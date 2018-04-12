@@ -44,26 +44,26 @@
 
 								<h1>Inscription</h1>
 
-								<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
+								<form action="ControleurInscription" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 
 									<div class="form-group">
 										<div class="col-md-8">
 											<label for="inscription_nom">Nom</label>
-											<input name="nom" placeholder="Nom" class="form-control" type="text" id="inscription_nom"/>
+											<input name="nom" placeholder="Nom" class="form-control" type="text" id="nom"/>
 										</div>
 									</div> 
 
 									<div class="form-group">
 										<div class="col-md-8">
 											<label for="">Prénom</label>
-											<input name="prenom" placeholder="Prénom" class="form-control" type="text" id="UserPassword"/>
+											<input name="prenom" placeholder="Prénom" class="form-control" type="text" id="prenom"/>
 										</div>
 									</div> 
 
 									<div class="form-group">
 										<div class="col-md-8">
 											<label for="">Date de naissance</label>
-											<input name="date naissance" placeholder="date de naissance" class="form-control" type="date" id="inscription_dn"/>
+											<input name="dateNaissancee" placeholder="date de naissance" class="form-control" type="date" id="dateNaissance"/>
 										</div>
 									</div> 
 
@@ -74,14 +74,14 @@
 										</div>
 										<div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
 											<label for="">Adresse mail</label>
-											<input name="mail" placeholder="Adresse mail" class="form-control" type="mail" id="inscription_am"/>
+											<input name="email" placeholder="Adresse mail" class="form-control" type="mail" id="email"/>
 										</div>
 									</div> 
 									
 									<div class="form-group">
 										<div class="col-md-8">
 											<label for="">Téléphone</label>
-											<input name="mail" placeholder="numéro de téléphone" class="form-control" type="number" id="inscription_phone"/>
+											<input name="telephone" placeholder="numéro de téléphone" class="form-control" type="number" id="telephone"/>
 										</div>
 									</div> 
 
