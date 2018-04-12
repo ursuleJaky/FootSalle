@@ -1,1 +1,8 @@
 /hibernate.cfg.xml
+/.gitignore
+/beans/
+/com/
+/log4j.properties
+/manager/
+/test/
+/utils/
