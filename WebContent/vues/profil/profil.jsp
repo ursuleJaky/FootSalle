@@ -11,13 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-
-    <script src="${pageContext.request.contextPath}/public/pages/js/profil.js"></script>
-    <link href="${pageContext.request.contextPath}/public/pages/css/profil.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/public/pages/index.css" rel="stylesheet">
     <title>fdsffsdf</title>
 </head>
 <body>
@@ -558,7 +552,7 @@
                     <ul>
                         <li>Changement de mdp qui sera remplacer par un bouton "laisser un avis"</li>
                         <li>Dans le formulaire "info perso": faudra cacher date de naissance, e-mail, adresse, ville & bouton modifier</li>
-                        <li>NAV TAB invitation (à voir)</li>
+                        <li>NAV TAB invitation (à voirrrr)</li>
                     </ul>
                 </strong>
             </p>
@@ -576,7 +570,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Changement de mot de passe</h4>
             </div>
             <div class="modal-body">
 
@@ -588,5 +582,8 @@
     </div>
 </div>
 
-</body>
-</html>
+
+<jsp:include page="/vues/footer.jsp"/>
+
+
+

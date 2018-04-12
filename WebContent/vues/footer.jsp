@@ -2,7 +2,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-
-
+<script src="${pageContext.request.contextPath}/public/pages/index.js"></script>
 <script src="${pageContext.request.contextPath}/public/global/plugins/starr.js"></script>
-    
