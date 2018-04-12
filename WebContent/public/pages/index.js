@@ -100,3 +100,9 @@ $(document).ready(function () {
     util.init();
     user_profil.init();
 });
+
+$(".button_connexion").on("click", function(){
+	$('#modalConnexion').load('${pageContext.request.contextPath}/vues/connexion.jsp', function(result){
+		$('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
+	});
+});
