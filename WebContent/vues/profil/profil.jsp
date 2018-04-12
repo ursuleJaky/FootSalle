@@ -21,7 +21,9 @@
     <div class="panel panel-default">
         <!-- DEBUT PANEL HEADER-->
         <div class="panel-heading">
-            <h3 class="panel-title">Zidan ZINEDIN</h3>
+            <h3 class="panel-title"><% String nom = (String)request.getAttribute("nom");
+            String prenom = (String)request.getAttribute("prenom");
+            out.println(nom + " " + prenom);%></h3>
         </div>
         <!-- FIN PANEL HEADER-->
 
@@ -33,7 +35,7 @@
                     <img alt="User Pic"
                          src="${pageContext.request.contextPath}/public/images/yinyang.jpg"
                          class="img-circle img-responsive">
-                    <h3>Zinedin.zidan</h3>
+                    <h3><%out.println(nom + " " + prenom);%></h3>
                     <button id="modal_launcher_changer_mdp" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_changement_mdp">Changer de mot de passe</button>
                 </div>
                 <!-- FIN COTE GAUCHE DU BODY-->
@@ -59,30 +61,33 @@
                                 <form id="form_profil" method="post">
                                     <div class="form-group col-md-4">
                                         <label for="nom">Nom</label>
-                                        <input type="text" class="form-control" id="nom" name="nom" value="ZINEDIN"
+                                        <input type="text" class="form-control" id="nom" name="nom" value="<%out.println(nom);%>"
                                                disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="prenom">Prénom</label>
-                                        <input type="text" class="form-control" id="prenom" name="prenom" value="Zidan"
+                                        <input type="text" class="form-control" id="prenom" name="prenom" value="<%out.println(prenom);%>"
                                                disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="date_naissance">Date de naissance</label>
                                         <input type="text" class="form-control" id="date_naissance"
-                                               name="date_naissance" value="28/03/1978"
+                                               name="date_naissance" value="<% String dateNaissance = (String) request.getAttribute("dateNaissance");
+                                               out.println(dateNaissance);%>"
                                                disabled>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="email">E-mail</label>
                                         <input href="mailto:info@support.com" class="form-control" id="email"
                                                name="email"
-                                               value="zinedin.zidan@madrid.com" disabled>
+                                               value="<% String email = (String) request.getAttribute("email");
+                                               out.println(email);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="adresse">Adresse</label>
                                         <input type="text" class="form-control" id="adresse" name="adresse"
-                                               value="11 rue de monstesquieu" disabled>
+                                               value="<% String adresse = (String) request.getAttribute("adresse");
+                                               out.println(adresse);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="ville">Ville</label>
@@ -96,7 +101,9 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="a_propos">A propos de moi</label>
-                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled> fsdfsdfsdf sfsdfsdfsdf  fsdfdsf</textarea>
+                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled> 
+                                        <% String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
+                                               out.println(descriptionUtilisateur);%></textarea>
                                     </div>
                                 </form>
                                 <!-- DEBUT FORM PROFIL-->
