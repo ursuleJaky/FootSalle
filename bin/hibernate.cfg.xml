@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
@@ -27,4 +28,35 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping resource = "beans/User.hbm.xml"/>
     </session-factory>
+=======
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">
+            jdbc:postgresql://localhost/postgres
+        </property>
+        <property name="connection.username">
+           postgres
+        </property>
+        <property name="connection.password">
+    admin
+    </property>
+        <property name="connection.driver_class">
+            org.postgresql.Driver
+        </property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="transaction.factory_class">
+            org.hibernate.transaction.JDBCTransactionFactory
+        </property>
+        <property name="current_session_context_class">
+            thread
+        </property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <mapping resource = "beans/User.hbm.xml"/>
+    </session-factory>
+>>>>>>> acdfe7a28ca3db6b3d300725e413662fc85aa274
 </hibernate-configuration>

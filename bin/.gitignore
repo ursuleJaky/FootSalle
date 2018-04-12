@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 /beans/
 /manager/
 /servlets/
+=======
+/hibernate.cfg.xml
+/.gitignore
+/beans/
+/com/
+/log4j.properties
+/manager/
+>>>>>>> refs/remotes/origin/dev
 /test/
 /utils/
