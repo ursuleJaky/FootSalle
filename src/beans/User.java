@@ -66,7 +66,7 @@ public class User {
 		this.statut = " ";
 		this.tel = " ";
 
-		Date temp = new Date (99,99,9999);
+		Date temp = new Date (99999999);
 		this.dateNaissance = temp;
 		this.adresse = " ";
 		this.ville = " ";
