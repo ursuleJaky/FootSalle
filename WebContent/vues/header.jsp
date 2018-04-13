@@ -144,7 +144,7 @@
 			<div class="topnav">
 				<a class="active" href="#home">Accueil</a>
 				<div class="topnav-right">
-					<a href="annonces.java"> annonce</a>
+					<a href="annonces.java"> Annonce</a>
 					<a id="connexion" href="#" >Connexion</a>
 				</div>
 			</div>
