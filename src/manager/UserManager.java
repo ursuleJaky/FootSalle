@@ -62,4 +62,61 @@ public class UserManager {
 		session.getTransaction().commit();
 	}
 	
+	public boolean SelectInfoUtilisateur(String pseudo) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		
+		String hql = "usernickname from User";
+	    Query query =session.createQuery(hql);
+	    User user = (User)query.uniqueResult(); 
+	    
+	    if (user.getPseudoUtilisateur()==pseudo) {
+			session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+	    	return true;
+	    }
+	    else {
+			session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+	    	return false;
+	    }
+	    
+	 
+
+		
+	}
+	
+	
+public Boolean CheckUtilisateurConnexion(String motDePasse, String mail) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		
+		String hql = "from User where Email like '"+mail+"%'";
+	    Query query =session.createQuery(hql);
+	    User user = (User)query.uniqueResult(); 
+	     
+	    if(user == null) return false;
+	    System.out.println(user);
+	    
+	    String motDePasseUserBDD = user.getMotDePasseUtilisateur().trim();
+	    
+	    if(motDePasseUserBDD.equals(motDePasse)) {
+	    	session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+			
+	    	return true;
+	    } else {
+	    	session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+			
+	    	return false;
+	    }	
+		
+	}
+
+
+
+	
 }

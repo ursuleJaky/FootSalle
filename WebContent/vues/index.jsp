@@ -112,7 +112,7 @@
 										https://www.google.com" target="_blanck">Mot de passe oublié</a>
 									</div>
 								</div>
-								<p class="credits">Développé par <a href="http://www.monsite.com" target="_blank">une super agence</a>.</p>
+								<p class="credits">Developpé par <a href="http://www.monsite.com" target="_blank">une super agence</a>.</p>
 
 							</div>
 						</div>

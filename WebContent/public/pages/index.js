@@ -22,7 +22,7 @@ var util = function (){
     };
 }();
 
-//Partie profil utilisateur
+//Actions profil utilisateur
 var user_profil = function () {
     var general = function (){
         $('#modal_launcher_changer_mdp').click(function (e) {
@@ -96,7 +96,14 @@ var user_profil = function () {
 
 }();
 
-$(document).ready(function () {
-    util.init();
-    user_profil.init();
+$( document ).ready(function() {
+	//util.init();
+    //user_profil.init();
+    
+    $("#connexion").on("click", function(){
+    	$('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){
+    		$('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
+    	});
+    	return false;
+    });
 });
