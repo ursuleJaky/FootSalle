@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+
+=======
+<<<<<<< Updated upstream
+>>>>>>> c56f79149c73ee3070eb594d68f20521f066d6cb
 <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
@@ -8,7 +13,7 @@
             jdbc:postgresql://localhost/postgres
         </property>
         <property name="connection.username">
-           postgres
+           admin
         </property>
         <property name="connection.password">
     admin
@@ -27,4 +32,39 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping resource = "beans/User.hbm.xml"/>
     </session-factory>
+<<<<<<< HEAD
+
+=======
+=======
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">
+            jdbc:postgresql://localhost/postgres
+        </property>
+        <property name="connection.username">
+           admin1
+        </property>
+        <property name="connection.password">
+    admin1
+    </property>
+        <property name="connection.driver_class">
+            org.postgresql.Driver
+        </property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="transaction.factory_class">
+            org.hibernate.transaction.JDBCTransactionFactory
+        </property>
+        <property name="current_session_context_class">
+            thread
+        </property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <mapping resource = "beans/User.hbm.xml"/>
+    </session-factory>
+>>>>>>> Stashed changes
+>>>>>>> c56f79149c73ee3070eb594d68f20521f066d6cb
 </hibernate-configuration>

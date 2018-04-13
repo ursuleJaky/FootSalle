@@ -18,8 +18,17 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400,700,300" />
+<<<<<<< Updated upstream
 		
-
+=======
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
 		<!-- javascript -->
 		
@@ -59,7 +68,7 @@
 			
 											<h3>Inscription</h3>
 			
-											<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
+											<form action="controleInscription" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 											
 											
 												<div class="form-group">
@@ -79,7 +88,7 @@
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="inscription_mdp">MOT DE PASSE</label>
-														<input id="inscription_mdp" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
+														<input id="motDePasse" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
 													</div>
 												</div> 
 			
