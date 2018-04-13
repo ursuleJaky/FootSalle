@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 //Initialisation des plugins utilitaires (tooltip, nav_tabs, popover, starr ...)
 var util = function (){
     //Initialise les nav tabs
@@ -20,7 +27,7 @@ var util = function (){
             starr();
         }
     };
-}();
+};
 
 //Partie profil utilisateur
 var user_profil = function () {
@@ -94,15 +101,17 @@ var user_profil = function () {
         }
     };
 
-}();
+};
 
-$(document).ready(function () {
-    util.init();
-    user_profil.init();
+$( document ).ready(function() {
+	//util.init();
+    //user_profil.init();
+    
+    $("#connexion").on("click", function(){
+    	$('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){
+    		$('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
+    	});
+    	return false;
+    });
 });
 
-$(".button_connexion").on("click", function(){
-	$('#modalConnexion').load('${pageContext.request.contextPath}/vues/connexion.jsp', function(result){
-		$('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
-	});
-});
