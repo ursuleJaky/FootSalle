@@ -66,4 +66,29 @@ public class UserManager {
 		session.getTransaction().commit();
 	}
 	
+	public boolean SelectInfoUtilisateur(String pseudo) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		
+		String hql = "usernickname from User";
+	    Query query =session.createQuery(hql);
+	    User user = (User)query.uniqueResult(); 
+	    
+	    if (user.getPseudoUtilisateur()==pseudo) {
+			session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+	    	return true;
+	    }
+	    else {
+			session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+	    	return false;
+	    }
+	    
+	 
+
+		
+	}
+	
 }
