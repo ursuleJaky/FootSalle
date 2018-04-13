@@ -24,7 +24,7 @@ public class ProfilUser extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserManager um = new UserManager();
-		User user = (User) um.SelectInfoUtilisateur(2); //TODO récupérer l'id de la session en cours
+		User user = (User) um.SelectInfoUtilisateur(2); //TODO rï¿½cupï¿½rer l'id de la session en cours
 
 		request.setAttribute("nom", ((beans.User) user).getNom());
 		request.setAttribute("prenom", ((beans.User) user).getPrenom());
@@ -44,10 +44,12 @@ public class ProfilUser extends HttpServlet {
 		request.setAttribute("nombreNotes", ((beans.User) user).getNombreNotes());
 		
 		this.getServletContext().getRequestDispatcher("/vues/profil/profil.jsp").forward(request, response);
+					
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		
 	}
+	
 
 }

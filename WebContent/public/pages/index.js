@@ -52,7 +52,7 @@ var user_profil = function () {
             //Préparation de la requête
             var request = $.ajax({
                 type: "POST",
-                url: 'chemin/vers/le/controlleur',
+                url: '/FootSalle/User?action=get_details?abonne_ID=fjsdlfjdslfsdk',
                 data: $('#form_profil').serialize()
             });
             //En cas de succès
