@@ -25,7 +25,7 @@ public class ProfilUser extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//afficherInfoPerso(request, response);
 		UserManager um = new UserManager();
-		User user = (User) um.SelectInfoUtilisateur(2); //TODO r�cup�rer l'id de la session en cours
+		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
 
 		request.setAttribute("nom", ((beans.User) user).getNom());
 		request.setAttribute("prenom", ((beans.User) user).getPrenom());
@@ -59,13 +59,13 @@ public class ProfilUser extends HttpServlet {
 	private void modifierInfoPerso(String nom, String prenom, String adresse, 
 			String descriptionUtilisateur, String ville) {
 		UserManager um = new UserManager();
-		User user = (User) um.SelectInfoUtilisateur(2); //TODO r�cup�rer l'id de la session en cours
+		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
 		user.setNom(nom);
 		user.setPrenom(prenom);
 		user.setAdresse(adresse);
 		user.setEmail(adresse);
 		user.setVille(ville);
-		//u.setDateNaissance(dateNaissance);
+		//u.setDateNaissance(dateNaissance);  // Pas encore gerer dans la modification
 		user.setDescriptionUtilisateur(descriptionUtilisateur);
 		
 		um.UpdateInfoUtilisateur(2, user);

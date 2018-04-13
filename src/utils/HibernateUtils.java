@@ -15,7 +15,7 @@ public class HibernateUtils {
 				sessionFactory = new Configuration().configure().buildSessionFactory();
 				
 			}catch (Throwable ex) {
-				System.err.println("Cr�ation du session Factory � �chou�." + ex);
+				System.err.println("Cr�ation de l objet session Factory � �chou�." + ex);
 				throw new ExceptionInInitializerError(ex);
 			}
 	}
