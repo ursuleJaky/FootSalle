@@ -63,6 +63,13 @@
 											<form action="controleInscription" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 											
 											
+													<div class="form-group">
+														<div class="col-md-12">
+															<label for="">PSEUDO</label>
+															<input name="inscription_pseudo" placeholder="Pseudo" class="form-control" type="text" id="inscription_pseudo"/>
+														</div>
+													</div>
+											
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="inscription_am">E-MAIL</label>
@@ -70,12 +77,6 @@
 													</div>
 												</div> 
 				
-													<div class="form-group">
-														<div class="col-md-12">
-															<label for="">PSEUDO</label>
-															<input name="inscription_pseudo" placeholder="Pseudo" class="form-control" type="text" id="inscription_pseudo"/>
-														</div>
-													</div>
 			
 												<div class="form-group">
 													<div class="col-md-12">
@@ -106,7 +107,7 @@
 			
 												<div class="form-group">
 													<div class="col-md-12">
-														<label for="">ADRESSE MAIL</label>
+														<label for="">E-MAIL</label>
 														<input name="email" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername" value ='${email}' autofocus/>
 													</div>
 												</div> 
