@@ -49,24 +49,21 @@ var user_profil = function () {
 
         // Form - click valider
         $('#form_profil_submit').click(function (e) {
-            //Préparation de la requête
+        	console.log("ok");
             var request = $.ajax({
                 type: "POST",
-                url: '/FootSalle/User?action=get_details?abonne_ID=fjsdlfjdslfsdk',
+                url: '/FootSalle/ProfilUser',
                 data: $('#form_profil').serialize()
             });
-            //En cas de succès
             request.done(function (resultat) {
                 var data = $.parseJSON(resultat);
-                //Notification
                 toastr.success(data.info.Message_title, data.info.Message_content);
+                $('#form_profil').find('input, textarea, select').prop('disabled', true);
             });
 
-            //En cas d'échec
             request.fail(function () {
                 toastr.error('La requête n\'a pas pu aboutir', 'Erreur')
             });
-            //Eviter le submit
             e.preventDefault();
         });
     };

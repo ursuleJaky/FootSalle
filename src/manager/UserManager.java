@@ -17,6 +17,7 @@ public class UserManager {
 	/** DB Methods **/
 	public void ajouterUtilisateur( User p) {
 		
+		
 		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		session.save(p);	

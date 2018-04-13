@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /hibernate.cfg.xml
 /.gitignore
 /beans/
@@ -6,3 +7,13 @@
 /manager/
 /test/
 /utils/
+=======
+<<<<<<< HEAD
+/hibernate.cfg.xml
+/com/
+/beans/
+/manager/
+=======
+/hibernate.cfg.xml
+>>>>>>> c56f79149c73ee3070eb594d68f20521f066d6cb
+>>>>>>> 310d57f393b1bcf3c7256d4f2479283e62f0d696

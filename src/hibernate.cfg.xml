@@ -1,3 +1,4 @@
+
 <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
@@ -8,7 +9,7 @@
             jdbc:postgresql://localhost/postgres
         </property>
         <property name="connection.username">
-           postgres
+           admin
         </property>
         <property name="connection.password">
     admin
@@ -27,4 +28,5 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping resource = "beans/User.hbm.xml"/>
     </session-factory>
+
 </hibernate-configuration>

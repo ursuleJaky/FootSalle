@@ -1,0 +1,47 @@
+#user_profil .tab-pane{
+    margin: 10px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+}
+
+.gauche {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.droite {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.delete_space {
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+.cadre {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.surcadre {
+	padding-left: 10px;
+    padding-right: 0px;
+}
+
+.space_new{
+	padding-top: 23px;
+    margin-bottom: 0px;
+}
+
+.foot{
+    /*background-image: url("/FootSalle/public/images/background.foot.jpg");*/
+}
