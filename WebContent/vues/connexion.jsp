@@ -18,17 +18,9 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400,700,300" />
-<<<<<<< Updated upstream
-		
-=======
+
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 
 		<!-- javascript -->
 		
@@ -88,7 +80,7 @@
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="inscription_mdp">MOT DE PASSE</label>
-														<input id="motDePasse" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
+														<input id="motDePasse" name="motDePasse" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
 													</div>
 												</div> 
 			
@@ -110,19 +102,19 @@
 			
 											<h3>Connexion</h3>
 			
-											<form name="login" role="form" class="form-horizontal " method="post" accept-charset="utf-8">
+											<form action = "controleConnexion" name="login" role="form" class="form-horizontal " method="post" accept-charset="utf-8">
 			
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="">ADRESSE MAIL</label>
-														<input name="username" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername"/>
+														<input name="email" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername" value ='${email}' autofocus/>
 													</div>
 												</div> 
 			
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="">MOT DE PASSE</label>
-														<input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
+														<input name="motDePasse" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
 													</div>
 												</div>
 												

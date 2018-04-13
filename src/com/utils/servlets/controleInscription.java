@@ -18,8 +18,9 @@ public class controleInscription extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public static final String VUE = "/vues/connexion.jsp";  //"/WEB-INF/inscription.jsp"
+	public static final String PAGE_ACCUEIL = "/vues/profil/AccueilTemp.jsp";
+
 		    public static final String CHAMP_NOM = "nom";
-		    
 		    public static final String CHAMP_EMAIL = "email";
 		    public static final String PSEUDO = "inscription_pseudo";
 		    public static final String CHAMP_MOT_DE_PASSE = "motDePasse";
@@ -65,7 +66,10 @@ public class controleInscription extends HttpServlet {
         
         System.out.println("Vous etes inscris !");
         
-		doGet(request, response);
+
+		this.getServletContext().getRequestDispatcher( PAGE_ACCUEIL ).forward( request, response );
+
+		//doGet(request, response);
 	}
 
 }

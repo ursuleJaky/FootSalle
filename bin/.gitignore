@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 /hibernate.cfg.xml
 /com/
-/beans/
 /manager/
-=======
-/hibernate.cfg.xml
->>>>>>> c56f79149c73ee3070eb594d68f20521f066d6cb
-/utils/
+/beans/

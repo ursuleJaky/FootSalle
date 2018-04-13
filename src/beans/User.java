@@ -19,7 +19,7 @@ public class User {
 	private int nombreNotes;
 	private String descriptionUtilisateur;
 	private String identifiantUtilisateur;
-	private transient String motDePasseUtilisateur;
+	private  String motDePasseUtilisateur;
 	private String pseudoUtilisateur;
 
 	
