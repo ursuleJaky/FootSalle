@@ -1,7 +1,6 @@
 package com.utils.servlets;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import manager.UserManager;
 import beans.User;
+import manager.UserManager;
 
 
 
@@ -27,6 +26,7 @@ public class ProfilUser extends HttpServlet {
 		UserManager um = new UserManager();
 		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
 
+		System.out.println(user.toString());
 		request.setAttribute("nom", ((beans.User) user).getNom());
 		request.setAttribute("prenom", ((beans.User) user).getPrenom());
 		request.setAttribute("motDePasseUtilisateur", ((beans.User) user).getMotDePasseUtilisateur());
@@ -48,17 +48,20 @@ public class ProfilUser extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-		System.out.println("Le nom " + request.getParameter("nom"));
+		//doGet(request, response);
 		modifierInfoPerso(request.getParameter("nom"), request.getParameter("prenom"), request.getParameter("adresse"), 
-				request.getParameter("ville"), request.getParameter("descriptionUtilisateur"));
+				request.getParameter("ville"), request.getParameter("a_propos"));
+		response.setContentType("application/json");
+	    response.setCharacterEncoding("UTF-8");
+	    response.getWriter().write("OK");
 	}
 	
 	//private void afficherInfoPerso(HttpServletRequest request, HttpServletResponse response) {}
 	
 	private void modifierInfoPerso(String nom, String prenom, String adresse, 
-			String descriptionUtilisateur, String ville) {
+			String ville, String descriptionUtilisateur) {
 		UserManager um = new UserManager();
+
 		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
 		user.setNom(nom);
 		user.setPrenom(prenom);
@@ -67,8 +70,7 @@ public class ProfilUser extends HttpServlet {
 		user.setVille(ville);
 		//u.setDateNaissance(dateNaissance);  // Pas encore gerer dans la modification
 		user.setDescriptionUtilisateur(descriptionUtilisateur);
-		
-		um.UpdateInfoUtilisateur(2, user);
+		um.UpdateInfoUtilisateur(1, user); //TODO récupérer l'id de la session en cours
 	}
 	
 

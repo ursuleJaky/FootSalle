@@ -48,20 +48,23 @@ var user_profil = function () {
 
         // Form - click valider
         $('#form_profil_submit').click(function (e) {
-        	console.log("ok");
-            var request = $.ajax({
+        	$.ajax({ 
                 type: "POST",
                 url: '/FootSalle/ProfilUser',
-                data: $('#form_profil').serialize()
-            });
-            request.done(function (resultat) {
-                var data = $.parseJSON(resultat);
-                toastr.success(data.info.Message_title, data.info.Message_content);
-                $('#form_profil').find('input, textarea, select').prop('disabled', true);
-            });
-
-            request.fail(function () {
-                toastr.error('La requête n\'a pas pu aboutir', 'Erreur')
+                data: $('#form_profil').serialize(),
+                success: function(data){
+                	$('#form_profil').find('input, textarea, select').prop('disabled', true);
+                	$('#form_profil_cancel').hide();
+                    $('#form_profil_submit').hide();
+                    $('#form_profil_edit').show();
+                },
+                error: function(errMsg) {
+                    toastr.error('La requete n\'a pas pu aboutir', 'Erreur');
+                    $('#form_profil').find('input, textarea, select').prop('disabled', true);
+                    $('#form_profil_cancel').hide();
+                    $('#form_profil_submit').hide();
+                    $('#form_profil_edit').show();
+                }
             });
             e.preventDefault();
         });
