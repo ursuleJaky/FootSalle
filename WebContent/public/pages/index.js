@@ -26,7 +26,7 @@ var util = function (){
 var user_profil = function () {
     var general = function (){
         $('#modal_launcher_changer_mdp').click(function (e) {
-            $('#modal_changement_mdp .modal-body').load("profil_change_pwd.jsp");
+            $('#modal_changement_mdp .modal-body').load("/FootSalle/vues/profil/profil_change_pwd.jsp");
         });
     };
 
@@ -94,8 +94,8 @@ var user_profil = function () {
 }();
 
 $( document ).ready(function() {
-	//util.init();
-    //user_profil.init();
+	util.init();
+    user_profil.init();
     
     $("#connexion").on("click", function(){
     	$('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){

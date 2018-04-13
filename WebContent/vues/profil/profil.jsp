@@ -36,7 +36,7 @@
                          src="${pageContext.request.contextPath}/public/images/yinyang.jpg"
                          class="img-circle img-responsive">
                     <h3><%out.println(nom + " " + prenom);%></h3>
-                    <button id="modal_launcher_changer_mdp" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_changement_mdp">Changer de mot de passe</button>
+                    <button id="modal_launcher_changer_mdp" type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_changement_mdp">Changer de mot de passe</button>
                 </div>
                 <!-- FIN COTE GAUCHE DU BODY-->
 
@@ -109,7 +109,7 @@
                                 <!-- DEBUT FORM PROFIL-->
                                 <div class="text-center">
                                     <button type="button" id="form_profil_edit"
-                                            class="btn btn-sm btn-primary "><i
+                                            class="btn btn-sm btn-success "><i
                                             class="glyphicon glyphicon-edit"></i>
                                         Modifier
                                     </button>
