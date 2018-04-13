@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <link href="${pageContext.request.contextPath}/public/pages/index.css" rel="stylesheet">
-    <title>fdsffsdf</title>
+    <title>profil utilisateur</title>
 </head>
 <body>
 <!-- DEBUT DU CONTENEUR -->

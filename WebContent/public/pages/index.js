@@ -1,7 +1,6 @@
 //Initialisation des plugins utilitaires (tooltip, nav_tabs, popover, starr ...)
 var util = function (){
-    //Initialise les nav tabs
-    var nav_tabs = function () {
+     var nav_tabs = function () {
         // Panel
         $(".nav-tabs a").click(function () {
             $(this).tab('show');
