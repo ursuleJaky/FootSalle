@@ -1,4 +1,11 @@
 /hibernate.cfg.xml
+<<<<<<< HEAD
 /com/
 /manager/
 /beans/
+=======
+/beans/
+/com/
+/test/
+/utils/
+>>>>>>> 87ee6777da3d1271a28be93539b7a4465896f073

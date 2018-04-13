@@ -10,20 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 import beans.User;
 import manager.UserManager;
 
-/**
- * Servlet implementation class controleInscription
- */
+
 @WebServlet("/controleInscription")
 public class controleInscription extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+<<<<<<< HEAD
 	public static final String VUE = "/vues/connexion.jsp";  //"/WEB-INF/inscription.jsp"
 	public static final String PAGE_ACCUEIL = "/vues/profil/AccueilTemp.jsp";
 
+=======
+	public static final String VUE = "/vues/connexion.jsp";  
+>>>>>>> 87ee6777da3d1271a28be93539b7a4465896f073
 		    public static final String CHAMP_NOM = "nom";
 		    public static final String CHAMP_EMAIL = "email";
 		    public static final String PSEUDO = "inscription_pseudo";
 		    public static final String CHAMP_MOT_DE_PASSE = "motDePasse";
+<<<<<<< HEAD
 		    
 			//public static final String CHAMP_PRENOM = "prenom";
 			//public static final String CHAMP_DATE_NAISSANCE = "dateNaissance";
@@ -31,17 +34,15 @@ public class controleInscription extends HttpServlet {
 			//public static final String CHAMP_SEXE = "sexe";
 		    //public static final String CHAMP_CONFIRMATION_MOT_DE_PASSE = "confirmationMotDePasse";
 		    //public static final String CHAMP_TELEPHONE = "telephone";
+=======
+		
+>>>>>>> 87ee6777da3d1271a28be93539b7a4465896f073
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public controleInscription() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 
@@ -50,9 +51,6 @@ public class controleInscription extends HttpServlet {
 		this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	    String email = request.getParameter( CHAMP_EMAIL );
