@@ -31,11 +31,12 @@
 >>>>>>> Stashed changes
 
 		<!-- javascript -->
+		
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
 		<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/bootstrap/js/bootstrap.min.js"></script>
 		
-		<script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/js/index.js"></script>
+		<!--  <script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/js/index.js"></script> -->
 
 		<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/public/global/pages/js/pages.js"></script>-->
 
@@ -49,15 +50,15 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="ConnexionLabel">Identifiez-vous</h4>
+		        <h4 class="modal-title" id="ConnexionLabel"></h4>
 		      </div>
-		      <div class="modal-body">
+		      <div class="modal-body ">
 		      	<body class="pace-black space1">
 
 					<div class="container delete_space">
 						<div class="row">
 						
-							<div class="col-md-12">
+							<div class="col-md-12 foot">
 			
 								<div class="main space1">
 									
@@ -71,12 +72,11 @@
 											
 											
 												<div class="form-group">
-													<div class="form-group">
-														<div class="col-md-12">
-															<label for="inscription_am">E-MAIL</label>
-															<input name="email" placeholder="email" class="form-control" type="text" id="inscription_am"/>
-														</div>
-													</div> 
+													<div class="col-md-12">
+														<label for="inscription_am">E-MAIL</label>
+														<input name="email" placeholder="email" class="form-control" type="text" id="inscription_am"/>
+													</div>
+												</div> 
 				
 													<div class="form-group">
 														<div class="col-md-12">
@@ -84,7 +84,6 @@
 															<input name="inscription_pseudo" placeholder="Pseudo" class="form-control" type="text" id="inscription_pseudo"/>
 														</div>
 													</div>
-												 </div>
 			
 												<div class="form-group">
 													<div class="col-md-12">
@@ -111,33 +110,32 @@
 			
 											<h3>Connexion</h3>
 			
-											<form name="login" role="form" class="form-horizontal space2" method="post" accept-charset="utf-8">
+											<form name="login" role="form" class="form-horizontal " method="post" accept-charset="utf-8">
 			
 												<div class="form-group">
-													<div class="col-md-10">
+													<div class="col-md-12">
 														<label for="">ADRESSE MAIL</label>
 														<input name="username" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername"/>
 													</div>
 												</div> 
 			
 												<div class="form-group">
-													<div class="col-md-10">
+													<div class="col-md-12">
 														<label for="">MOT DE PASSE</label>
 														<input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
 													</div>
 												</div>
 												
-												<div class="form-group">
-													<div class="col-md-10">
-														<label for="">RESTER CONNECTE(E)</label>
-														<input name="se_souvenir"  class="form-control" type="checkbox" id="inscription_se_souvenir"/>
+												<div class="form-group col-md-12">
+													<div class="space_new"><a href="
+														https://www.google.com" target="_blanck">Mot de passe oublié</a>
 													</div>
 												</div>
 			
 												<div>
 													<div class="form-group">
 														<div class="col-md-offset-0 col-md-8">
-															<input  class="btn btn-success btn btn-success" type="submit" value="Connexion"/>
+															<input  class="btn btn-success btn btn-success" type="submit" value="Se Connecter"/>
 														</div>
 													</div>
 			
@@ -145,11 +143,7 @@
 			
 											</form>
 			
-											<div class="form-group col-md-12">
-												<div><a href="
-													https://www.google.com" target="_blanck">Mot de passe oublié</a>
-												</div>
-											</div>
+											
 			
 										</div>
 									</div>

@@ -1,62 +1,152 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+	<html>
+	
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<!--  <title>Insert title here</title> -->
+		<title>FootSalle</title>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<meta charset="utf-8" />
+		<title>S'inscrire</title>
 		
+		<meta content="Charte Graphique" name="description" />
+		<meta content="Davy NANA" name="author" />
 		
 		<!-- stylesheet -->
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
-
-		<link rel="stylesheet" type="text/css" href="../css/pages.css"/>
-
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
-
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400,700,300" />
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
+		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/global/bootstrap/css/bootstrap.min.css" />
+				
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/pages/css/profil.css"/>
+		
+		
 		<!-- javascript -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/bootstrap/js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/index.js"></script>
+		
+		
+		<style>
 
+			body {
+			background: #FFFFFF;
+			margin: 10;
+			font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+			}
+			
+			.topnav {
+			overflow: hidden;
+			background-color: #333;
+			}
+			
+			.topnav a {
+			float: left;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			}
+			
+			.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+			}
+			
+			.topnav a.active {
+			background-color: #4CAF50;
+			color: white;
+			}
+			
+			.topnav-right {
+			float: right;
+			}
+			
+			
+			.main {
+			background: white url(machine_a_ecrire.jpg) right top no-repeat;
+			background-size: contain;
+			padding: 80px 20px 20px;
+			margin-top: 120px;
+			}
+			
+			@media only screen and (max-width : 992px) {
+			.main {
+			background: white;
+			margin-top: 30px;
+			}
+			}
+			
+			.space1{
+			padding-top: 0px;
+			margin-top: 0px;
+			margin-bottom: 0px;
+			}
+			
+			.space2{
+			padding-top: 40px;
+			margin-top:  0px;
+			margin-bottom: 0px;
+			}
+			
+			h1 {
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			color: #555;
+			margin-bottom: 0;
+			}
+			
+			h2 {
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			color: #999;
+			font-size: 18px;
+			margin-top: 5px;
+			}
+			
+			.b{
+			font-size:123px;
+			font-family: arial, sans-serif;
+			color: aqua;
+			}
+			
+			form {
+			margin-top: 60px;
+			}
+			
+			input.form-control , input[type="submit"] , .btn {
+			border-radius: 0px;
+			}
+			
+			.btn {
+			transition: all ease-in-out 0.2s;
+			}
+			
+			.credits {
+			margin-top: 100px;
+			color: #999;
+			font-size: 12px;
+			}
+			
+			.credits a {
+			color: inherit;
+			}
+		
+		</style>
+		
 	</head>
+	
 	<body>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html">Accueil</a>
+	
+		<div class="modal fade" id=modalConnexion tabindex="-1" role="dialog" aria-labelledby="modalConnexionLabel" aria-hidden="true">
+		</div>
+			<div class="topnav">
+				<a class="active" href="#home">Accueil</a>
+				<div class="topnav-right">
+					<a href="annonces.java"> annonce</a>
+					<a id="connexion" href="#" >Connexion</a>
 				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="annonces.html">Annonces <span class="sr-only">(current)</span></a></li>
-
-
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Mon compte
-								<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="mes_annonces.html">Mes annonces</a></li>
-								<li><a href="profil.html">Mon profil</a></li>
-								<li><a href="preference.html">préférences</a></li>
-								<li><a href="index.html">Déconnexion</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
+			</div>
 	</body>
-</html>
+	</html>
