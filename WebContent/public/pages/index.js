@@ -22,7 +22,7 @@ var util = function (){
     };
 }();
 
-//Partie profil utilisateur
+//Actions profil utilisateur
 var user_profil = function () {
     var general = function (){
         $('#modal_launcher_changer_mdp').click(function (e) {

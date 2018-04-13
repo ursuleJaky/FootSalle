@@ -40,7 +40,7 @@
                 toastr.success(data.info.Message_title, data.info.Message_content);
             });
 
-            //En cas d'échec
+            //En cas d'echec
             request.fail(function () {
                 toastr.error('La requête n\'a pas pu aboutir', 'Erreur')
             });
