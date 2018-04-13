@@ -15,7 +15,6 @@ import manager.UserManager;
 public class controleInscription extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-<<<<<<< HEAD
 	public static final String VUE = "/vues/connexion.jsp";  //"/WEB-INF/inscription.jsp"
 	public static final String PAGE_ACCUEIL = "/vues/profil/AccueilTemp.jsp";
 
@@ -31,15 +30,8 @@ public class controleInscription extends HttpServlet {
 		    //public static final String CHAMP_CONFIRMATION_MOT_DE_PASSE = "confirmationMotDePasse";
 		    //public static final String CHAMP_TELEPHONE = "telephone";
 		
-=======
-	public static final String VUE = "/vues/connexion.jsp"; 
-	public static final String PAGE_ACCUEIL = "/vues/profil/AccueilTemp.jsp";
-    public static final String CHAMP_NOM = "nom";
-    public static final String CHAMP_EMAIL = "email";
-    public static final String PSEUDO = "inscription_pseudo";
-    public static final String CHAMP_MOT_DE_PASSE = "motDePasse";
+	
        
->>>>>>> 3801eba67268886f302c28d3de22deb042b5db79
     public controleInscription() {
         super();
     }
