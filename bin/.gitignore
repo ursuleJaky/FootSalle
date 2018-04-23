@@ -1,19 +1,20 @@
+/hibernate.cfg.xml
+<<<<<<< HEAD
+/com/
+/manager/
+/beans/
+=======
 <<<<<<< HEAD
 /hibernate.cfg.xml
+>>>>>>> c56f79149c73ee3070eb594d68f20521f066d6cb
 /.gitignore
-/beans/
-/com/
 /log4j.properties
-/manager/
 /test/
 /utils/
 =======
-<<<<<<< HEAD
-/hibernate.cfg.xml
-/com/
 /beans/
-/manager/
-=======
-/hibernate.cfg.xml
->>>>>>> c56f79149c73ee3070eb594d68f20521f066d6cb
->>>>>>> 310d57f393b1bcf3c7256d4f2479283e62f0d696
+/com/
+/test/
+/utils/
+>>>>>>> 87ee6777da3d1271a28be93539b7a4465896f073
+>>>>>>> 4994d474ec7287efb2c93c0721af0af354a42f3c

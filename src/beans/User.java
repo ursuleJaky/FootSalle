@@ -19,7 +19,7 @@ public class User {
 	private int nombreNotes;
 	private String descriptionUtilisateur;
 	private String identifiantUtilisateur;
-	private transient String motDePasseUtilisateur;
+	private  String motDePasseUtilisateur;
 	private String pseudoUtilisateur;
 
 	
@@ -50,7 +50,7 @@ public class User {
 	
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	
@@ -66,7 +66,7 @@ public class User {
 		this.statut = " ";
 		this.tel = " ";
 
-		Date temp = new Date (99,99,9999);
+		Date temp = new Date (99999999);
 		this.dateNaissance = temp;
 		this.adresse = " ";
 		this.ville = " ";
@@ -76,7 +76,6 @@ public class User {
 		this.descriptionUtilisateur = " ";
 		this.identifiantUtilisateur = " ";
 		
-		// TODO Auto-generated constructor stub
 	}
 
 

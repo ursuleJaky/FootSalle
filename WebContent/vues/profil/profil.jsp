@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <link href="${pageContext.request.contextPath}/public/pages/index.css" rel="stylesheet">
-    <title>fdsffsdf</title>
+    <title>profil utilisateur</title>
 </head>
 <body>
 <!-- DEBUT DU CONTENEUR -->
@@ -35,7 +35,12 @@
                     <img alt="User Pic"
                          src="${pageContext.request.contextPath}/public/images/yinyang.jpg"
                          class="img-circle img-responsive">
+<<<<<<< HEAD
                     <button id="modal_launcher_changer_mdp" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_changement_mdp">Changer de mot de passe</button>
+=======
+                    <h3><%out.println(nom + " " + prenom);%></h3>
+                    <button id="modal_launcher_changer_mdp" type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_changement_mdp">Changer de mot de passe</button>
+>>>>>>> a559a370cf80dd64c2ee4a8d38a6d1fe78af4152
                 </div>
                 <!-- FIN COTE GAUCHE DU BODY-->
 
@@ -116,7 +121,7 @@
                                 <!-- DEBUT FORM PROFIL-->
                                 <div class="text-center">
                                     <button type="button" id="form_profil_edit"
-                                            class="btn btn-sm btn-primary "><i
+                                            class="btn btn-sm btn-success "><i
                                             class="glyphicon glyphicon-edit"></i>
                                         Modifier
                                     </button>
