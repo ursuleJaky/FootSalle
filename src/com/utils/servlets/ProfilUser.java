@@ -44,22 +44,23 @@ public class ProfilUser extends HttpServlet {
 		request.setAttribute("pseudoUtilisateur", ((beans.User) user).getPseudoUtilisateur());
 		request.setAttribute("nombreNotes", ((beans.User) user).getNombreNotes());
 		this.getServletContext().getRequestDispatcher("/vues/profil/profil.jsp").forward(request, response);
-					
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//doGet(request, response);
 		modifierInfoPerso(request.getParameter("nom"), request.getParameter("prenom"), request.getParameter("adresse"), 
 				request.getParameter("ville"), request.getParameter("a_propos"));
-		response.setContentType("application/json");
-	    response.setCharacterEncoding("UTF-8");
+		//response.setContentType("application/json");
+	    //response.setCharacterEncoding("UTF-8");
+	    
 	    response.getWriter().write("OK");
 	}
 	
 	//private void afficherInfoPerso(HttpServletRequest request, HttpServletResponse response) {}
 	
 	private void modifierInfoPerso(String nom, String prenom, String adresse, 
-			String ville, String descriptionUtilisateur) {
+		String ville, String descriptionUtilisateur) {
+
 		UserManager um = new UserManager();
 
 		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
@@ -69,8 +70,8 @@ public class ProfilUser extends HttpServlet {
 		user.setEmail(adresse);
 		user.setVille(ville);
 		//u.setDateNaissance(dateNaissance);  // Pas encore gerer dans la modification
-		user.setDescriptionUtilisateur(descriptionUtilisateur);
-		um.UpdateInfoUtilisateur(1, user); //TODO récupérer l'id de la session en cours
+		//user.setDescriptionUtilisateur(descriptionUtilisateur);
+		//um.UpdateInfoUtilisateur(1, user); //TODO rï¿½cupï¿½rer l'id de la session en cours
 	}
 	
 

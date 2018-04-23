@@ -35,12 +35,8 @@
                     <img alt="User Pic"
                          src="${pageContext.request.contextPath}/public/images/yinyang.jpg"
                          class="img-circle img-responsive">
-<<<<<<< HEAD
-                    <button id="modal_launcher_changer_mdp" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_changement_mdp">Changer de mot de passe</button>
-=======
                     <h3><%out.println(nom + " " + prenom);%></h3>
                     <button id="modal_launcher_changer_mdp" type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_changement_mdp">Changer de mot de passe</button>
->>>>>>> a559a370cf80dd64c2ee4a8d38a6d1fe78af4152
                 </div>
                 <!-- FIN COTE GAUCHE DU BODY-->
 

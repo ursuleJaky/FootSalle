@@ -53,6 +53,7 @@ var user_profil = function () {
                 url: '/FootSalle/ProfilUser',
                 data: $('#form_profil').serialize(),
                 success: function(data){
+                    toastr.success('Votre profil a bien été modifié.', 'Succès');
                 	$('#form_profil').find('input, textarea, select').prop('disabled', true);
                 	$('#form_profil_cancel').hide();
                     $('#form_profil_submit').hide();
@@ -60,10 +61,6 @@ var user_profil = function () {
                 },
                 error: function(errMsg) {
                     toastr.error('La requete n\'a pas pu aboutir', 'Erreur');
-                    $('#form_profil').find('input, textarea, select').prop('disabled', true);
-                    $('#form_profil_cancel').hide();
-                    $('#form_profil_submit').hide();
-                    $('#form_profil_edit').show();
                 }
             });
             e.preventDefault();
