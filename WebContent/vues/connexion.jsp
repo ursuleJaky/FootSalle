@@ -11,7 +11,6 @@
 		<meta content="Davy NANA" name="author" />
 
 		<!-- stylesheet -->
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/global/bootstrap/css/bootstrap.min.css" />
 				
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/pages/css/profil.css"/>
 
@@ -26,7 +25,6 @@
 		
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
-		<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/bootstrap/js/bootstrap.min.js"></script>
 		
 		<!--  <script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/js/index.js"></script> -->
 
@@ -44,22 +42,22 @@
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        <h4 class="modal-title" id="ConnexionLabel"></h4>
 		      </div>
-		      <div class="modal-body ">
-		      	<body class="pace-black space1">
-
+		      <div class="modal-body">
+		       <div class="panel panel-danger">
+      <div class="panel-heading">Panel with panel-danger class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+    
+    <div class="alert alert-dark" role="alert">
+  This is a dark alert—check it out!
+</div>
 					<div class="container delete_space">
 						<div class="row">
-						
 							<div class="col-md-12 foot">
-			
 								<div class="main space1">
-									
 									<div class="">
-									
 										<div class=" col-md-6 gauche cadre">
-			
 											<h3>Inscription</h3>
-			
 											<form id="form_user_inscription" action="controleInscription" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 													<div class="form-group">
 														<div class="col-md-12">
@@ -94,7 +92,6 @@
 												</div>
 			
 											</form>
-			
 										</div>
 									
 										<div class=" col-md-6 droite cadre">
@@ -145,9 +142,8 @@
 						</div>
 					</div>
 			
+	
 			
-			
-				</body>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
