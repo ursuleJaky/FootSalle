@@ -50,8 +50,13 @@ public class ProfilUser extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//doGet(request, response);
-		modifierInfoPerso(request.getParameter("nom"), request.getParameter("prenom"), request.getParameter("adresse"), 
-				request.getParameter("ville"), request.getParameter("a_propos"));
+		modifierInfoPerso(
+				request.getParameter("nom"), 
+				request.getParameter("prenom"), 
+				request.getParameter("adresse"), 
+				request.getParameter("ville"), 
+				request.getParameter("a_propos")
+		);
 		//response.setContentType("application/json");
 	    //response.setCharacterEncoding("UTF-8");
 	    

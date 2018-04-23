@@ -1,25 +1,23 @@
+
 <!--  Ajout du header Menu + CSS -->
 <%@include  file="/vues/header.jsp" %>
 
 <% 
+//Variables: info perso
 String prenom = (String)request.getAttribute("prenom");
 String nom = (String)request.getAttribute("nom");
 String dateNaissance = (String) request.getAttribute("dateNaissance");
 String email = (String) request.getAttribute("email");
 String adresse = (String) request.getAttribute("adresse");
 String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
-
-
 %>
 <!-- DEBUT DU CONTENEUR -->
-<div class="container" id="user_profil">
+<div id="user_profil">
     <!-- DEBUT PANEL-->
     <div class="card">
         <!-- DEBUT PANEL HEADER-->
         <div class="card-header">
-            <h3><% 
-                
-                out.println(nom + " " + prenom);%></h3>
+            <h3><%out.println(nom + " " + prenom);%></h3>
         </div>
         <!-- FIN PANEL HEADER-->
         
