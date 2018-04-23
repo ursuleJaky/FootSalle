@@ -95,6 +95,25 @@ var user_profil = function () {
 
 }();
 
+//Page user connexion
+var user_connexion = function () {
+	var form_validation = function () {
+		$("#form_user_connexion").validate({
+			rules: {
+				inscription_pseudo: "required",
+			}
+		});
+    };
+    
+    return {
+        //main function to initiate the module
+        init: function () {
+        	form_validation();
+        }
+    };
+
+}();
+
 $( document ).ready(function() {
 	util.init();
     user_profil.init();

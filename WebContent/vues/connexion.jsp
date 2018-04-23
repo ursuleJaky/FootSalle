@@ -60,20 +60,18 @@
 			
 											<h3>Inscription</h3>
 			
-											<form action="controleInscription" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
-											
-											
+											<form id="form_user_inscription" action="controleInscription" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 													<div class="form-group">
 														<div class="col-md-12">
 															<label for="">PSEUDO</label>
-															<input name="inscription_pseudo" placeholder="Pseudo" class="form-control" type="text" id="inscription_pseudo"/>
+															<input name="inscription_pseudo" placeholder="Pseudo" class="form-control" type="text" id="inscription_pseudo" required/>
 														</div>
 													</div>
 											
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="inscription_am">E-MAIL</label>
-														<input name="email" placeholder="email" class="form-control" type="text" id="inscription_am"/>
+														<input name="email" placeholder="email" class="form-control" type="text" id="inscription_am" required/>
 													</div>
 												</div> 
 				
@@ -81,7 +79,7 @@
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="inscription_mdp">MOT DE PASSE</label>
-														<input id="motDePasse" name="motDePasse" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
+														<input id="motDePasse" name="motDePasse" placeholder="Mot de passe" class="form-control" type="password"required/>
 													</div>
 												</div> 
 			
@@ -108,14 +106,14 @@
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="">E-MAIL</label>
-														<input name="email" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername" value ='${email}' autofocus/>
+														<input name="email" placeholder="Idenfiant" class="form-control" type="email" id="UserUsername" value ='${email}' autofocus required/>
 													</div>
 												</div> 
 			
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="">MOT DE PASSE</label>
-														<input name="motDePasse" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
+														<input name="motDePasse" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword" required/>
 													</div>
 												</div>
 												
