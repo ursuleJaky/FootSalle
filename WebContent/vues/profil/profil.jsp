@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--head>
-    <meta charset="UTF-8">
-    <meta charset="utf8_general_ci"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-          type="text/css"/>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
-    <title>profil utilisateur</title>
-</head-->
-
 <%@include  file="../header.jsp" %>
-<body>
 <!-- DEBUT DU CONTENEUR -->
 <div class="container" id="user_profil">
     <!-- DEBUT PANEL-->
@@ -27,10 +10,10 @@
                 out.println(nom + " " + prenom);%></h3>
         </div>
         <!-- FIN PANEL HEADER-->
-		
+        
         <!-- DEBUT PANEL BODY-->
         <div class="panel-body">
-            <div class="row">
+            <div class="form-row">
                 <!-- DEBUT COTE GAUCHE DU BODY-->
                 <div class="col-md-3" align="center">
                     <img alt="User Pic"
@@ -47,7 +30,9 @@
                     <div>
                         <!-- DEBUT TABS NAV-->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Informations personnelles</a></li>
+                            <li class=nav-item>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="info_perso" role="tab" aria-controls="info_perso" aria-selected="true">Informations personnelles</a>
+                            </li>
                             <!--<li><a href="#avis">Avis</a></li>-->
                             <!--<li><a href="#events">Participations</a></li>-->
                             <!--<li><a href="#invit">Invitations</a></li>-->
@@ -57,15 +42,15 @@
                         <!-- DEBUT TABS CONTENT-->
                         <div class="tab-content">
                             <!-- DEBUT TAB INFO PERSO-->
-                            <div id="info_perso" class="tab-pane fade in active">
+                            <div id="info_perso" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="info_perso">                  
                                 <!-- DEBUT FORM PROFIL-->
-                                <form id="form_profil" method="post">
-                                	<div class="form-group col-md-4">
+                                <form id="form_profil" method="post" class="form-row">
+                                    <div class="form-group col-md-4">
                                         <label for="civilite">Civilité</label>
                                         <select name="civilite" id="civilite" class="form-control" disabled>
-                                        	<option value="mme">Madame</option>
-                               	            <option value="mlle">Mademoiselle</option>
-                               	            <option value="m">Monsieur</option>
+                                            <option value="mme">Madame</option>
+                                            <option value="mlle">Mademoiselle</option>
+                                            <option value="m">Monsieur</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
@@ -596,23 +581,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">1</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div>
 </div>
 
 

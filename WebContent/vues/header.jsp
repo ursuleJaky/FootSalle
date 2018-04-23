@@ -1,33 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	//Variables globales du header
+	String page_title = (String) request.getAttribute("page_title");
+%>
 <!DOCTYPE html>
 	<html>
 	
 	<head>
-		<title>FootSalle</title>
+		<title><% out.println(page_title);%></title>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<meta charset="utf-8" />
-		<title>S'inscrire</title>
-		
-		<meta content="Charte Graphique" name="description" />
-		<meta content="Davy NANA" name="author" />
-		
 		<!-- stylesheet -->
-		
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/global/bootstrap/css/bootstrap.min.css" />
-				
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/pages/css/profil.css"/>
-		
-		
-		<!-- javascript -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		
-		<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/bootstrap/js/bootstrap.min.js"></script>
-				<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/jquery-validation/jquery.validate.min.js"></script>
-				<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/jquery-validation/additional-methods.min.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/index.js"></script>
-		
-		
+    	<link rel="stylesheet" href="${pageContext.request.contextPath}/public/pages/index.css">
+    	<link rel="stylesheet" href="${pageContext.request.contextPath}/public/global/plugins/toastr/toastr.min.css">
+    	
 		<style>
 
 			body {
@@ -149,5 +136,3 @@
 					<a id="connexion" href="#" >Connexion</a>
 				</div>
 			</div>
-	</body>
-	</html>

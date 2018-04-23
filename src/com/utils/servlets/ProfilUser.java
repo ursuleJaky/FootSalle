@@ -26,7 +26,9 @@ public class ProfilUser extends HttpServlet {
 		UserManager um = new UserManager();
 		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
 
-		System.out.println(user.toString());
+		//System.out.println(user.toString());
+		request.setAttribute("page_title", "Profil de "+((beans.User) user).getNom()+" "+((beans.User) user).getPrenom());
+
 		request.setAttribute("nom", ((beans.User) user).getNom());
 		request.setAttribute("prenom", ((beans.User) user).getPrenom());
 		request.setAttribute("motDePasseUtilisateur", ((beans.User) user).getMotDePasseUtilisateur());
