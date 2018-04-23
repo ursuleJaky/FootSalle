@@ -53,7 +53,7 @@ public class ProfilUser extends HttpServlet {
 		//response.setContentType("application/json");
 	    //response.setCharacterEncoding("UTF-8");
 	    
-	    response.getWriter().write("OK");
+	    response.getWriter().write("oK");
 	}
 	
 	//private void afficherInfoPerso(HttpServletRequest request, HttpServletResponse response) {}
@@ -70,8 +70,8 @@ public class ProfilUser extends HttpServlet {
 		user.setEmail(adresse);
 		user.setVille(ville);
 		//u.setDateNaissance(dateNaissance);  // Pas encore gerer dans la modification
-		//user.setDescriptionUtilisateur(descriptionUtilisateur);
-		//um.UpdateInfoUtilisateur(1, user); //TODO r�cup�rer l'id de la session en cours
+		user.setDescriptionUtilisateur(descriptionUtilisateur);
+		um.UpdateInfoUtilisateur(2, user); //TODO r�cup�rer l'id de la session en cours
 	}
 	
 

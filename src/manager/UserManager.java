@@ -53,7 +53,7 @@ public class UserManager {
 		
 		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		User p = (User) session.load(User.class, id); //Chargement de l'utilisateur de la BDD à l'objet User
+		User p = (User) session.load(User.class, id); //Chargement de l'utilisateur de la BDD ï¿½ l'objet User
 
 		p = p1;
 		p.setId(id);
