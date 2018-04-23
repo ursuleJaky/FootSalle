@@ -18,11 +18,28 @@ public class controleInscription extends HttpServlet {
 	public static final String VUE = "/vues/connexion.jsp";  //"/WEB-INF/inscription.jsp"
 	public static final String PAGE_ACCUEIL = "/vues/profil/AccueilTemp.jsp";
 
+<<<<<<< HEAD
+		    public static final String CHAMP_NOM = "nom";
+		    public static final String CHAMP_EMAIL = "email";
+		    public static final String PSEUDO = "inscription_pseudo";
+		    public static final String CHAMP_MOT_DE_PASSE = "motDePasse";
+		    
+			//public static final String CHAMP_PRENOM = "prenom";
+			//public static final String CHAMP_DATE_NAISSANCE = "dateNaissance";
+			//public static final String CHAMP_CONFIRMATION_EMAIL = "confirmerEmail";
+			//public static final String CHAMP_SEXE = "sexe";
+		    //public static final String CHAMP_CONFIRMATION_MOT_DE_PASSE = "confirmationMotDePasse";
+		    //public static final String CHAMP_TELEPHONE = "telephone";
+
+
+
+=======
     public static final String CHAMP_NOM = "nom";
     public static final String CHAMP_EMAIL = "email";
     public static final String PSEUDO = "inscription_pseudo";
     public static final String CHAMP_MOT_DE_PASSE = "motDePasse";
 		    
+>>>>>>> 15d241a9ba0b78bcf760f67614de413ae6073a0b
     public controleInscription() {
         super();
     }

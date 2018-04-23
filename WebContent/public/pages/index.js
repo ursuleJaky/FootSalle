@@ -8,15 +8,15 @@ var util = function (){
     };
 
     //Initialise starr plugins
-    var starr = function (){
+   /* var starr = function (){
         $(".starrr").starrr();
-    };
+    };*/
 
     return {
         //main function to initiate the module
         init: function () {
             nav_tabs();
-            starr();
+            /*starr();*/
         }
     };
 }();
