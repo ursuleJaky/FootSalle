@@ -1,22 +1,35 @@
-<%@include  file="../header.jsp" %>
+<!--  Ajout du header Menu + CSS -->
+<%@include  file="/vues/header.jsp" %>
+
+<% 
+String prenom = (String)request.getAttribute("prenom");
+String nom = (String)request.getAttribute("nom");
+String dateNaissance = (String) request.getAttribute("dateNaissance");
+String email = (String) request.getAttribute("email");
+String adresse = (String) request.getAttribute("adresse");
+String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
+
+
+%>
 <!-- DEBUT DU CONTENEUR -->
 <div class="container" id="user_profil">
     <!-- DEBUT PANEL-->
-    <div class="panel panel-default">
+    <div class="card">
         <!-- DEBUT PANEL HEADER-->
-        <div class="panel-heading">
-            <h3 class="panel-title"><% String nom = (String)request.getAttribute("nom");
-                String prenom = (String)request.getAttribute("prenom");
+        <div class="card-header">
+            <h3><% 
+                
                 out.println(nom + " " + prenom);%></h3>
         </div>
         <!-- FIN PANEL HEADER-->
         
         <!-- DEBUT PANEL BODY-->
-        <div class="panel-body">
+        <div class="card-body">
             <div class="form-row">
                 <!-- DEBUT COTE GAUCHE DU BODY-->
                 <div class="col-md-3" align="center">
                     <img alt="User Pic"
+                    	 style="width:250px;"
                          src="${pageContext.request.contextPath}/public/images/yinyang.jpg"
                          class="img-circle img-responsive">
                     <h3><%out.println(nom + " " + prenom);%></h3>
@@ -66,7 +79,7 @@
                                     <div class="form-group col-md-4">
                                         <label for="date_naissance">Date de naissance</label>
                                         <input type="date" class="form-control" id="date_naissance"
-                                               name="date_naissance" value="<% String dateNaissance = (String) request.getAttribute("dateNaissance");
+                                               name="date_naissance" value="<% 
                                         out.println(dateNaissance);%>"
                                         disabled>
                                     </div>
@@ -74,29 +87,22 @@
                                         <label for="email">E-mail</label>
                                         <input href="mailto:info@support.com" class="form-control" id="email"
                                                name="email"
-                                               value="<% String email = (String) request.getAttribute("email");
+                                               value="<%
                                         out.println(email);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="ville">Ville</label>
-                                        <select id="ville" name="ville" class="form-control" disabled>
-                                            <option value="Talence">Talence</option>
-                                            <option value="Bordeaux">Bordeaux</option>
-                                            <option value="Canéjan">Canéjan</option>
-                                            <option value="Pessac">Pessac</option>
-                                            <option value="Cestas">Cestas</option>
-                                        </select>
+                                        <input type="text" class="form-control" id="ville" name="ville"
+                                               value="<%out.println(adresse);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-8">
                                         <label for="adresse">Adresse</label>
                                         <input type="text" class="form-control" id="adresse" name="adresse"
-                                               value="<% String adresse = (String) request.getAttribute("adresse");
-                                        out.println(adresse);%>" disabled>
+                                               value="<%out.println(adresse);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="a_propos">A propos de moi</label>
-                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled>
-                                        <% String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
+                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled><% 
                                                out.println(descriptionUtilisateur);%></textarea>
                                     </div>
                                 </form>
@@ -583,7 +589,7 @@
     </div>
 </div>
 
-
+<!--  Ajout du footer: JS -->
 <jsp:include page="/vues/footer.jsp"/>
 
 
