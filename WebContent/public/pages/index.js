@@ -99,8 +99,8 @@ var user_profil = function () {
 }();
 
 $( document ).ready(function() {
-	//util.init();
-    //user_profil.init();
+	util.init();
+    user_profil.init();
     
     $("#connexion").on("click", function(){
     	$('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){
