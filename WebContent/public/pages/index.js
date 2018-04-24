@@ -114,11 +114,25 @@ var user_connexion = function () {
 $( document ).ready(function() {
 	util.init();
     user_profil.init();
-    
     $("#connexion").on("click", function(){
+    	console.log("connexion click")
     	$('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){
     		$('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
     	});
     	return false;
+    });
+    
+    $("#connexionButton").on("click", function(){
+    	console.log("connexionButton click")
+    	$("#disconnect").val("OK");
+    	$("#connect").val("KO");
+    });
+    
+ 
+    
+    $("#deconnexionButton").on("click", function(){
+    	console.log("deconnexionButton click")
+    	$("#disconnect").val("OK");
+    	$("#connect").val("KO");
     });
 });

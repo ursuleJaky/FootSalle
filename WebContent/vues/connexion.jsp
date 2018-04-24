@@ -69,8 +69,8 @@
 
                                     <h3>Connexion</h3>
 
-                                    <form action="controleConnexion" name="login" role="form" class="form-horizontal "
-                                          method="post" accept-charset="utf-8">
+                                    <!-- <form action="controleConnexion" name="login" role="form" class="form-horizontal "
+                                          method="post" accept-charset="utf-8"> -->
 
                                         <div class="form-group">
                                             <div class="col-md-12">
@@ -98,15 +98,16 @@
                                         <div>
                                             <div class="form-group">
                                                 <div class="col-md-offset-0 col-md-8">
-                                                    <input class="btn btn-success btn btn-success" type="submit"
+                                                <input id="connect" type="hidden"/>
+    											<input id="disconnect" type="hidden"/>
+                                                    <input id="connexionButto" class="btn btn-success btn btn-success" type="submit"
                                                            value="Se Connecter"/>
                                                 </div>
                                             </div>
 
                                         </div>
 
-                                    </form>
-
+                                    <!-- </form> -->
 
                                 </div>
                             </div>
@@ -148,6 +149,17 @@
         </div>
     </div>
 </div>
+
+
+<!-- javascript -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/jquery-validation/additional-methods.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/toastr/toastr.min.js"></script>
+<script src="${pageContext.request.contextPath}/public/global/plugins/starr.js"></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/index.js"></script>
 
 
 
