@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   
+<hibernate-mapping>
+<class name="beans.Event" table="public.Events">
+	<id name="id" column="Id_event">
+	<generator class="increment"></generator>
+	</id>
+	
+	<property name="activite" column="Activity"></property>
+	<property name="dateCreationEvenement" column="EventCreationDateHour"></property>
+	<property name="dateDebutEvenement" column="EventDateHour"></property>
+	<property name="dateFinEvenement" column="EventDateHourEnd"></property>
+	<property name="localisationEvenement" column="EventLocationName"></property>
+	<property name="adresseEvenement" column="EventLocationAddress"></property>
+	<property name="ville" column="EventLocationCity"></property>
+	<property name="codePostal" column="EventLocationZipcode"></property>
+	<property name="pays" column="EventLocationCountry"></property>
+	<property name="complet" column="EventCompleted"></property>
+	<property name="nbPersonneVoulu" column="PeopleNumberWanted"></property>
+	<property name="nbPersonneInscrite" column="PeopleNumberRegistered"></property>
+	<property name="participants" column="Participants"></property>
+	<property name="description" column="EventDescription"></property>
+	<property name="idCreateurEvenement" column="Id_user"></property>
+	
+	
+	
+	
+	</class>
+</hibernate-mapping>

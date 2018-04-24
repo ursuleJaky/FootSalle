@@ -26,9 +26,24 @@
 		<div class="topnav" >
 			<a class="active" href="#home">Accueil</a>
 			<div class="topnav-right">
-				<a href="annonces.java"> Annonce</a>
-				<a id="connexion" href="#" >Connexion</a>
-			</div>
+					<!-- <a href="annonces.java"> Annonce</a> -->
+					
+					<%String userConnected = (String)request.getAttribute("userConnected");
+					if(userConnected == "OK")  {%>
+						<a id="monCompte" href="#" >Mon Compte</a>
+						<form action = "controleConnexion" name="deconnexion" method="post">
+							
+							<input id="deconnexionButton" type="submit" value="Déconnexion"/>
+						</form>
+						
+					<% } else {%>
+							<a id="connexion" href="#" >Connexion</a>
+						<!-- <a id="deconnexionButton" href="#" >Déconnexion</a> -->
+					<% }%>
+					
+					%>
+					
+				</div>
 		</div>
 		<!--  Début du conteneur du body -->
 		<div class="container" style="margin-top:30px;margin-bottom:30px;">
