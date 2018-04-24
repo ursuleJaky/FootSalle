@@ -1,38 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta charset="utf8_general_ci"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-          type="text/css"/>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<!--  Ajout du header Menu + CSS -->
+<%@include  file="/vues/header.jsp" %>
 
-    <link href="${pageContext.request.contextPath}/public/pages/index.css" rel="stylesheet">
-    <title>profil utilisateur</title>
-</head>
-<body>
+<% 
+//Variables: info perso
+String prenom = (String)request.getAttribute("prenom");
+String nom = (String)request.getAttribute("nom");
+String dateNaissance = (String) request.getAttribute("dateNaissance");
+String email = (String) request.getAttribute("email");
+String adresse = (String) request.getAttribute("adresse");
+String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
+%>
 <!-- DEBUT DU CONTENEUR -->
-<div class="container" id="user_profil">
+<div id="user_profil">
     <!-- DEBUT PANEL-->
-    <div class="panel panel-default">
+    <div class="card">
         <!-- DEBUT PANEL HEADER-->
-        <div class="panel-heading">
-            <h3 class="panel-title"><% String nom = (String)request.getAttribute("nom");
-                String prenom = (String)request.getAttribute("prenom");
-                out.println(nom + " " + prenom);%></h3>
+        <div class="card-header">
+            <h3><%out.println(nom + " " + prenom);%></h3>
         </div>
         <!-- FIN PANEL HEADER-->
-
+        
         <!-- DEBUT PANEL BODY-->
-        <div class="panel-body">
-            <div class="row">
+        <div class="card-body">
+            <div class="form-row">
                 <!-- DEBUT COTE GAUCHE DU BODY-->
                 <div class="col-md-3" align="center">
                     <img alt="User Pic"
+                    	 style="width:250px;"
                          src="${pageContext.request.contextPath}/public/images/yinyang.jpg"
                          class="img-circle img-responsive">
                     <h3><%out.println(nom + " " + prenom);%></h3>
@@ -45,8 +40,10 @@
                     <!-- DEBUT TABS-->
                     <div>
                         <!-- DEBUT TABS NAV-->
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#info_perso">Informations personnelles</a></li>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class=nav-item>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="info_perso" role="tab" aria-controls="info_perso" aria-selected="true">Informations personnelles</a>
+                            </li>
                             <!--<li><a href="#avis">Avis</a></li>-->
                             <!--<li><a href="#events">Participations</a></li>-->
                             <!--<li><a href="#invit">Invitations</a></li>-->
@@ -56,15 +53,15 @@
                         <!-- DEBUT TABS CONTENT-->
                         <div class="tab-content">
                             <!-- DEBUT TAB INFO PERSO-->
-                            <div id="info_perso" class="tab-pane fade in active">
+                            <div id="info_perso" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="info_perso">                  
                                 <!-- DEBUT FORM PROFIL-->
-                                <form id="form_profil" method="post">
-                                	<div class="form-group col-md-4">
+                                <form id="form_profil" method="post" class="form-row">
+                                    <div class="form-group col-md-4">
                                         <label for="civilite">Civilité</label>
                                         <select name="civilite" id="civilite" class="form-control" disabled>
-                                        	<option value="mme">Madame</option>
-                               	            <option value="mlle">Mademoiselle</option>
-                               	            <option value="m">Monsieur</option>
+                                            <option value="mme">Madame</option>
+                                            <option value="mlle">Mademoiselle</option>
+                                            <option value="m">Monsieur</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
@@ -80,7 +77,7 @@
                                     <div class="form-group col-md-4">
                                         <label for="date_naissance">Date de naissance</label>
                                         <input type="date" class="form-control" id="date_naissance"
-                                               name="date_naissance" value="<% String dateNaissance = (String) request.getAttribute("dateNaissance");
+                                               name="date_naissance" value="<% 
                                         out.println(dateNaissance);%>"
                                         disabled>
                                     </div>
@@ -88,29 +85,22 @@
                                         <label for="email">E-mail</label>
                                         <input href="mailto:info@support.com" class="form-control" id="email"
                                                name="email"
-                                               value="<% String email = (String) request.getAttribute("email");
+                                               value="<%
                                         out.println(email);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="ville">Ville</label>
-                                        <select id="ville" name="ville" class="form-control" disabled>
-                                            <option value="Talence">Talence</option>
-                                            <option value="Bordeaux">Bordeaux</option>
-                                            <option value="Canéjan">Canéjan</option>
-                                            <option value="Pessac">Pessac</option>
-                                            <option value="Cestas">Cestas</option>
-                                        </select>
+                                        <input type="text" class="form-control" id="ville" name="ville"
+                                               value="<%out.println(adresse);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-8">
                                         <label for="adresse">Adresse</label>
                                         <input type="text" class="form-control" id="adresse" name="adresse"
-                                               value="<% String adresse = (String) request.getAttribute("adresse");
-                                        out.println(adresse);%>" disabled>
+                                               value="<%out.println(adresse);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="a_propos">A propos de moi</label>
-                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled>
-                                        <% String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
+                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled><% 
                                                out.println(descriptionUtilisateur);%></textarea>
                                     </div>
                                 </form>
@@ -597,7 +587,7 @@
     </div>
 </div>
 
-
+<!--  Ajout du footer: JS -->
 <jsp:include page="/vues/footer.jsp"/>
 
 

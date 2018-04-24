@@ -56,6 +56,12 @@ public class controleConnexion extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String email = request.getParameter( CHAMP_EMAIL );
+		try {
+			validationEmail(email);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         String motDePasse = request.getParameter( CHAMP_MOT_DE_PASSE );
         System.out.println("==========================================================================================");
         System.out.println(email + " " + motDePasse);
@@ -79,6 +85,16 @@ public class controleConnexion extends HttpServlet {
 			doGet(request, response);
 		}
 
+	} 
+	
+	private void validationEmail( String email ) throws Exception {
+	    if ( email != null && email.trim().length() != 0 ) {
+	        if ( !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
+	            throw new Exception( "Merci de saisir une adresse mail valide." );
+	        }
+	    } else {
+	        throw new Exception( "Merci de saisir une adresse mail." );
+	    }
 	}
 	
 	

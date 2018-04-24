@@ -1,6 +1,7 @@
 //Initialisation des plugins utilitaires (tooltip, nav_tabs, popover, starr ...)
 var util = function (){
-     var nav_tabs = function () {
+    //Initialise les nav tabs
+    var nav_tabs = function () {
         // Panel
         $(".nav-tabs a").click(function () {
             $(this).tab('show');
@@ -8,29 +9,30 @@ var util = function (){
     };
 
     //Initialise starr plugins
-   /* var starr = function (){
+    var starr = function (){
         $(".starrr").starrr();
-    };*/
+    };
 
     return {
         //main function to initiate the module
         init: function () {
             nav_tabs();
-            /*starr();*/
+            starr();
         }
     };
 }();
 
-//Actions profil utilisateur
+//Implementation des actions de la page profil utilisateur
+
 var user_profil = function () {
     var general = function (){
         $('#modal_launcher_changer_mdp').click(function (e) {
-            $('#modal_changement_mdp .modal-body').load("/FootSalle/vues/profil/profil_change_pwd.jsp");
+            $('#modal_changement_mdp .modal-body').load("profil_change_pwd.jsp");
         });
     };
 
     var info_perso = function () {
-        // Form - click modificaiton
+        // Click modifification
         $('#form_profil_edit').click(function () {
             $('#form_profil').find('input, textarea, select').prop('disabled', false);
             $('#form_profil_cancel').show();
@@ -38,7 +40,7 @@ var user_profil = function () {
             $('#form_profil_edit').hide();
         });
 
-        // Form - click annuler
+        // Click annuler
         $('#form_profil_cancel').click(function () {
             $('#form_profil').find('input, textarea, select').prop('disabled', true);
             $('#form_profil_cancel').hide();
@@ -46,11 +48,13 @@ var user_profil = function () {
             $('#form_profil_edit').show();
         });
 
-        // Form - click valider
+        // Click valider
         $('#form_profil_submit').click(function (e) {
-        	$.ajax({ 
+        	console.log("ok");
+            var request = $.ajax({
                 type: "POST",
                 url: '/FootSalle/ProfilUser',
+<<<<<<< HEAD
                 data: $('#form_profil').serialize(),
                 success: function(data){
                 	$('#form_profil').find('input, textarea, select').prop('disabled', true);
@@ -65,6 +69,18 @@ var user_profil = function () {
                     $('#form_profil_submit').hide();
                     $('#form_profil_edit').show();
                 }
+=======
+                data: $('#form_profil').serialize()
+            });
+            request.done(function (resultat) {
+                var data = $.parseJSON(resultat);
+                toastr.success(data.info.Message_title, data.info.Message_content);
+                $('#form_profil').find('input, textarea, select').prop('disabled', true);
+            });
+
+            request.fail(function () {
+                toastr.error('La requête n\'a pas pu aboutir', 'Erreur')
+>>>>>>> a9374fe42d327224a8c91444b972bfc6e6956b5d
             });
             e.preventDefault();
         });
@@ -96,8 +112,8 @@ var user_profil = function () {
 }();
 
 $( document ).ready(function() {
-	util.init();
-    user_profil.init();
+	//util.init();
+    //user_profil.init();
     
     $("#connexion").on("click", function(){
     	$('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){
