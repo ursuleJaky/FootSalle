@@ -1,6 +1,7 @@
 package com.utils.servlets;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
 import manager.UserManager;
+import utils.form_options;
 
 
 
@@ -22,13 +24,12 @@ public class ProfilUser extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//afficherInfoPerso(request, response);
+		//Récupérer les info de l'utilisateur
+		//-- Instantiation du model
 		UserManager um = new UserManager();
-		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
-
-		//System.out.println(user.toString());
-		request.setAttribute("page_title", "Profil de "+((beans.User) user).getNom()+" "+((beans.User) user).getPrenom());
-
+		
+		//-- Récupérer les informations du user pour les transmettre à la vue
+		User user = (User) um.SelectInfoUtilisateur(Integer.parseInt(request.getParameter("user_id")));
 		request.setAttribute("nom", ((beans.User) user).getNom());
 		request.setAttribute("prenom", ((beans.User) user).getPrenom());
 		request.setAttribute("motDePasseUtilisateur", ((beans.User) user).getMotDePasseUtilisateur());
@@ -45,6 +46,13 @@ public class ProfilUser extends HttpServlet {
 		request.setAttribute("descriptionUtilisateur", ((beans.User) user).getDescriptionUtilisateur());
 		request.setAttribute("pseudoUtilisateur", ((beans.User) user).getPseudoUtilisateur());
 		request.setAttribute("nombreNotes", ((beans.User) user).getNombreNotes());
+		
+		//Set form options
+		//HashMap<String, String> myMap = request.setAttribute("myMap", myMap);
+		
+		//Set page title
+		request.setAttribute("page_title", "Profil de "+((beans.User) user).getNom()+" "+((beans.User) user).getPrenom());
+		
 		this.getServletContext().getRequestDispatcher("/vues/profil/profil.jsp").forward(request, response);
 	}
 
