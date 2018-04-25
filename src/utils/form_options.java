@@ -12,7 +12,7 @@ public class form_options {
 	//Option civilité
 	public static Map<String, String> civilite() {
 		Map<String, String> civilite = new HashMap<String, String>();
-		civilite.put("F", "Madamme");
+		civilite.put("F", "Madame");
 		civilite.put("M", "Monsieur");
 		return civilite;
 	}

@@ -6,7 +6,7 @@
 //Variables: info perso
 //Boolean profil_owner = (Boolean)request.getAttribute("profil_owner");
 Boolean profil_owner = true;
-//String civilite = (String)request.getAttribute("genre");
+String civilite = (String)request.getAttribute("genre");
 
 String prenom = (String)request.getAttribute("prenom");
 String nom = (String)request.getAttribute("nom");
@@ -71,10 +71,16 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                     <div class="form-group col-md-4">
                                         <label for="civilite">CIVILITÉ</label>
                                         <select name="civilite" id="civilite" class="form-control" disabled>
-                                        
-                                            <option value="mme">Madame</option>
-                                            <option value="mlle">Mademoiselle</option>
-                                            <option value="m">Monsieur</option>
+                                        <c:forEach items="${options_civilite}" var="entry">
+                                        <c:choose>
+										    <c:when test="${entry.key == genre}">
+										    	<option value="${entry.key}" selected>${entry.value}</option>
+										    </c:when>    
+										    <c:otherwise>
+										    	<option value="${entry.key}">${entry.value}</option>
+										    </c:otherwise>
+										</c:choose>
+									    </c:forEach>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">

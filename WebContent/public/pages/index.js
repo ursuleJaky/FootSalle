@@ -50,14 +50,15 @@ var user_profil = function () {
 
         // Click valider
         $('#form_profil_submit').click(function (e) {
-        	console.log("ok");
-            var request = $.ajax({
+            console.log("ok");
+            $.ajax({
                 type: "POST",
                 url: '/FootSalle/ProfilUser',
                 data: $('#form_profil').serialize(),
                 success: function(data){
-                	$('#form_profil').find('input, textarea, select').prop('disabled', true);
-                	$('#form_profil_cancel').hide();
+                    toastr.success('Votre modification a bien été prise en compte.', 'Succès');
+                    $('#form_profil').find('input, textarea, select').prop('disabled', true);
+                    $('#form_profil_cancel').hide();
                     $('#form_profil_submit').hide();
                     $('#form_profil_edit').show();
                 },
@@ -74,17 +75,17 @@ var user_profil = function () {
     };
 
     var avis = function (){
-    	
+
     };
-    
+
     var participations = function () {
-    	
+
     };
-    
+
     var invitations = function () {
-    	
+
     };
-    
+
     return {
         //main function to initiate the module
         init: function () {
@@ -99,13 +100,13 @@ var user_profil = function () {
 }();
 
 $( document ).ready(function() {
-	util.init();
+    util.init();
     user_profil.init();
-    
+
     $("#connexion").on("click", function(){
-    	$('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){
-    		$('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
-    	});
-    	return false;
+        $('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){
+            $('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
+        });
+        return false;
     });
 });

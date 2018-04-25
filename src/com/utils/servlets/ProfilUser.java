@@ -1,6 +1,10 @@
 package com.utils.servlets;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 import javax.servlet.ServletException;
@@ -48,8 +52,8 @@ public class ProfilUser extends HttpServlet {
 		request.setAttribute("nombreNotes", ((beans.User) user).getNombreNotes());
 		
 		//Set form options
-		//HashMap<String, String> myMap = request.setAttribute("myMap", myMap);
-		
+		request.setAttribute("options_civilite", (HashMap<String, String>) form_options.civilite());
+	
 		//Set page title
 		request.setAttribute("page_title", "Profil de "+((beans.User) user).getNom()+" "+((beans.User) user).getPrenom());
 		
@@ -57,35 +61,34 @@ public class ProfilUser extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doGet(request, response);
+		//Récupérer l'id de l'utilisateur via la variable de session
 		modifierInfoPerso(
+				request.getParameter("civilite"), 
 				request.getParameter("nom"), 
 				request.getParameter("prenom"), 
 				request.getParameter("adresse"), 
 				request.getParameter("ville"), 
 				request.getParameter("a_propos")
-		);
-		//response.setContentType("application/json");
-	    //response.setCharacterEncoding("UTF-8");
-	    
-	    response.getWriter().write("oK");
+		);	    
+		//Réponse retournée
+	    response.getWriter().write("ok");
 	}
 	
 	//private void afficherInfoPerso(HttpServletRequest request, HttpServletResponse response) {}
 	
-	private void modifierInfoPerso(String nom, String prenom, String adresse, 
+	private void modifierInfoPerso(String genre, String nom, String prenom, String adresse, 
 		String ville, String descriptionUtilisateur) {
-
 		UserManager um = new UserManager();
-
+		
 		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
+		user.setGenre(genre);
 		user.setNom(nom);
 		user.setPrenom(prenom);
 		user.setAdresse(adresse);
 		user.setEmail(adresse);
 		user.setVille(ville);
 		//u.setDateNaissance(dateNaissance);  // Pas encore gerer dans la modification
-		user.setDescriptionUtilisateur(descriptionUtilisateur);
+		user.setDescriptionUtilisateur(descriptionUtilisateur.replaceAll("\\s+",""));
 		um.UpdateInfoUtilisateur(2, user); //TODO r�cup�rer l'id de la session en cours
 	}
 	
