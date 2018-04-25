@@ -69,8 +69,8 @@
 
                                     <h3>Connexion</h3>
 
-                                    <!-- <form action="controleConnexion" name="login" role="form" class="form-horizontal "
-                                          method="post" accept-charset="utf-8"> -->
+                                    <form id="form_connexion" name="login" role="form" class="form-horizontal "
+                                          method="post" accept-charset="utf-8"> 
 
                                         <div class="form-group">
                                             <div class="col-md-12">
@@ -94,21 +94,15 @@
 														https://www.google.com" target="_blanck">Mot de passe oublié</a>
                                             </div>
                                         </div>
-
-                                        <div>
-                                            <div class="form-group">
+                                        <input id="connect" name="connect" type="hidden"/>
+                                    </form>
+									 <div class="form-group">
                                                 <div class="col-md-offset-0 col-md-8">
-                                                <input id="connect" type="hidden"/>
-    											<input id="disconnect" type="hidden"/>
-                                                    <input id="connexionButto" class="btn btn-success btn btn-success" type="submit"
+                                                	
+                                                    <input id="connexionButton" class="btn btn-success btn btn-success" type="submit"
                                                            value="Se Connecter"/>
                                                 </div>
-                                            </div>
-
-                                        </div>
-
-                                    <!-- </form> -->
-
+                                     </div>
                                 </div>
                             </div>
 

@@ -15,5 +15,6 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate3"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/postgres"/>
+	<classpathentry kind="lib" path="C:/Users/ursul/Documents/java-json.jar/java-json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
