@@ -17,7 +17,7 @@
                                 <div class="col-md-12">
                                     <label for="inscription_pseudo">PSEUDO</label>
                                     <input id="inscription_pseudo" name="inscription_pseudo" placeholder="Pseudo"
-                                           class="form-control" type="text"
+                                           class="form-control" type="text" minlength="3"
                                            required/>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                                 <div class="col-md-12">
                                     <label for="inscription_am">E-MAIL</label>
                                     <input id="inscription_am" name="email" placeholder="email" class="form-control"
-                                           type="text"
+                                           type="email"
                                            required/>
                                 </div>
                             </div>
@@ -36,10 +36,9 @@
                                 <div class="col-md-12">
                                     <label for="inscription_mdp">MOT DE PASSE</label>
                                     <input id="inscription_mdp" name="motDePasse" placeholder="Mot de passe"
-                                           class="form-control" type="password" required/>
+                                           class="form-control" type="password" minlength="8" required/>
                                 </div>
                             </div>
-
                             <div class="form-group" align="center">
                                 <div class="col-md-8">
                                     <input id="inscription_rejoindre"

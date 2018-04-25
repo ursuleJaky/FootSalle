@@ -7,10 +7,10 @@
 			jdbc:postgresql://localhost/postgres
 		</property>
 		<property name="connection.username">
-			admin
+			postgres
 		</property>
 		<property name="connection.password">
-			admin
+			postgres
 		</property>
 		<property name="connection.driver_class">
 			org.postgresql.Driver

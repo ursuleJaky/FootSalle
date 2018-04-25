@@ -5,9 +5,8 @@
 <%
 //Variables: info perso
 //Boolean profil_owner = (Boolean)request.getAttribute("profil_owner");
-Boolean profil_owner = true;
+Boolean profil_owner = false;
 String civilite = (String)request.getAttribute("genre");
-
 String prenom = (String)request.getAttribute("prenom");
 String nom = (String)request.getAttribute("nom");
 String dateNaissance = (String) request.getAttribute("dateNaissance");
@@ -85,9 +84,7 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="nom">NOM</label>
-                                        <input type="text" class="form-control" id="nom" name="nom"
-                                               value="<%out.println(nom);%>"
-                                               disabled>
+                                        <input type="text" class="form-control" id="nom" name="nom" value="${nom}" disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="prenom">PRÉNOM</label>
@@ -96,7 +93,7 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="date_naissance">DATE DE NAISSANCE</label>
-                                     	<input type="date" class="form-control" id="date_naissance" name="date_naissance" value="<%out.println(dateNaissance);%>" disabled>
+                                     	<input type="date" class="form-control" id="date_naissance" name="date_naissance" value="${dateNaissance}" disabled>
                                     </div>
                                     <div class="form-group col-md-8">
                                         <label for="email">E-MAIL</label>
@@ -144,7 +141,7 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label>CIVILITÉ</label>
-                                        <div><%//out.println(civilite);%></div>
+                                        <div><%out.println(form_options.civilite().get(civilite));%></div>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label>NOM</label>
