@@ -37,11 +37,12 @@ public class UserManager {
 		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		
-		String hql = "from User where Id_user="+id_user;
-	    Query query =session.createQuery(hql);
+		Query query = session.createQuery("from User where Id_user = :id");
+		query.setParameter("id", id_user);
+		
 	    User user = (User)query.uniqueResult(); 
 	     
-	    System.out.println(user);
+	    //System.out.println(user);
 	       
 		session.getTransaction().commit();
 		HibernateUtils.sessionFactory.close();

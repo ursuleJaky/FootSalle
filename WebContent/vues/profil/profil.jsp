@@ -92,22 +92,17 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                     <div class="form-group col-md-4">
                                         <label for="prenom">PRÉNOM</label>
                                         <input type="text" class="form-control" id="prenom" name="prenom"
-                                               value="<%out.println(prenom);%>"
-                                               disabled>
+                                               value="<%out.println(prenom);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="date_naissance">DATE DE NAISSANCE</label>
-                                        <input type="date" class="form-control" id="date_naissance"
-                                               name="date_naissance" value="<%
-                                        out.println(dateNaissance);%>"
-                                               disabled>
+                                     	<input type="date" class="form-control" id="date_naissance" name="date_naissance" value="<%out.println(dateNaissance);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-8">
                                         <label for="email">E-MAIL</label>
-                                        <input href="mailto:info@support.com" class="form-control" id="email"
+                                        <input href="mailto:<%out.println(email);%>" class="form-control" id="email"
                                                name="email"
-                                               value="<%
-                                        out.println(email);%>" disabled>
+                                               value="<%out.println(email);%>" disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="ville">VILLE</label>
