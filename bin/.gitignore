@@ -1,6 +1,10 @@
 /hibernate.cfg.xml
+<<<<<<< HEAD
 /manager/
 /test/
 /beans/
 /com/
 /utils/
+=======
+/com/
+>>>>>>> Mise en place de déconnexion

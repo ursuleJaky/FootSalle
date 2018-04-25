@@ -64,22 +64,44 @@
                                            required/>
                                 </div>
                             </div>
+                                <div class=" col-md-6 droite cadre">
 
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label for="motDePasse">MOT DE PASSE</label>
-                                    <input id="motDePasse" name="motDePasse" placeholder="Mot de passe"
-                                           class="form-control"
-                                           type="password" required/>
-                                </div>
-                            </div>
+                                    <h3>Connexion</h3>
 
-                            <div class="form-group" style="margin-top:28px;" align="center">
-                                <div class="col-md-12">
-                                    <label style="color:white;">fdsf</label>
-                                    <div>
-                                        <a href="https://www.google.com">Mot de passe oublié</a>
-                                    </div>
+                                    <form id="form_connexion" name="login" role="form" class="form-horizontal "
+                                          method="post" accept-charset="utf-8"> 
+
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label for="">E-MAIL</label>
+                                                <input name="email" placeholder="Idenfiant" class="form-control"
+                                                       type="email" id="UserUsername" value='${email}' autofocus
+                                                       required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label for="">MOT DE PASSE</label>
+                                                <input name="motDePasse" placeholder="Mot de passe" class="form-control"
+                                                       type="password" id="UserPassword" required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                            <div class="space_new"><a href="
+														https://www.google.com" target="_blanck">Mot de passe oublié</a>
+                                            </div>
+                                        </div>
+                                        <input id="connect" name="connect" type="hidden"/>
+                                    </form>
+									 <div class="form-group">
+                                                <div class="col-md-offset-0 col-md-8">
+                                                	
+                                                    <input id="connexionButton" class="btn btn-success btn btn-success" type="submit"
+                                                           value="Se Connecter"/>
+                                                </div>
+                                     </div>
                                 </div>
                             </div>
 

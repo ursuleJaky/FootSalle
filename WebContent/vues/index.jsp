@@ -33,11 +33,15 @@
 	<body class="pace-black">
 	
 	<jsp:include page="header.jsp" />
-	<%String userConnected = (String)request.getAttribute("userConnected");%>
+	<%-- <%String userConnected = (String)request.getAttribute("userConnected");%>
     <span id="connected">
     	<%out.println(userConnected); %>
-    </span>
-    
+    </span> --%>
+    <span id="spanTest"></span>
+    <% String userConnected = (String) session.getAttribute("email"); %>
+    <span>
+    	<%out.println("Ecco -"+userConnected+"\n"); %>
+    </span> 
 		<!-- <nav class="navbar navbar-default">
 			<div class="container-fluid">
 				Brand and toggle get grouped for better mobile display
