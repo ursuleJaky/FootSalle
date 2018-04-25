@@ -19,18 +19,29 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400,700,300" />
+<<<<<<< Updated upstream
+=======
+		
+>>>>>>> Stashed changes
 
 		
 
 		<!-- javascript -->
+<<<<<<< Updated upstream
 		
+=======
+>>>>>>> Stashed changes
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
 		<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/bootstrap/js/bootstrap.min.js"></script>
 		
+<<<<<<< Updated upstream
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
 		<!--  <script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/js/index.js"></script> -->
+=======
+		<script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/js/index.js"></script>
+>>>>>>> Stashed changes
 
 		<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/public/global/pages/js/pages.js"></script>-->
 
@@ -44,15 +55,25 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<<<<<<< Updated upstream
 		        <h4 class="modal-title" id="ConnexionLabel"></h4>
 		      </div>
 		      <div class="modal-body ">
+=======
+		        <h4 class="modal-title" id="ConnexionLabel">Identifiez-vous</h4>
+		      </div>
+		      <div class="modal-body">
+>>>>>>> Stashed changes
 		      	<body class="pace-black space1">
 
 					<div class="container delete_space">
 						<div class="row">
 						
+<<<<<<< Updated upstream
 							<div class="col-md-12 foot">
+=======
+							<div class="col-md-12">
+>>>>>>> Stashed changes
 			
 								<div class="main space1">
 									
@@ -62,6 +83,7 @@
 			
 											<h3>Inscription</h3>
 			
+<<<<<<< Updated upstream
 											<form action="controleInscription" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 											
 											
@@ -71,6 +93,18 @@
 														<input name="email" placeholder="email" class="form-control" type="text" id="inscription_am"/>
 													</div>
 												</div> 
+=======
+											<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
+											
+											
+												<div class="form-group">
+													<div class="form-group">
+														<div class="col-md-12">
+															<label for="inscription_am">E-MAIL</label>
+															<input name="email" placeholder="email" class="form-control" type="text" id="inscription_am"/>
+														</div>
+													</div> 
+>>>>>>> Stashed changes
 				
 													<div class="form-group">
 														<div class="col-md-12">
@@ -78,11 +112,19 @@
 															<input name="inscription_pseudo" placeholder="Pseudo" class="form-control" type="text" id="inscription_pseudo"/>
 														</div>
 													</div>
+<<<<<<< Updated upstream
+=======
+												 </div>
+>>>>>>> Stashed changes
 			
 												<div class="form-group">
 													<div class="col-md-12">
 														<label for="inscription_mdp">MOT DE PASSE</label>
+<<<<<<< Updated upstream
 														<input id="motDePasse" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
+=======
+														<input id="inscription_mdp" name="password" placeholder="Mot de passe" class="form-control" type="password" id="inscription_mdp"/>
+>>>>>>> Stashed changes
 													</div>
 												</div> 
 			
@@ -104,32 +146,54 @@
 			
 											<h3>Connexion</h3>
 			
+<<<<<<< Updated upstream
 											<form name="login" role="form" class="form-horizontal " method="post" accept-charset="utf-8">
 			
 												<div class="form-group">
 													<div class="col-md-12">
+=======
+											<form name="login" role="form" class="form-horizontal space2" method="post" accept-charset="utf-8">
+			
+												<div class="form-group">
+													<div class="col-md-10">
+>>>>>>> Stashed changes
 														<label for="">ADRESSE MAIL</label>
 														<input name="username" placeholder="Idenfiant" class="form-control" type="text" id="UserUsername"/>
 													</div>
 												</div> 
 			
 												<div class="form-group">
+<<<<<<< Updated upstream
 													<div class="col-md-12">
+=======
+													<div class="col-md-10">
+>>>>>>> Stashed changes
 														<label for="">MOT DE PASSE</label>
 														<input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword"/>
 													</div>
 												</div>
 												
+<<<<<<< Updated upstream
 												<div class="form-group col-md-12">
 													<div class="spac  rrrrggrv e fe eve e cd d ede   rv ev eve_new"><a href="
 														https://www.google.com" target="_blanck">Mot de passe oublié</a>
+=======
+												<div class="form-group">
+													<div class="col-md-10">
+														<label for="">RESTER CONNECTE(E)</label>
+														<input name="se_souvenir"  class="form-control" type="checkbox" id="inscription_se_souvenir"/>
+>>>>>>> Stashed changes
 													</div>
 												</div>
 			
 												<div>
 													<div class="form-group">
 														<div class="col-md-offset-0 col-md-8">
+<<<<<<< Updated upstream
 															<input  class="btn btn-success btn btn-success" type="submit" value="Se Connecter"/>
+=======
+															<input  class="btn btn-success btn btn-success" type="submit" value="Connexion"/>
+>>>>>>> Stashed changes
 														</div>
 													</div>
 			
@@ -137,7 +201,15 @@
 			
 											</form>
 			
+<<<<<<< Updated upstream
 											
+=======
+											<div class="form-group col-md-12">
+												<div><a href="
+													https://www.google.com" target="_blanck">Mot de passe oublié</a>
+												</div>
+											</div>
+>>>>>>> Stashed changes
 			
 										</div>
 									</div>
@@ -157,6 +229,7 @@
 		      </div>
 		    </div>
 		  </div>
+<<<<<<< Updated upstream
 
 	<footer>
 
@@ -344,6 +417,8 @@
 <script src="${pageContext.request.contextPath}/public/global/plugins/starr.js"></script>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/index.js"></script>
+=======
+>>>>>>> Stashed changes
 
 
 

@@ -12,13 +12,21 @@ body {
 }
 
 .gauche {
+<<<<<<< Updated upstream
 	width: 50%;
+=======
+	width: 40%;
+>>>>>>> Stashed changes
 	height: 100%;
 	float: left;
 }
 
 .droite {
+<<<<<<< Updated upstream
 	width: 50%;
+=======
+	width: 60%;
+>>>>>>> Stashed changes
 	height: 100%;
 	float: left;
 }
@@ -35,6 +43,7 @@ body {
 .surcadre {
 	padding-left: 10px;
     padding-right: 0px;
+<<<<<<< Updated upstream
 }
 
 .space_new{
@@ -44,4 +53,6 @@ body {
 
 .foot{
     /*background-image: url("/FootSalle/public/images/background.foot.jpg");*/
+=======
+>>>>>>> Stashed changes
 }
