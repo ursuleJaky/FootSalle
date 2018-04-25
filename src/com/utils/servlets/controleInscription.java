@@ -52,7 +52,6 @@ public class controleInscription extends HttpServlet {
         try {
 			validationEmail(email);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         User u = new User(pseudo, email, motDePasse);

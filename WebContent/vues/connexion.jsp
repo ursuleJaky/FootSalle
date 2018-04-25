@@ -30,6 +30,29 @@
                                            required/>
                                 </div>
                             </div>
+                                <div class=" col-md-6 droite cadre">
+
+                                    <h3>Connexion</h3>
+
+                                    <!-- <form action="controleConnexion" name="login" role="form" class="form-horizontal "
+                                          method="post" accept-charset="utf-8"> -->
+
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label for="">E-MAIL</label>
+                                                <input name="email" placeholder="Idenfiant" class="form-control"
+                                                       type="email" id="UserUsername" value='${email}' autofocus
+                                                       required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label for="">MOT DE PASSE</label>
+                                                <input name="motDePasse" placeholder="Mot de passe" class="form-control"
+                                                       type="password" id="UserPassword" required/>
+                                            </div>
+                                        </div>
 
 
                             <div class="form-group">
@@ -39,6 +62,15 @@
                                            class="form-control" type="password" required/>
                                 </div>
                             </div>
+                                        <div>
+                                            <div class="form-group">
+                                                <div class="col-md-offset-0 col-md-8">
+                                                <input id="connect" type="hidden"/>
+    											<input id="disconnect" type="hidden"/>
+                                                    <input id="connexionButto" class="btn btn-success btn btn-success" type="submit"
+                                                           value="Se Connecter"/>
+                                                </div>
+                                            </div>
 
                             <div class="form-group" align="center">
                                 <div class="col-md-8">
@@ -64,6 +96,7 @@
                                            required/>
                                 </div>
                             </div>
+                                    <!-- </form> -->
 
                             <div class="form-group">
                                 <div class="col-md-12">
@@ -131,6 +164,17 @@
         src="${pageContext.request.contextPath}/public/global/plugins/jquery-validation/additional-methods.min.js"></script>
 <script type="text/javascript"
         src="${pageContext.request.contextPath}/public/global/plugins/toastr/toastr.min.js"></script>
+<script src="${pageContext.request.contextPath}/public/global/plugins/starr.js"></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/index.js"></script>
+
+
+<!-- javascript -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/jquery-validation/additional-methods.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/global/plugins/toastr/toastr.min.js"></script>
 <script src="${pageContext.request.contextPath}/public/global/plugins/starr.js"></script>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/index.js"></script>
