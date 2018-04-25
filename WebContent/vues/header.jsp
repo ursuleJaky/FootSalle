@@ -141,6 +141,10 @@
 	
 		<div class="modal fade" id=modalConnexion tabindex="-1" role="dialog" aria-labelledby="modalConnexionLabel" aria-hidden="true">
 		</div>
+		
+		<div class="modal fade" id=modalCreationAnnonce tabindex="-1" role="dialog" aria-labelledby="modalCreationAnnonceLabel" aria-hidden="true">
+		</div>
+		
 			<div class="topnav">
 				<a class="active" href="#home">Accueil</a>
 				<div class="topnav-right">

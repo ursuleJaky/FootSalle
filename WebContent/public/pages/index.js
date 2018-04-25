@@ -113,5 +113,12 @@ $( document ).ready(function() {
     	});
     	return false;
     });
+    
+    $("#creer_annonce").on("click", function(){
+    	$('#modalCreationAnnonce').load('/FootSalle/vues/annonces.jsp', function(result){
+    		$('#modalCreationAnnonce').modal({backdrop: 'static', keyboard: false, show :true});
+    	});
+    	return false;
+    });
 });
 
