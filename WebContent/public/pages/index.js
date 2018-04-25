@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 //Initialisation des plugins utilitaires (tooltip, nav_tabs, popover, starr ...)
 var util = function (){
     //Initialise les nav tabs
@@ -27,9 +20,10 @@ var util = function (){
             starr();
         }
     };
-};
+}();
 
-//Partie profil utilisateur
+//Implementation des actions de la page profil utilisateur
+
 var user_profil = function () {
     var general = function (){
         $('#modal_launcher_changer_mdp').click(function (e) {
@@ -38,7 +32,7 @@ var user_profil = function () {
     };
 
     var info_perso = function () {
-        // Form - click modificaiton
+        // Click modifification
         $('#form_profil_edit').click(function () {
             $('#form_profil').find('input, textarea, select').prop('disabled', false);
             $('#form_profil_cancel').show();
@@ -46,7 +40,7 @@ var user_profil = function () {
             $('#form_profil_edit').hide();
         });
 
-        // Form - click annuler
+        // Click annuler
         $('#form_profil_cancel').click(function () {
             $('#form_profil').find('input, textarea, select').prop('disabled', true);
             $('#form_profil_cancel').hide();
@@ -54,42 +48,44 @@ var user_profil = function () {
             $('#form_profil_edit').show();
         });
 
-        // Form - click valider
+        // Click valider
         $('#form_profil_submit').click(function (e) {
-            //Préparation de la requête
-            var request = $.ajax({
+            console.log("ok");
+            $.ajax({
                 type: "POST",
-                url: 'chemin/vers/le/controlleur',
-                data: $('#form_profil').serialize()
+                url: '/FootSalle/ProfilUser',
+                data: $('#form_profil').serialize(),
+                success: function(data){
+                    toastr.success('Votre modification a bien été prise en compte.', 'Succès');
+                    $('#form_profil').find('input, textarea, select').prop('disabled', true);
+                    $('#form_profil_cancel').hide();
+                    $('#form_profil_submit').hide();
+                    $('#form_profil_edit').show();
+                },
+                error: function(errMsg) {
+                    toastr.error('La requete n\'a pas pu aboutir', 'Erreur');
+                    $('#form_profil').find('input, textarea, select').prop('disabled', true);
+                    $('#form_profil_cancel').hide();
+                    $('#form_profil_submit').hide();
+                    $('#form_profil_edit').show();
+                }
             });
-            //En cas de succès
-            request.done(function (resultat) {
-                var data = $.parseJSON(resultat);
-                //Notification
-                toastr.success(data.info.Message_title, data.info.Message_content);
-            });
-
-            //En cas d'échec
-            request.fail(function () {
-                toastr.error('La requête n\'a pas pu aboutir', 'Erreur')
-            });
-            //Eviter le submit
             e.preventDefault();
         });
     };
 
     var avis = function (){
-    	
+
     };
-    
+
     var participations = function () {
-    	
+
     };
-    
+
     var invitations = function () {
-    	
+
     };
-    
+
     return {
         //main function to initiate the module
         init: function () {
@@ -101,19 +97,21 @@ var user_profil = function () {
         }
     };
 
-};
+}();
 
 $( document ).ready(function() {
-	//util.init();
-    //user_profil.init();
-    
+    util.init();
+    user_profil.init();
     $("#connexion").on("click", function(){
+
+    	console.log("connexion click")
     	$('#modalConnexion').load('/FootSalle/vues/connexion.jsp', function(result){
     		$('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
     	});
     	return false;
     });
     
+<<<<<<< HEAD
     $("#creer_annonce").on("click", function(){
     	$('#modalCreationAnnonce').load('/FootSalle/vues/annonces.jsp', function(result){
     		$('#modalCreationAnnonce').modal({backdrop: 'static', keyboard: false, show :true});
@@ -122,3 +120,19 @@ $( document ).ready(function() {
     });
 });
 
+=======
+    $("#connexionButton").on("click", function(){
+    	console.log("connexionButton click")
+    	$("#disconnect").val("OK");
+    	$("#connect").val("KO");
+    });
+    
+ 
+    
+    $("#deconnexionButton").on("click", function(){
+    	console.log("deconnexionButton click")
+    	$("#disconnect").val("OK");
+    	$("#connect").val("KO");
+    });
+});
+>>>>>>> 317b66c7308b32c7139d7e01fb43d3c1d6407e07

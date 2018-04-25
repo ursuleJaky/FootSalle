@@ -1,42 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta charset="utf8_general_ci"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-          type="text/css"/>
+<!--  Ajout du header Menu + CSS -->
+<%@page import="utils.form_options"%>
+<%@include  file="/vues/header.jsp" %>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<%
+//Variables: info perso
+//Boolean profil_owner = (Boolean)request.getAttribute("profil_owner");
+Boolean profil_owner = true;
+String civilite = (String)request.getAttribute("genre");
 
-    <link href="${pageContext.request.contextPath}/public/pages/index.css" rel="stylesheet">
-    <title>fdsffsdf</title>
-</head>
-<body>
+String prenom = (String)request.getAttribute("prenom");
+String nom = (String)request.getAttribute("nom");
+String dateNaissance = (String) request.getAttribute("dateNaissance");
+String email = (String) request.getAttribute("email");
+String adresse = (String) request.getAttribute("adresse");
+String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
+%>
 <!-- DEBUT DU CONTENEUR -->
-<div class="container" id="user_profil">
+<div id="user_profil">
     <!-- DEBUT PANEL-->
-    <div class="panel panel-default">
+    <div class="card">
         <!-- DEBUT PANEL HEADER-->
-        <div class="panel-heading">
-            <h3 class="panel-title"><% String nom = (String)request.getAttribute("nom");
-            String prenom = (String)request.getAttribute("prenom");
-            out.println(nom + " " + prenom);%></h3>
+        <div class="card-header">
+            <h3><%out.println(nom + " " + prenom);%></h3>
         </div>
         <!-- FIN PANEL HEADER-->
 
         <!-- DEBUT PANEL BODY-->
-        <div class="panel-body">
-            <div class="row">
+        <div class="card-body">
+            <div class="form-row">
                 <!-- DEBUT COTE GAUCHE DU BODY-->
                 <div class="col-md-3" align="center">
                     <img alt="User Pic"
+                         style="width:250px;"
                          src="${pageContext.request.contextPath}/public/images/yinyang.jpg"
                          class="img-circle img-responsive">
                     <h3><%out.println(nom + " " + prenom);%></h3>
-                    <button id="modal_launcher_changer_mdp" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_changement_mdp">Changer de mot de passe</button>
+                    <%if(profil_owner){%>
+                    <button id="modal_launcher_changer_mdp" type="button" class="btn btn-success" data-toggle="modal"
+                            data-target="#modal_changement_mdp">Changer de mot de passe
+                    </button>
+                    <%} %>
                 </div>
                 <!-- FIN COTE GAUCHE DU BODY-->
 
@@ -45,85 +48,125 @@
                     <!-- DEBUT TABS-->
                     <div>
                         <!-- DEBUT TABS NAV-->
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#info_perso">Informations personnelles</a></li>
-                            <li><a href="#avis">Avis</a></li>
-                            <li><a href="#events">Participations</a></li>
-                            <li><a href="#invit">Invitations</a></li>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class=nav-item>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="info_perso" role="tab"
+                                   aria-controls="info_perso" aria-selected="true">Informations personnelles</a>
+                            </li>
+                            <!--<li><a href="#avis">Avis</a></li>-->
+                            <!--<li><a href="#events">Participations</a></li>-->
+                            <!--<li><a href="#invit">Invitations</a></li>-->
                         </ul>
                         <!-- FIN TABS NAV-->
 
                         <!-- DEBUT TABS CONTENT-->
                         <div class="tab-content">
                             <!-- DEBUT TAB INFO PERSO-->
-                            <div id="info_perso" class="tab-pane fade in active">
-                                <!-- DEBUT FORM PROFIL-->
-                                <form id="form_profil" method="post">
+                            <div id="info_perso" class="tab-pane fade show active" role="tabpanel"
+                                 aria-labelledby="info_perso">
+                                <%if(profil_owner){ %>
+
+                                <!-- DEBUT FORM PROFIL PRIVEE-->
+                                <form id="form_profil" method="post" class="form-row">
                                     <div class="form-group col-md-4">
-                                        <label for="nom">Nom</label>
-                                        <input type="text" class="form-control" id="nom" name="nom" value="<%out.println(nom);%>"
-                                               disabled>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="prenom">Prénom</label>
-                                        <input type="text" class="form-control" id="prenom" name="prenom" value="<%out.println(prenom);%>"
-                                               disabled>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="date_naissance">Date de naissance</label>
-                                        <input type="text" class="form-control" id="date_naissance"
-                                               name="date_naissance" value="<% String dateNaissance = (String) request.getAttribute("dateNaissance");
-                                               out.println(dateNaissance);%>"
-                                               disabled>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="email">E-mail</label>
-                                        <input href="mailto:info@support.com" class="form-control" id="email"
-                                               name="email"
-                                               value="<% String email = (String) request.getAttribute("email");
-                                               out.println(email);%>" disabled>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="adresse">Adresse</label>
-                                        <input type="text" class="form-control" id="adresse" name="adresse"
-                                               value="<% String adresse = (String) request.getAttribute("adresse");
-                                               out.println(adresse);%>" disabled>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="ville">Ville</label>
-                                        <select id="ville" name="ville" class="form-control" disabled>
-                                            <option value="Talence">Talence</option>
-                                            <option value="Bordeaux">Bordeaux</option>
-                                            <option value="Canéjan">Canéjan</option>
-                                            <option value="Pessac">Pessac</option>
-                                            <option value="Cestas">Cestas</option>
+                                        <label for="civilite">CIVILITÉ</label>
+                                        <select name="civilite" id="civilite" class="form-control" disabled>
+                                        <c:forEach items="${options_civilite}" var="entry">
+                                        <c:choose>
+										    <c:when test="${entry.key == genre}">
+										    	<option value="${entry.key}" selected>${entry.value}</option>
+										    </c:when>    
+										    <c:otherwise>
+										    	<option value="${entry.key}">${entry.value}</option>
+										    </c:otherwise>
+										</c:choose>
+									    </c:forEach>
                                         </select>
                                     </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="nom">NOM</label>
+                                        <input type="text" class="form-control" id="nom" name="nom"
+                                               value="<%out.println(nom);%>"
+                                               disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="prenom">PRÉNOM</label>
+                                        <input type="text" class="form-control" id="prenom" name="prenom"
+                                               value="<%out.println(prenom);%>"
+                                               disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="date_naissance">DATE DE NAISSANCE</label>
+                                        <input type="date" class="form-control" id="date_naissance"
+                                               name="date_naissance" value="<%
+                                        out.println(dateNaissance);%>"
+                                               disabled>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label for="email">E-MAIL</label>
+                                        <input href="mailto:info@support.com" class="form-control" id="email"
+                                               name="email"
+                                               value="<%
+                                        out.println(email);%>" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="ville">VILLE</label>
+                                        <input type="text" class="form-control" id="ville" name="ville"
+                                               value="<%out.println(adresse);%>" disabled>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label for="adresse">ADRESSE</label>
+                                        <input type="text" class="form-control" id="adresse" name="adresse"
+                                               value="<%out.println(adresse);%>" disabled>
+                                    </div>
                                     <div class="form-group col-md-12">
-                                        <label for="a_propos">A propos de moi</label>
-                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled> 
-                                        <% String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
+                                        <label for="a_propos">A PROPOS DE MOI</label>
+                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled><%
                                                out.println(descriptionUtilisateur);%></textarea>
                                     </div>
+                                    <div class="form-group col-md-12 text-center">
+                                        <button type="button" id="form_profil_edit"
+                                                class="btn btn-sm btn-success "><i
+                                                class="glyphicon glyphicon-edit"></i>
+                                            Modifier
+                                        </button>
+                                        <button type="submit" id="form_profil_submit" style="display: none;"
+                                                class="btn btn-sm btn-success"><i
+                                                class="glyphicon glyphicon-check"></i>
+                                            Valider
+                                        </button>
+                                        <button type="button" id="form_profil_cancel" style="display: none;"
+                                                class="btn btn-sm btn-danger "><i
+                                                class="glyphicon glyphicon-times"></i>
+                                            Annuler
+                                        </button>
+                                    </div>
+
                                 </form>
-                                <!-- DEBUT FORM PROFIL-->
-                                <div class="text-center">
-                                    <button type="button" id="form_profil_edit"
-                                            class="btn btn-sm btn-primary "><i
-                                            class="glyphicon glyphicon-edit"></i>
-                                        Modifier
-                                    </button>
-                                    <button type="submit" id="form_profil_submit" style="display: none;"
-                                            class="btn btn-sm btn-success"><i
-                                            class="glyphicon glyphicon-check"></i>
-                                        Valider
-                                    </button>
-                                    <button type="button" id="form_profil_cancel" style="display: none;"
-                                            class="btn btn-sm btn-danger "><i
-                                            class="glyphicon glyphicon-times"></i>
-                                        Annuler
-                                    </button>
+                                <% }else{%>
+                                <!-- END FORM PROFIL PRIVEE-->
+                                <!-- DEBUT PROFIL PUBLIC-->
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label>CIVILITÉ</label>
+                                        <div><%//out.println(civilite);%></div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>NOM</label>
+                                        <div><%out.println(nom);%></div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>PRÉNOM</label>
+                                        <div><%out.println(prenom);%></div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>A PROPOS DE MOI</label>
+                                        <div><%out.println(descriptionUtilisateur);%></div>
+                                    </div>
                                 </div>
+                                <%} %>
+                                <!-- FIN PROFIL PUBLIC-->
+
                             </div>
                             <!-- FIN TAB INFO PERSO-->
 
@@ -252,7 +295,8 @@
                                                 <div class="overlay">
                                                     <i class="fa fa-share md"></i>
                                                 </div>
-                                                <img style="height: 100px;" src="${pageContext.request.contextPath}/public/images/yinyang.jpg">
+                                                <img style="height: 100px;"
+                                                     src="${pageContext.request.contextPath}/public/images/yinyang.jpg">
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-3">
@@ -552,13 +596,17 @@
         <div class="panel-heading">A SAVOIR</div>
         <div class="panel-body">
             <p>
-                <strong>Profil privé: en tant que propriétaire du "profil" que je visualise, je pourrai voir toutes les tab & info présentes sur cette page.</strong>
+                <strong>Profil privé: en tant que propriétaire du "profil" que je visualise, je pourrai voir toutes les
+                    tab & info présentes sur cette page.</strong>
             </p>
             <p>
-                <strong>Profil public: si je visualise un autre profil qui n'est pas le mien, les élements suivants seront cachés:
+                <strong>Profil public: si je visualise un autre profil qui n'est pas le mien, les élements suivants
+                    seront cachés:
                     <ul>
                         <li>Changement de mdp qui sera remplacer par un bouton "laisser un avis"</li>
-                        <li>Dans le formulaire "info perso": faudra cacher date de naissance, e-mail, adresse, ville & bouton modifier</li>
+                        <li>Dans le formulaire "info perso": faudra cacher date de naissance, e-mail, adresse, ville &
+                            bouton modifier
+                        </li>
                         <li>NAV TAB invitation (à voirrrr)</li>
                     </ul>
                 </strong>
@@ -589,7 +637,7 @@
     </div>
 </div>
 
-
+<!--  Ajout du footer: JS -->
 <jsp:include page="/vues/footer.jsp"/>
 
 

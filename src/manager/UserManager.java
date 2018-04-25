@@ -1,12 +1,8 @@
 package manager;
 
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
+
 import beans.User;
 import utils.HibernateUtils;
 
@@ -57,7 +53,7 @@ public class UserManager {
 		
 		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		User p = (User) session.load(User.class, id); //Chargement de l'utilisateur de la BDD à l'objet User
+		User p = (User) session.load(User.class, id); //Chargement de l'utilisateur de la BDD ï¿½ l'objet User
 
 		p = p1;
 		p.setId(id);
@@ -65,5 +61,62 @@ public class UserManager {
 
 		session.getTransaction().commit();
 	}
+	
+	public boolean SelectInfoUtilisateur(String pseudo) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		
+		String hql = "usernickname from User";
+	    Query query =session.createQuery(hql);
+	    User user = (User)query.uniqueResult(); 
+	    
+	    if (user.getPseudoUtilisateur()==pseudo) {
+			session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+	    	return true;
+	    }
+	    else {
+			session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+	    	return false;
+	    }
+	    
+	 
+
+		
+	}
+	
+	
+public Boolean CheckUtilisateurConnexion(String motDePasse, String mail) {
+		
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		
+		String hql = "from User where Email like '"+mail+"%'";
+	    Query query =session.createQuery(hql);
+	    User user = (User)query.uniqueResult(); 
+	     
+	    if(user == null) return false;
+	    System.out.println(user);
+	    
+	    String motDePasseUserBDD = user.getMotDePasseUtilisateur().trim();
+	    
+	    if(motDePasseUserBDD.equals(motDePasse)) {
+	    	session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+			
+	    	return true;
+	    } else {
+	    	session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+			
+	    	return false;
+	    }	
+		
+	}
+
+
+
 	
 }
