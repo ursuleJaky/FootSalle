@@ -1,6 +1,7 @@
 package com.utils.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,8 @@ import manager.UserManager;
 public class controleConnexion extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
+	private static final String CHAMP_EMAIL = "email";
+	private static final String CHAMP_MOT_DE_PASSE = "motDePasse";
     public HttpSession userSession = null;
     public boolean connected = false;
        
@@ -55,24 +58,20 @@ public class controleConnexion extends HttpServlet {
 		connected = false;
 		request.setAttribute("userConnected", "KO");
 		
-<<<<<<< HEAD
 		String email = request.getParameter( CHAMP_EMAIL );
 		try {
 			validationEmail(email);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         String motDePasse = request.getParameter( CHAMP_MOT_DE_PASSE );
         System.out.println("==========================================================================================");
         System.out.println(email + " " + motDePasse);
-=======
 	}
 	
 	private void connexion(HttpServletRequest request, HttpServletResponse response) {
 		String email = request.getParameter("email");	
         String motDePasse = request.getParameter("motDePasse");
->>>>>>> dev-zeineb
         UserManager uman = new UserManager();
         
         connected = uman.CheckUtilisateurConnexion(motDePasse, email);
@@ -83,7 +82,6 @@ public class controleConnexion extends HttpServlet {
 		}else {
 			deconnexion(request, response);
 		}
-<<<<<<< HEAD
 
 	} 
 	
@@ -95,8 +93,6 @@ public class controleConnexion extends HttpServlet {
 	    } else {
 	        throw new Exception( "Merci de saisir une adresse mail." );
 	    }
-=======
->>>>>>> dev-zeineb
 	}
 	
 	

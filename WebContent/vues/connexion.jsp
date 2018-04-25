@@ -22,7 +22,6 @@
                                 </div>
                             </div>
 
-<<<<<<< HEAD
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <label for="inscription_am">E-MAIL</label>
@@ -31,7 +30,6 @@
                                            required/>
                                 </div>
                             </div>
-=======
                                 <div class=" col-md-6 droite cadre">
 
                                     <h3>Connexion</h3>
@@ -55,10 +53,8 @@
                                                        type="password" id="UserPassword" required/>
                                             </div>
                                         </div>
->>>>>>> dev-zeineb
 
 
-<<<<<<< HEAD
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <label for="inscription_mdp">MOT DE PASSE</label>
@@ -66,7 +62,6 @@
                                            class="form-control" type="password" required/>
                                 </div>
                             </div>
-=======
                                         <div>
                                             <div class="form-group">
                                                 <div class="col-md-offset-0 col-md-8">
@@ -76,7 +71,6 @@
                                                            value="Se Connecter"/>
                                                 </div>
                                             </div>
->>>>>>> dev-zeineb
 
                             <div class="form-group" align="center">
                                 <div class="col-md-8">
@@ -86,7 +80,6 @@
                                 </div>
                             </div>
 
-<<<<<<< HEAD
 
                         </form>
                     </div>
@@ -103,9 +96,7 @@
                                            required/>
                                 </div>
                             </div>
-=======
                                     <!-- </form> -->
->>>>>>> dev-zeineb
 
                             <div class="form-group">
                                 <div class="col-md-12">
