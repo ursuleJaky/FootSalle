@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONArray;
 
 import beans.User;
+
 import manager.UserManager;
 
 
@@ -19,13 +20,7 @@ import manager.UserManager;
 public class controleConnexion extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-<<<<<<< HEAD
-	private static final String CHAMP_EMAIL = "email";
-	private static final String CHAMP_MOT_DE_PASSE = "motDePasse";
-    public HttpSession userSession = null;
-=======
     public HttpSession userSession;
->>>>>>> Mise en place de déconnexion
     public boolean connected = false;
        
 
@@ -51,6 +46,7 @@ public class controleConnexion extends HttpServlet {
 		if("OK".equals(request.getParameter("connect"))) {
 			request.setAttribute("disconnect", "KO");
 			request.setAttribute("inscription", "KO");
+
 			System.out.println("doPost connect == " + request.getParameter("connect"));
 			connexion(request, response);
 		} else if ("OK".equals(request.getParameter("disconnect"))) {
@@ -95,23 +91,9 @@ public class controleConnexion extends HttpServlet {
 		System.out.println(userSession.getAttribute("email"));
 		userSession.invalidate();
 		connected = false;
-<<<<<<< HEAD
-		request.setAttribute("userConnected", "KO");
-		
-		String email = request.getParameter( CHAMP_EMAIL );
-		try {
-			validationEmail(email);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-        String motDePasse = request.getParameter( CHAMP_MOT_DE_PASSE );
-        System.out.println("==========================================================================================");
-        System.out.println(email + " " + motDePasse);
-=======
 		JSONArray rep = new JSONArray();
 		rep.put("disconnected");
 		response.getWriter().write(rep.toString());
->>>>>>> Mise en place de déconnexion
 	}
 	
 	private void connexion(HttpServletRequest request, HttpServletResponse response) throws IOException {

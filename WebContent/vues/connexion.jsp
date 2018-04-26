@@ -21,15 +21,13 @@
                                            required/>
                                 </div>
                             </div>
-
                             <div class="form-group">
-                                <div class="col-md-12">
-                                    <label for="inscription_am">E-MAIL</label>
-                                    <input id="inscription_am" name="email" placeholder="email" class="form-control"
-                                           type="text"
-                                           required/>
-                                </div>
-                            </div>
+                                 <div class="col-md-12">
+                                     <label for="inscription_am">E-MAIL</label>
+                                     <input name="email" placeholder="email" class="form-control" type="text"
+                                            id="inscription_am" required/>
+                                 </div>
+                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <label for="inscription_mdp">MOT DE PASSE</label>
@@ -37,7 +35,7 @@
                                            class="form-control" type="password" required/>
                                     <input id="inscription" name="inscription" type="hidden"/>
                                 </div>
-                            </div>
+                            </div>                            
                         </form>
                         <div class="form-group">
                             <div class="col-md-offset-0 col-md-8">

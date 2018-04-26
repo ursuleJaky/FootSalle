@@ -39,9 +39,7 @@
 			<%}%>
 				
     					
-			<input id="disconnect" name="disconnect" type="hidden"/> 
-						
-										
+			<input id="disconnect" name="disconnect" type="hidden"/> 		
 				</div>
 		</div>
 		<!--  Début du conteneur du body -->

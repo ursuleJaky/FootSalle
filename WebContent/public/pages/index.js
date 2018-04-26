@@ -168,11 +168,9 @@ $( document ).ready(function() {
             success: function(data){
             	var obj = JSON.parse(data);
             	$("#spanTest").empty().append(obj[0]);
-            	//if("disconnected" == obj[0]){
             		$("#connexion").attr("hidden", false);
             		$("#deconnexion").attr("hidden", true);
             		$("#monCompte").attr("hidden", true);
-            	//}
             },
             error: function(errMsg) {
             	console.log("deconnexionButton click error")
