@@ -3,7 +3,6 @@
 <%
 	//Variables globales du header
 	String page_title = (String) request.getAttribute("page_title");
-	String message_user = (String) request.getAttribute("message_user");
 %>
 
 <!DOCTYPE html>
@@ -45,11 +44,4 @@
 		</div>
 		<!--  Début du conteneur du body -->
 		<div class="container" style="margin-top:30px;margin-bottom:30px;">
-		<%if(message_user != null){ %>
-		<div class="card text-white ${message_user_bg_color} mb-3">
-                <div class="card-header">${message_user_titre}</div>
-                <div class="card-body">
-                    <p class="card-text">${message_user_contenu}</p>
-                </div>
-            </div>
-        <%} %>
+
