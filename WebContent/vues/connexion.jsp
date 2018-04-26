@@ -45,8 +45,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-               <div class=" col-md-6 droite cadre">
+                    <div class=" col-md-6 droite cadre">
                    <h3>Connexion</h3>
                    <form id="form_connexion" name="login" role="form" class="form-horizontal "
                          method="post" accept-charset="utf-8"> 
@@ -77,7 +76,7 @@
 		                  </div>
 	               	 </div>
                 </div>
-				
+                </div>
              </div>
         </div>
         <div class="card text-white bg-danger mb-3 d-none">

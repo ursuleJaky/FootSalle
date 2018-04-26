@@ -73,6 +73,12 @@ public class controleConnexion extends HttpServlet {
         String motDePasse = request.getParameter("motDePasse");
         String pseudo = request.getParameter("inscription_pseudo");
         
+        try {
+			validationEmail(email);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        
         User u = new User(pseudo, email, motDePasse);
         
         UserManager um = new UserManager();
