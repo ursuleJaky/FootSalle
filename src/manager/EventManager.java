@@ -1,6 +1,8 @@
 package manager;
 
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -66,9 +68,13 @@ public class EventManager {
 			session.beginTransaction();
 			
 			Criteria crit = session.createCriteria(Event.class);
+			Date dt = new Date ();
 
-			ArrayList <Event> e = (ArrayList<Event>) crit.list();
+			//debut event
+			crit.add( Restrictions.ge("dateDebutEvenement", dt) );
 			
+			
+			ArrayList <Event> e = (ArrayList<Event>) crit.list();
 			
 			
 			session.getTransaction().commit();
@@ -77,6 +83,26 @@ public class EventManager {
 			return e;
 		}
 		
+		public ArrayList <Event> RechercheEvent() {
+			Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+			session.beginTransaction();
+			
+			Criteria crit = session.createCriteria(Event.class);
+			crit.add(Restrictions.like("activite", "volley"));
+			
+			ArrayList<Event> es = new ArrayList<Event> ();
+			es = (ArrayList<Event>) crit.list();
+
+
+			
+			
+			System.out.println(es.toString());
+			
+			session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+			return es;
+			
+		}
 		
 		public void AjoutParticipantEvent (int id, Event p1, int id_participant) {
 			
