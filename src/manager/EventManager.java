@@ -1,12 +1,12 @@
 package manager;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.criterion.Expression;
 import org.hibernate.criterion.Restrictions;
 
 import beans.Event;
@@ -23,7 +23,9 @@ public class EventManager {
 			session.beginTransaction();
 			session.save(e);	
 			session.getTransaction().commit();
+			
 		}
+
 		
 		
 		public void supprimerEvent(int id) {
@@ -78,14 +80,14 @@ public class EventManager {
 		}
 		
 		
-		public void AjoutParticipantEvent (int id, Event p1, int id_participant) {
+		public void AjoutParticipantEvent (int id_event, Event p1, int id_participant) {
 			
 			Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
-			Event p = (Event) session.load(Event.class, id); //Chargement de l'event de la BDD à l'objet Event
+			Event p = (Event) session.load(Event.class, id_event); //Chargement de l'event de la BDD à l'objet Event
 
 			p = p1;
-			p.setId(id);
+			p.setId(id_event);
 			p.setParticipants(p.getParticipants()+id_participant+",");
 			p = (Event) session.merge(p1);
 
@@ -106,5 +108,13 @@ public class EventManager {
 		}
 		
 	
+		public java.sql.Date dateDuJour () {
+			
+			Date dateDuJour = new Date();
+			
+			java.sql.Date creationDate = new java.sql.Date(dateDuJour.getTime());
+				
+				 return creationDate;
+		}
 
 }

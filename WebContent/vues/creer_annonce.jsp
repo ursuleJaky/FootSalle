@@ -14,20 +14,19 @@
 		      </div>
 		      <div class="modal-body ">
 				
-				<body>
 				<div class="container">
 						<div class="col-md-12">
 						
 										<h1>Créer une annonce</h1>
 										
 		
-										<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
+										<form action="EventInfo" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
 		
 										
 											<div class="form-group row">
 												<label class="col-md-2" for="lieu">Lieu</label>
 												<div class="col-md-8">
-													<input name="lieu" placeholder="Ex : Talence" class="form-control" id=lieu/>
+													<input name="lieu" placeholder="Ex : Talence" class="form-control" id="lieu"/>
 												</div>
 											</div> 
 		
@@ -55,7 +54,7 @@
 											<div class="form-group row">
 												<label class="col-md-2" for="Prix">Prix</label>
 												<div class="col-md-8">
-													<input name="prix" placeholder="5" class="form-control" type="number"  min="0" id="prix"/>
+													<input name="prix" placeholder="5" class="form-control" type="number" step="0.1"  min="0" id="prix"/>
 												</div>
 											</div> 
 											
@@ -73,38 +72,28 @@
 												</div>
 											</div> 
 											
-											<div class="form-group row">
-												<label class="col-md-4" for="participants">Participants</label>
-												<div class="col-md-6">
-													<input class="form-control" type="text" value="Jean Bosco" >
-													<input class="form-control" type="text" value="Anne Duval" >
-													<input class="form-control" type="text" value="Cecile Emile" >
-													<input class="form-control" type="text" value="Jean Dupond" >
-													<input class="form-control" type="text" value="Georges Bonnac" >
-												</div>									
-											</div> 
 											
 											  <div class="form-group row ">
 											    <div class="form-group col-md-5">
 											      <label for="Date">Date</label>
-											      <input type="Date" class="form-control" type="date" id="Date">
+											      <input name = "date" type="Date" class="form-control" type="date" id="Date">
 											    </div>
 											    <div class="form-group col-md-5">
 											      <label for="Heure">Heure</label>
-											      <input id="Heure" class="form-control" type="time" id="Heure">
+											      <input name = "heure" id="Heure" class="form-control" type="time" id="Heure">
 											    </div>
 											  </div>
+												
+												<input class="btn btn-success col-md-4" type="submit" value="Créer" />
+												<button type="button" class="btn btn-default col-md-4" data-dismiss="modal">Fermer</button>
+											
 										</form>
 		
 								</div>
 					</div>
-				</body>
 				</div>
 				
-				<div class="modal-footer col-md-8">
-					<button type="button" class="btn btn-success col-md-4">Créer</button>
-					<button type="button" class="btn btn-default col-md-4" data-dismiss="modal">Fermer</button>
-				</div>
+				
 			</div>
 		</div>
 		
