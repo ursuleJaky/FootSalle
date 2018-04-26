@@ -115,9 +115,29 @@ public Boolean CheckUtilisateurConnexion(String motDePasse, String mail) {
 	    	return false;
 	    }	
 		
-	}
+	}	
 
 
-
+public Boolean CheckEmailPseudoUserExistence(String email, String pseudo) {
+	//Démarrage de la transaction
+	Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+	session.beginTransaction();
 	
+	//Querry
+	Query query = session.createQuery("from User where Email = :email or Usernickname = :pseudo");
+	
+	//Binding
+	query.setParameter("email", email);
+	query.setParameter("pseudo", pseudo);
+	
+	//Execution
+    User user = (User)query.uniqueResult(); 
+     
+    
+    if(user == null) {
+    	return false;
+    }
+    return true;
+    
+}	
 }

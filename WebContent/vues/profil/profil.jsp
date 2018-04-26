@@ -5,7 +5,7 @@
 <%
 //Variables: info perso
 //Boolean profil_owner = (Boolean)request.getAttribute("profil_owner");
-Boolean profil_owner = false;
+Boolean profil_owner = true;
 String civilite = (String)request.getAttribute("genre");
 String prenom = (String)request.getAttribute("prenom");
 String nom = (String)request.getAttribute("nom");
@@ -116,6 +116,7 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                         <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled><%
                                                out.println(descriptionUtilisateur);%></textarea>
                                     </div>
+                                    <input type="hidden" name="user_id" value="${user_id}" disabled>
                                     <div class="form-group col-md-12 text-center">
                                         <button type="button" id="form_profil_edit"
                                                 class="btn btn-sm btn-success "><i
