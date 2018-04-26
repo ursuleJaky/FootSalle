@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
 
+import beans.User;
 import manager.UserManager;
 
 
@@ -49,18 +50,41 @@ public class controleConnexion extends HttpServlet {
 		System.out.println("I am in the doPost");
 		if("OK".equals(request.getParameter("connect"))) {
 			request.setAttribute("disconnect", "KO");
+			request.setAttribute("inscription", "KO");
 			System.out.println("doPost connect == " + request.getParameter("connect"));
 			connexion(request, response);
 		} else if ("OK".equals(request.getParameter("disconnect"))) {
 			request.setAttribute("connect", "KO");
+			request.setAttribute("inscription", "KO");
 			System.out.println("doPost disconnect == " + request.getParameter("disconnect"));
 			deconnexion(request, response);
-		}else {
+		} else if ("OK".equals(request.getParameter("inscription"))) {
+			request.setAttribute("connect", "KO");
+			request.setAttribute("disconnect", "KO");
+			System.out.println("doPost disconnect == " + request.getParameter("disconnect"));
+			inscription(request, response);
+		} else {
 			System.out.println("doPost disconnect == " + request.getParameter("disconnect") + " connect == " + request.getParameter("connect"));
 			doGet(request, response);
 		}
 			
 		//request.getRequestDispatcher("/vues/index.jsp").forward(request, response);
+	}
+	
+	private void inscription(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		userSession = request.getSession(true);
+		String email = request.getParameter("email");
+        String motDePasse = request.getParameter("motDePasse");
+        String pseudo = request.getParameter("inscription_pseudo");
+        
+        User u = new User(pseudo, email, motDePasse);
+        
+        UserManager um = new UserManager();
+        um.ajouterUtilisateur(u);
+		JSONArray rep = new JSONArray();
+		rep.put(email);
+		rep.put("inscription");
+		response.getWriter().write(rep.toString());
 	}
 	
 	private void deconnexion(HttpServletRequest request, HttpServletResponse response) throws IOException {

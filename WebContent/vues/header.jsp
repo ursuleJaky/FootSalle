@@ -27,24 +27,20 @@
 		<div class="topnav" >
 			<a class="active" href="#home">Accueil</a>
 			<div class="topnav-right">
-					<!-- <a href="annonces.java"> Annonce</a> -->
-					
-					<%-- <%String userConnected = (String)request.getAttribute("userConnected");
-					if(userConnected == "OK")  {%>
-						<a id="monCompte" href="#" >Mon Compte</a>
-						<form action = "controleConnexion" name="deconnexion" method="post">
-							
-							<input id="deconnexionButton" type="submit" value="Déconnexion"/>
-						</form>
+			<% String userConnected = (String) session.getAttribute("email"); %>
+	    	<% if(userConnected == null){%>
+	    			<a id="connexion" href="#" >Connexion</a>
+	    			<a id="monCompte" href="#" hidden="true">Mon Compte</a>
+					<a id="deconnexion" href="#" hidden="true">Déconnexion</a>
+	    	<%} else {%>
+	    			<a id="connexion" href="#" hidden="true">Connexion</a>
+	    			<a id="monCompte" href="#">Mon Compte</a>
+					<a id="deconnexion" href="#">Déconnexion</a>
+			<%}%>
+				
+    					
+			<input id="disconnect" name="disconnect" type="hidden"/> 
 						
-					<% } else {%>
-							<a id="connexion" href="#" >Connexion</a>
-						<!-- <a id="deconnexionButton" href="#" >Déconnexion</a> -->
-					<% }%> --%>
-						<a id="monCompte" href="#" hidden="true">Mon Compte</a>
-						<a id="deconnexion" href="#" hidden="true">Déconnexion</a>
-						<input id="disconnect" name="disconnect" type="hidden"/> 
-						<a id="connexion" href="#" >Connexion</a>
 										
 				</div>
 		</div>
