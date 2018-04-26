@@ -21,101 +21,86 @@
                                            required/>
                                 </div>
                             </div>
-
                             <div class="form-group">
-                                <div class="col-md-12">
-                                    <label for="inscription_am">E-MAIL</label>
-                                    <input id="inscription_am" name="email" placeholder="email" class="form-control"
-                                           type="email"
-                                           required/>
-                                </div>
-                            </div>
-
-
+                                 <div class="col-md-12">
+                                     <label for="inscription_am">E-MAIL</label>
+                                     <input name="email" placeholder="email" class="form-control" type="text"
+                                            id="inscription_am" required/>
+                                 </div>
+                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <label for="inscription_mdp">MOT DE PASSE</label>
-                                    <input id="inscription_mdp" name="motDePasse" placeholder="Mot de passe"
-                                           class="form-control" type="password" minlength="8" required/>
-                                </div>
-                            </div>
-                            <div class="form-group" align="center">
-                                <div class="col-md-8">
-                                    <input id="inscription_rejoindre"
-                                           class="btn btn-success btn btn-success" type="submit"
-                                           value="Nous rejoindre"/>
-                                </div>
-                            </div>
-
-
-                        </form>
-                    </div>
-                    <div class=" col-md-6">
-                        <h3>Connexion</h3>
-                        <form action="controleConnexion" name="login" role="form" class="form-horizontal "
-                              method="post" accept-charset="utf-8">
-
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label for="email">E-MAIL</label>
-                                    <input id="email" name="email" placeholder="Idenfiant" class="form-control"
-                                           type="email" id="UserUsername" value='${email}' autofocus
-                                           required/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label for="motDePasse">MOT DE PASSE</label>
                                     <input id="motDePasse" name="motDePasse" placeholder="Mot de passe"
-                                           class="form-control"
-                                           type="password" required/>
+                                           class="form-control" type="password" required/>
+                                    <input id="inscription" name="inscription" type="hidden"/>
                                 </div>
-                            </div>
-
-                            <div class="form-group" style="margin-top:28px;" align="center">
-                                <div class="col-md-12">
-                                    <label style="color:white;">fdsf</label>
-                                    <div>
-                                        <a href="https://www.google.com">Mot de passe oublié</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group" >
-                                <div class="col-md-8">
-                                    <input class="btn btn-success form-control" type="submit"
-                                           value="Se Connecter"/>
-
-                                </div>
-                            </div>
+                            </div>                            
                         </form>
+                        <div class="form-group">
+                            <div class="col-md-offset-0 col-md-8">
+                                <input id="inscription_rejoindre"
+                                       class="btn btn-success btn btn-success" type="submit"
+                                       value="Nous rejoindre"/>
+                            </div>
+                        </div>
                     </div>
+                    <div class=" col-md-6 droite cadre">
+                   <h3>Connexion</h3>
+                   <form id="form_connexion" name="login" role="form" class="form-horizontal "
+                         method="post" accept-charset="utf-8"> 
+                       <div class="form-group">
+                           <div class="col-md-12">
+                               <label for="">E-MAIL</label>
+                               <input name="email" placeholder="Idenfiant" class="form-control"
+                                      type="email" id="UserUsername" value='${email}' autofocus required/>
+                           </div>
+                       </div>
+                       <div class="form-group">
+                           <div class="col-md-12">
+                               <label for="">MOT DE PASSE</label>
+                               <input name="motDePasse" placeholder="Mot de passe" class="form-control"
+                                      type="password" id="UserPassword" required/>
+                           </div>
+                       </div>
+                       <div class="form-group col-md-12">
+                           <div class="space_new"><a href="https://www.google.com" target="_blanck">Mot de passe oublié</a>
+                           </div>
+                       </div>
+                    	<input id="connect" name="connect" type="hidden"/>
+                   </form>
+	                  <div class="form-group">
+		                  <div class="col-md-offset-0 col-md-8">
+		                      <input id="connexionButton" class="btn btn-success btn btn-success" type="submit"
+		                             value="Se Connecter"/>
+		                  </div>
+	               	 </div>
                 </div>
+                </div>
+             </div>
+        </div>
+        <div class="card text-white bg-danger mb-3 d-none">
+            <div class="card-header">Echec de connexion</div>
+            <div class="card-body">
+                <p class="card-text">Identifiant ou mot de passe incorrecte</p>
             </div>
-            <div class="card text-white bg-danger mb-3 d-none">
-                <div class="card-header">Echec de connexion</div>
-                <div class="card-body">
-                    <p class="card-text">Identifiant ou mot de passe incorrecte</p>
-                </div>
+        </div>
+        <div class="card text-white bg-danger mb-3 d-none">
+            <div class="card-header">Echec d'inscription</div>
+            <div class="card-body">
+                <p class="card-text">Cet e-mail est déjà utilisé, veuillez choisir un autre.</p>
             </div>
-            <div class="card text-white bg-danger mb-3 d-none">
-                <div class="card-header">Echec d'inscription</div>
-                <div class="card-body">
-                    <p class="card-text">Cet e-mail est déjà utilisé, veuillez choisir un autre.</p>
-                </div>
+        </div>
+        <div class="card text-white bg-success mb-3 d-none">
+            <div class="card-header">Inscription réussie</div>
+            <div class="card-body">
+                <p class="card-text">Votre compte a bien été créé.</p>
             </div>
-            <div class="card text-white bg-success mb-3 d-none">
-                <div class="card-header">Inscription réussie</div>
-                <div class="card-body">
-                    <p class="card-text">Votre compte a bien été créé.</p>
-                </div>
-            </div>
-            <div class="card text-white bg-success mb-3 d-none">
-                <div class="card-header">Connexion réussie</div>
-                <div class="card-body">
-                    <p class="card-text">Bienvenue sur votre espace.</p>
-                </div>
+        </div>
+        <div class="card text-white bg-success mb-3 d-none">
+            <div class="card-header">Connexion réussie</div>
+            <div class="card-body">
+                <p class="card-text">Bienvenue sur votre espace.</p>
             </div>
         </div>
     </div>

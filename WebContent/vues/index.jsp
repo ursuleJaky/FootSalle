@@ -1,44 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>FootSalle</title>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<meta charset="utf-8" />
-		<title>Charte graphique</title>
+<head>
+<title>FootSalle</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>Charte graphique</title>
 
-		<meta content="Charte Graphique" name="description" />
-		<meta content="Davy NANA" name="author" />
+<meta content="Charte Graphique" name="description" />
+<meta content="Davy NANA" name="author" />
 
-		<!-- stylesheet -->
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+<!-- stylesheet -->
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
 
-		<link rel="stylesheet" type="text/css" href="../css/pages.css"/>
+<link rel="stylesheet" type="text/css" href="../css/pages.css" />
 
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+<link rel="stylesheet" type="text/css"
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400,700,300" />
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://fonts.googleapis.com/css?family=Lato:400,700,300" />
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-		<!-- javascript -->
-		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<!-- javascript -->
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
-		<script type="text/javascript" src="../js/page.js"></script>
+<script type="text/javascript" src="../js/page.js"></script>
 
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNDFsPWL9fW9OFIzR0QQs_H8pCsmlP4DU&callback=myMap"></script>
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNDFsPWL9fW9OFIzR0QQs_H8pCsmlP4DU&callback=myMap"></script>
 
-	</head>
+</head>
 
-	<body class="pace-black">
-	
+<body class="pace-black">
+
 	<jsp:include page="header.jsp" />
-	<%String userConnected = (String)request.getAttribute("userConnected");%>
+	<%-- <%String userConnected = (String)request.getAttribute("userConnected");%>
     <span id="connected">
     	<%out.println(userConnected); %>
-    </span>
-    
-		<!-- <nav class="navbar navbar-default">
+    </span> --%>
+	<span id="spanTest"></span>
+	<%-- <% String userConnected = (String) session.getAttribute("email"); %>
+    <span>
+    	<%out.println("Ecco -"+userConnected+"\n"); %>
+    </span> --%>
+	<!-- <nav class="navbar navbar-default">
 			<div class="container-fluid">
 				Brand and toggle get grouped for better mobile display
 				<div class="navbar-header">
@@ -78,7 +87,7 @@
 		</nav> -->
 
 
-		<!-- <div class="container">
+	<!-- <div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 
@@ -129,7 +138,7 @@
 			</div>
 		</div> -->
 
-		<!-- <section class="container relative">
+	<!-- <section class="container relative">
 			<div class="top-left z-index-10">
 				<div class="bg-white p-l-20 p-r-20 p-t-20 p-b-20">
 					<img src="img/logo_b.png" data-src-retina="img/logo_b_2x.png" class="" alt="" width="17" height="20">
@@ -139,14 +148,14 @@
 
 
 
-	</body>
+</body>
 
 
 
-	<footer>
+<footer>
 
-<jsp:include page="footer.jsp" />
-	</footer>
+	<jsp:include page="footer.jsp" />
+</footer>
 
 
 

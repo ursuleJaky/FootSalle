@@ -28,9 +28,20 @@
 		<div class="topnav" >
 			<a class="active" href="#home">Accueil</a>
 			<div class="topnav-right">
-				<a href="annonces.java"> Annonce</a>
-				<a id="connexion" href="#" >Connexion</a>
-			</div>
+			<% String userConnected = (String) session.getAttribute("email"); %>
+	    	<% if(userConnected == null){%>
+	    			<a id="connexion" href="#" >Connexion</a>
+	    			<a id="monCompte" href="#" hidden="true">Mon Compte</a>
+					<a id="deconnexion" href="#" hidden="true">Déconnexion</a>
+	    	<%} else {%>
+	    			<a id="connexion" href="#" hidden="true">Connexion</a>
+	    			<a id="monCompte" href="#">Mon Compte</a>
+					<a id="deconnexion" href="#">Déconnexion</a>
+			<%}%>
+				
+    					
+			<input id="disconnect" name="disconnect" type="hidden"/> 		
+				</div>
 		</div>
 		<!--  Début du conteneur du body -->
 		<div class="container" style="margin-top:30px;margin-bottom:30px;">
