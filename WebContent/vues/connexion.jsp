@@ -15,7 +15,7 @@
                               class="form-horizontal" method="post" accept-charset="utf-8">
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <label for="inscription_pseudo">PSEUDO</label>
+                                    <label for  ="inscription_pseudo">PSEUDO</label>
                                     <input id="inscription_pseudo" name="inscription_pseudo" placeholder="Pseudo"
                                            class="form-control" type="text" minlength="3"
                                            required/>
