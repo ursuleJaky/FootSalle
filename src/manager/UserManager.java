@@ -1,5 +1,7 @@
 package manager;
 
+import java.util.Date;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -20,7 +22,6 @@ public class UserManager {
 		session.getTransaction().commit();
 	}
 	
-	
 	public void supprimerUtilisateur(int id) {
 		
 		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
@@ -30,7 +31,6 @@ public class UserManager {
 		session.getTransaction().commit();
 		
 	}
-	
 	
 	public User SelectInfoUtilisateur(int id_user) {
 		
@@ -88,8 +88,44 @@ public class UserManager {
 		
 	}
 	
-	
-public Boolean CheckUtilisateurConnexion(String motDePasse, String mail) {
+	public Boolean checkIfUserProfilIsComplete(int id_user) {
+		//Démarrage de la transaction
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		
+		//Querry
+		Query query = session.createQuery("from User where id_user = :id_user");
+		
+		//Binding
+		query.setParameter("id_user", id_user);
+		
+		//Execution
+	    User user = (User)query.uniqueResult();
+	     	    
+	    String civilite = user.getGenre();
+	    String nom = user.getNom();
+	    String prenom = user.getPrenom();
+	    Date dteNaissance = user.getDateNaissance();
+	    String email = user.getEmail();
+	    String ville = user.getVille();
+	    String adresse = user.getAdresse();
+	    String aPropos = user.getDescriptionUtilisateur();
+	    
+	    if(civilite == "" || nom == "" || prenom == "" || dteNaissance == null || 
+	    		email == "" || ville == "" || adresse == "" || aPropos == "") {
+	    	session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+			
+	    	return false;
+	    }else {
+	    	session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+			
+	    	return true;
+	    }
+	  
+	}
+	public Boolean CheckUtilisateurConnexion(String motDePasse, String mail) {
 		
 		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
@@ -116,9 +152,8 @@ public Boolean CheckUtilisateurConnexion(String motDePasse, String mail) {
 	    }	
 		
 	}	
-
-
-public Boolean CheckEmailPseudoUserExistence(String email, String pseudo) {
+	
+	public Boolean CheckEmailPseudoUserExistence(String email, String pseudo) {
 	//Démarrage de la transaction
 	Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 	session.beginTransaction();

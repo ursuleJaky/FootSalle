@@ -16,7 +16,7 @@ public class controleInscription extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public static final String VUE = "/vues/connexion.jsp"; 
-	public static final String PAGE_ACCUEIL = "/vues/profil/profil.jsp";
+	public static final String PAGE_ACCUEIL = "/vues/profil/AccueilTemp.jsp";
 		    
 			//public static final String CHAMP_PRENOM = "prenom";
 			//public static final String CHAMP_DATE_NAISSANCE = "dateNaissance";
