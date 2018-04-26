@@ -179,3 +179,58 @@ $( document ).ready(function() {
         });
     });
 });
+
+
+
+
+
+//map
+function myMap() {
+	var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+	var mapCanvas = document.getElementById("map");
+	var mapOptions = {center: myCenter, zoom: 5};
+	var map = new google.maps.Map(mapCanvas, mapOptions);
+	var marker = new google.maps.Marker({position:myCenter});
+	marker.setMap(map);
+}
+
+//Set the date we're counting down to
+//var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+
+//Update the count down every 1 second
+var x = setInterval(function() {
+
+	// Get todays date and time
+	var now = new Date().getTime();
+
+	// Find the distance between now an the count down date
+	var distance = countDownDate - now;
+
+	// Time calculations for days, hours, minutes and seconds
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	// Display the result in the element with id="demo"
+	document.getElementById("demo").innerHTML = days + "j " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+
+	// If the count down is finished, write some text 
+	if (distance < 0) {
+		clearInterval(x);
+		document.getElementById("demo").innerHTML = "EXPIRED";
+	}
+}, 1000);
+
+
+	// When the user scrolls the page, execute myFunction 
+	window.onscroll = function() {myFunction()};
+
+function myFunction() {
+	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	var scrolled = (winScroll / height) * 100;
+	document.getElementById("myBar").style.width = scrolled + "%";
+}
+
