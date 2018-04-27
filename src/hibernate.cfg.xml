@@ -25,6 +25,10 @@
 		<property name="show_sql">true</property>
 		<property name="hbm2ddl.auto">update</property>
 		<mapping resource="beans/User.hbm.xml" />
+<<<<<<< Updated upstream
+=======
+		<mapping resource = "beans/Event.hbm.xml"/>
+>>>>>>> Stashed changes
 	</session-factory>
 
 </hibernate-configuration>

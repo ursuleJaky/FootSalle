@@ -15,5 +15,9 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate3"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/postgres"/>
+<<<<<<< Updated upstream
+=======
+	<classpathentry kind="lib" path="C:/Users/et.diouf/git/java-json.jar"/>
+>>>>>>> Stashed changes
 	<classpathentry kind="output" path="bin"/>
 </classpath>

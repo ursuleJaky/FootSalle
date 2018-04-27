@@ -8,7 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+<<<<<<< Updated upstream
 import manager.UserManager;
+=======
+import org.json.JSONArray;
+
+import beans.User;
+import manager.UserManager;
+
+>>>>>>> Stashed changes
 
 /**
  * Servlet implementation class controleConnexion
