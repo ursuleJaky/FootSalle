@@ -1,5 +1,5 @@
 package beans;
-
+import manager.EventManager;
 import java.sql.Date;
 
 public class Event {
@@ -20,6 +20,7 @@ public class Event {
 	private String participants;
 	private String description;
 	private int idCreateurEvenement;
+	private float prixEvent;
 	
 	
 	
@@ -28,10 +29,33 @@ public class Event {
 		super();
 	}
 	
+	public Event(String ville, String activite, Date dateDebutEvenement,
+			String localisationEvenement, int nbPersonneVoulu, int nbPersonneInscrite,
+			int idCreateurEvenement, float prix) {
+	
+		super();
+		EventManager em = new EventManager();
+		this.activite = activite;
+		Date temp = new Date (99999999);
+		this.dateCreationEvenement = em.dateDuJour();
+		this.dateDebutEvenement = dateDebutEvenement;
+		this.dateFinEvenement = temp;
+		this.localisationEvenement = localisationEvenement;
+		this.adresseEvenement = " ";
+		this.ville = ville;
+		this.codePostal =  " ";
+		this.pays =  " ";
+		this.complet = false;
+		this.nbPersonneVoulu = nbPersonneVoulu;
+		this.nbPersonneInscrite = nbPersonneInscrite;
+		this.idCreateurEvenement = idCreateurEvenement;
+		this.prixEvent = prix;
+	}
+
 	public Event(String activite, Date dateCreationEvenement, Date dateDebutEvenement, Date dateFinEvenement,
 			String localisationEvenement, String adresseEvenement, String ville, String codePostal, String pays,
 			boolean complet, int nbPersonneVoulu, int nbPersonneInscrite, String participants, String description,
-			int idCreateurEvenement) {
+			int idCreateurEvenement, float prix) {
 		super();
 		this.activite = activite;
 		this.dateCreationEvenement = dateCreationEvenement;
@@ -48,8 +72,8 @@ public class Event {
 		this.participants = participants;
 		this.description = description;
 		this.idCreateurEvenement = idCreateurEvenement;
+		this.prixEvent = prix;
 	}
-
 
 	public int getId() {
 		return id;
@@ -209,16 +233,25 @@ public class Event {
 	public void setIdCreateurEvenement(int idCreateurEvenement) {
 		this.idCreateurEvenement = idCreateurEvenement;
 	}
+	
+	public float getPrixEvent() {
+		return prixEvent;
+	}
+
+	public void setPrixEvent(float prixEvent) {
+		this.prixEvent = prixEvent;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Event [id=" + id + ", activite=" + activite + ", dateCreationEvenement=" + dateCreationEvenement
+		return "Event [id=" + id + ", activite=" + activite.trim() + ", dateCreationEvenement=" + dateCreationEvenement
 				+ ", dateDebutEvenement=" + dateDebutEvenement + ", dateFinEvenement=" + dateFinEvenement
-				+ ", localisationEvenement=" + localisationEvenement + ", adresseEvenement=" + adresseEvenement
-				+ ", ville=" + ville + ", codePostal=" + codePostal + ", pays=" + pays + ", complet=" + complet
+				+ ", localisationEvenement=" + localisationEvenement.trim() + ", adresseEvenement=" + adresseEvenement.trim()
+				+ ", ville=" + ville.trim() + ", codePostal=" + codePostal.trim() + ", pays=" + pays.trim() + ", complet=" + complet
 				+ ", nbPersonneVoulu=" + nbPersonneVoulu + ", nbPersonneInscrite=" + nbPersonneInscrite
-				+ ", participants=" + participants + ", description=" + description + ", idCreateurEvenement="
-				+ idCreateurEvenement + "]";
+				+ ", participants=" + participants.trim() + ", description=" + description.trim() + ", idCreateurEvenement="
+				+ idCreateurEvenement + ", "+ prixEvent + "]";
 	}
 
 
