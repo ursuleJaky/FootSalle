@@ -1,20 +1,7 @@
 /hibernate.cfg.xml
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-/manager/
-/test/
 /beans/
 /com/
+/log4j.properties
+/manager/
+/test/
 /utils/
-<<<<<<< HEAD
-=======
-/com/
->>>>>>> Mise en place de déconnexion
-=======
-/com/
->>>>>>> ed7c52177b700580094589fbb6b7729ece01873c
-=======
->>>>>>> dev-zeineb
-=======
->>>>>>> rubencito

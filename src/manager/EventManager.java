@@ -1,16 +1,7 @@
 package manager;
 
-<<<<<<< HEAD
-
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-=======
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
->>>>>>> rubencito
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
