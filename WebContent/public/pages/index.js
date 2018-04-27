@@ -54,7 +54,7 @@ var user_profil = function () {
             var request = $.ajax({
                 type: "POST",
                 url: '/FootSalle/ProfilUser',
-<<<<<<< HEAD
+
                 data: $('#form_profil').serialize(),
                 success: function(data){
                 	$('#form_profil').find('input, textarea, select').prop('disabled', true);
@@ -69,18 +69,7 @@ var user_profil = function () {
                     $('#form_profil_submit').hide();
                     $('#form_profil_edit').show();
                 }
-=======
-                data: $('#form_profil').serialize()
-            });
-            request.done(function (resultat) {
-                var data = $.parseJSON(resultat);
-                toastr.success(data.info.Message_title, data.info.Message_content);
-                $('#form_profil').find('input, textarea, select').prop('disabled', true);
-            });
 
-            request.fail(function () {
-                toastr.error('La requête n\'a pas pu aboutir', 'Erreur')
->>>>>>> a9374fe42d327224a8c91444b972bfc6e6956b5d
             });
             e.preventDefault();
         });
@@ -121,9 +110,7 @@ $( document ).ready(function() {
     	});
     	return false;
     });
-<<<<<<< Updated upstream
 });
-=======
     
     $("#deconnexion").on("click", function(){
     	$.ajax({ 
@@ -143,9 +130,6 @@ $( document ).ready(function() {
             }
         });
     });
-});
-
-
 
 
 
@@ -199,4 +183,3 @@ function myFunction() {
 	document.getElementById("myBar").style.width = scrolled + "%";
 }
 */
->>>>>>> Stashed changes
