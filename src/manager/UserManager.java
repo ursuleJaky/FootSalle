@@ -41,9 +41,7 @@ public class UserManager {
 		query.setParameter("id", id_user);
 		
 	    User user = (User)query.uniqueResult(); 
-	     
-	    //System.out.println(user);
-	       
+	     	       
 		session.getTransaction().commit();
 		HibernateUtils.sessionFactory.close();
 		
