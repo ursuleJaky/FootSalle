@@ -26,9 +26,5 @@
 	<property name="description" column="EventDescription"></property>
 	<property name="idCreateurEvenement" column="Id_user"></property>
 	<property name="prixEvent" column="event_price"></property>
-	
-	
-	
-	
 	</class>
 </hibernate-mapping>

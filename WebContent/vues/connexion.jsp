@@ -120,6 +120,3 @@
 <script src="${pageContext.request.contextPath}/public/global/plugins/starr.js"></script>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/index.js"></script>
-
-
-

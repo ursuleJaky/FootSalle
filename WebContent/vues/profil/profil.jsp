@@ -1,6 +1,6 @@
 <!--  Ajout du header Menu + CSS -->
 <%@page import="utils.form_options"%>
-<%@include  file="/vues/header.jsp" %>
+<%-- <%@include  file="/vues/header.jsp" %> --%>
 
 <%
 //Variables: info perso

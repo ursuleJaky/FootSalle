@@ -36,4 +36,3 @@
 		</div>
 		<!--  Début du conteneur du body -->
 		<div class="container" style="margin-top:30px;margin-bottom:30px;">
-

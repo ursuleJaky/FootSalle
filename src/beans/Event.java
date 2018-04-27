@@ -253,8 +253,4 @@ public class Event {
 				+ ", participants=" + participants.trim() + ", description=" + description.trim() + ", idCreateurEvenement="
 				+ idCreateurEvenement + ", "+ prixEvent + "]";
 	}
-
-
-
-
 }
