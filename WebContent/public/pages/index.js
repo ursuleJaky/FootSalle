@@ -116,64 +116,64 @@ $( document ).ready(function() {
         });
         return false;
     });
-    $("#connexionButton").on("click", function(){   
-    	console.log("connexionButton")
-    	$.ajax({ 
+    $("#connexionButton").on("click", function(){
+        console.log("connexionButton")
+        $.ajax({
             type: "POST",
             url: '/FootSalle/controleConnexion',
             data: $("#form_connexion").serialize()+ "OK",
             success: function(data){
-            	var obj = JSON.parse(data);
-        		$("#connexion").attr("hidden", true);
-        		$("#deconnexion").attr("hidden", false);
-        		$("#monCompte").attr("hidden", false);
-            	console.log("connexionButton click success")
-            	$("#spanTest").empty().append(obj[0] + " " + obj[1]);
-            	$('#modalConnexion').modal("hide");
+                var obj = JSON.parse(data);
+                $("#connexion").attr("hidden", true);
+                $("#deconnexion").attr("hidden", false);
+                $("#monCompte").attr("hidden", false);
+                console.log("connexionButton click success")
+                $("#spanTest").empty().append(obj[0] + " " + obj[1]);
+                $('#modalConnexion').modal("hide");
             },
             error: function(errMsg) {
-            	console.log("connexionButton click error")
+                console.log("connexionButton click error")
                 toastr.error('La requete n\'a pas pu aboutir', 'Erreur');
             }
         });
     });
-    
-    $("#inscription_rejoindre").on("click", function(){   
-    	console.log("inscription_rejoindre")
-    	$.ajax({ 
+
+    $("#inscription_rejoindre").on("click", function(){
+        $.ajax({
             type: "POST",
             url: '/FootSalle/controleConnexion',
             data: $("#form_user_inscription").serialize()+ "OK",
             success: function(data){
-            	var obj = JSON.parse(data);
-        		$("#connexion").attr("hidden", true);
-        		$("#deconnexion").attr("hidden", false);
-        		$("#monCompte").attr("hidden", false);
-            	console.log("inscripntion click success")
-            	$("#spanTest").empty().append(obj[0] + " " + obj[1]);
-            	$('#modalConnexion').modal("hide");
+                var obj = JSON.parse(data);
+                console.log(obj);
+                $("#connexion").attr("hidden", true);
+                $("#deconnexion").attr("hidden", false);
+                $("#monCompte").attr("hidden", false);
+                console.log("inscripntion click success")
+                $("#spanTest").empty().append(obj[0] + " " + obj[1]);
+                $('#modalConnexion').modal("hide");
             },
             error: function(errMsg) {
-            	console.log("inscripntion click error")
+                console.log("inscripntion click error")
                 toastr.error('La requete n\'a pas pu aboutir', 'Erreur');
             }
         });
     });
-    
+
     $("#deconnexion").on("click", function(){
-    	$.ajax({ 
+        $.ajax({
             type: "POST",
             url: '/FootSalle/controleConnexion',
             data: 'disconnect=' + "OK",
             success: function(data){
-            	var obj = JSON.parse(data);
-            	$("#spanTest").empty().append(obj[0]);
-            		$("#connexion").attr("hidden", false);
-            		$("#deconnexion").attr("hidden", true);
-            		$("#monCompte").attr("hidden", true);
+                var obj = JSON.parse(data);
+                $("#spanTest").empty().append(obj[0]);
+                $("#connexion").attr("hidden", false);
+                $("#deconnexion").attr("hidden", true);
+                $("#monCompte").attr("hidden", true);
             },
             error: function(errMsg) {
-            	console.log("deconnexionButton click error")
+                console.log("deconnexionButton click error")
                 toastr.error('La requete n\'a pas pu aboutir', 'Erreur');
             }
         });

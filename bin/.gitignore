@@ -1,1 +1,17 @@
 /hibernate.cfg.xml
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+/beans/
+/com/
+/log4j.properties
+/manager/
+/test/
+/utils/
+=======
+/com/
+>>>>>>> branche_yasu
+=======
+>>>>>>> dev-zeineb
+>>>>>>> 0b613b121765edeeaf79a5a4342eae7f210d7088

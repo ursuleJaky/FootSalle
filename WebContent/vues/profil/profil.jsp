@@ -6,13 +6,7 @@
 //Variables: info perso
 //Boolean profil_owner = (Boolean)request.getAttribute("profil_owner");
 Boolean profil_owner = true;
-String civilite = (String)request.getAttribute("genre");
-String prenom = (String)request.getAttribute("prenom");
-String nom = (String)request.getAttribute("nom");
-String dateNaissance = (String) request.getAttribute("dateNaissance");
-String email = (String) request.getAttribute("email");
-String adresse = (String) request.getAttribute("adresse");
-String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilisateur");
+String civilite = (String)request.getAttribute("civilite");
 %>
 <!-- DEBUT DU CONTENEUR -->
 <div id="user_profil">
@@ -20,7 +14,7 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
     <div class="card">
         <!-- DEBUT PANEL HEADER-->
         <div class="card-header">
-            <h3><%out.println(nom + " " + prenom);%></h3>
+            <h3>${prenom} ${nom}</h3>
         </div>
         <!-- FIN PANEL HEADER-->
 
@@ -33,7 +27,7 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                          style="width:250px;"
                          src="${pageContext.request.contextPath}/public/images/yinyang.jpg"
                          class="img-circle img-responsive">
-                    <h3><%out.println(nom + " " + prenom);%></h3>
+                    <h3>${prenom} ${nom}</h3>
                     <%if(profil_owner){%>
                     <button id="modal_launcher_changer_mdp" type="button" class="btn btn-success" data-toggle="modal"
                             data-target="#modal_changement_mdp">Changer de mot de passe
@@ -89,7 +83,7 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                     <div class="form-group col-md-4">
                                         <label for="prenom">PRÉNOM</label>
                                         <input type="text" class="form-control" id="prenom" name="prenom"
-                                               value="<%out.println(prenom);%>" disabled>
+                                               value="${prenom }" disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="date_naissance">DATE DE NAISSANCE</label>
@@ -97,24 +91,23 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                     </div>
                                     <div class="form-group col-md-8">
                                         <label for="email">E-MAIL</label>
-                                        <input href="mailto:<%out.println(email);%>" class="form-control" id="email"
-                                               name="email"
-                                               value="<%out.println(email);%>" disabled>
+                                        <input class="form-control" id="email"
+                                               name="email" type="email"
+                                               value="${email}" disabled>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="ville">VILLE</label>
                                         <input type="text" class="form-control" id="ville" name="ville"
-                                               value="<%out.println(adresse);%>" disabled>
+                                               value="${ville}" disabled>
                                     </div>
                                     <div class="form-group col-md-8">
                                         <label for="adresse">ADRESSE</label>
                                         <input type="text" class="form-control" id="adresse" name="adresse"
-                                               value="<%out.println(adresse);%>" disabled>
+                                               value="${adresse}" disabled>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="a_propos">A PROPOS DE MOI</label>
-                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled><%
-                                               out.println(descriptionUtilisateur);%></textarea>
+                                        <textarea class="form-control" rows="5" id="a_propos" name="a_propos" disabled>${descriptionUtilisateur}</textarea>
                                     </div>
                                     <input type="hidden" name="user_id" value="${user_id}" disabled>
                                     <div class="form-group col-md-12 text-center">
@@ -146,15 +139,15 @@ String descriptionUtilisateur = (String) request.getAttribute("descriptionUtilis
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label>NOM</label>
-                                        <div><%out.println(nom);%></div>
+                                        <div>${nom }</div>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label>PRÉNOM</label>
-                                        <div><%out.println(prenom);%></div>
+                                        <div>${prenom}</div>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>A PROPOS DE MOI</label>
-                                        <div><%out.println(descriptionUtilisateur);%></div>
+                                        <div>${descriptionUtilisateur}</div>
                                     </div>
                                 </div>
                                 <%} %>
