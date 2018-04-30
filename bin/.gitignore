@@ -1,17 +1,24 @@
 /hibernate.cfg.xml
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+/.gitignore
+>>>>>>> rubencito
 /beans/
 /com/
 /log4j.properties
 /manager/
 /test/
 /utils/
+<<<<<<< HEAD
 =======
 /com/
 >>>>>>> branche_yasu
 =======
 >>>>>>> dev-zeineb
 >>>>>>> 0b613b121765edeeaf79a5a4342eae7f210d7088
+=======
+>>>>>>> rubencito
