@@ -1,6 +1,7 @@
 package beans;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class User {
 	
@@ -75,7 +76,6 @@ public class User {
 		this.nombreNotes = 0;
 		this.descriptionUtilisateur = " ";
 		this.identifiantUtilisateur = " ";
-		
 	}
 
 
@@ -153,6 +153,18 @@ public class User {
 	public Date getDateNaissance() {
 		return dateNaissance;
 	}
+	
+	public String getDateNaissance_fr() {
+		SimpleDateFormat formater = null;
+		formater = new SimpleDateFormat("dd/MM/yyyy");
+		return formater.format(this.getDateNaissance());
+	}
+	
+	/*public String getDateNaissance_us() {
+		SimpleDateFormat formater = null;
+		formater = new SimpleDateFormat("dd/MM/yyyy");
+		return formater.format(this.getDateNaissance());
+	}*/
 
 
 	public void setDateNaissance(Date dateNaissance) {

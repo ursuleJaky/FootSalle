@@ -7,10 +7,10 @@
 			jdbc:postgresql://localhost/postgres
 		</property>
 		<property name="connection.username">
-			admin
+			postgres
 		</property>
 		<property name="connection.password">
-			admin
+			postgres
 		</property>
 		<property name="connection.driver_class">
 			org.postgresql.Driver
@@ -25,7 +25,7 @@
 		<property name="show_sql">true</property>
 		<property name="hbm2ddl.auto">update</property>
 		<mapping resource="beans/User.hbm.xml" />
-		<mapping resource = "beans/Event.hbm.xml"/>
+		<!-- <mapping resource = "beans/Event.hbm.xml"/> -->
 	</session-factory>
 
 </hibernate-configuration>

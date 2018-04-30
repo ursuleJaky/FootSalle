@@ -34,6 +34,7 @@ public class ProfilUser extends HttpServlet {
 		
 		//-- Récupérer les informations du user pour les transmettre à la vue
 		User user = (User) um.SelectInfoUtilisateur(Integer.parseInt(request.getParameter("user_id")));
+		request.setAttribute("user_id", ((beans.User) user).getId());
 		request.setAttribute("nom", ((beans.User) user).getNom());
 		request.setAttribute("prenom", ((beans.User) user).getPrenom());
 		request.setAttribute("motDePasseUtilisateur", ((beans.User) user).getMotDePasseUtilisateur());
@@ -44,6 +45,7 @@ public class ProfilUser extends HttpServlet {
 		request.setAttribute("email", ((beans.User) user).getEmail());
 		request.setAttribute("dateNaissance", ((beans.User) user).getDateNaissance().toString());
 		request.setAttribute("adresse", ((beans.User) user).getAdresse());
+		request.setAttribute("ville", ((beans.User) user).getVille());
 		request.setAttribute("codePostal", ((beans.User) user).getCodePostal());
 		request.setAttribute("noteGlobale", ((beans.User) user).getNoteGlobale());
 		request.setAttribute("identifiantUtilisateur", ((beans.User) user).getIdentifiantUtilisateur());
@@ -63,33 +65,32 @@ public class ProfilUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Récupérer l'id de l'utilisateur via la variable de session
 		modifierInfoPerso(
+				Integer.parseInt(request.getParameter("user_id")),
 				request.getParameter("civilite"), 
 				request.getParameter("nom"), 
 				request.getParameter("prenom"), 
 				request.getParameter("adresse"), 
 				request.getParameter("ville"), 
+				request.getParameter("email"),
 				request.getParameter("a_propos")
 		);	    
 		//Réponse retournée
 	    response.getWriter().write("ok");
 	}
-	
-	//private void afficherInfoPerso(HttpServletRequest request, HttpServletResponse response) {}
-	
-	private void modifierInfoPerso(String genre, String nom, String prenom, String adresse, 
-		String ville, String descriptionUtilisateur) {
+		
+	private void modifierInfoPerso(int user_id, String genre, String nom, String prenom, String adresse, 
+		String ville, String email, String descriptionUtilisateur) {
 		UserManager um = new UserManager();
 		
-		User user = (User) um.SelectInfoUtilisateur(2); //TODO recuperer l'id de la session en cours en dur pour l'instant
+		User user = (User) um.SelectInfoUtilisateur(user_id);
 		user.setGenre(genre);
 		user.setNom(nom);
 		user.setPrenom(prenom);
 		user.setAdresse(adresse);
-		user.setEmail(adresse);
+		user.setEmail(email);
 		user.setVille(ville);
-		//u.setDateNaissance(dateNaissance);  // Pas encore gerer dans la modification
 		user.setDescriptionUtilisateur(descriptionUtilisateur.replaceAll("\\s+",""));
-		um.UpdateInfoUtilisateur(2, user); //TODO r�cup�rer l'id de la session en cours
+		um.UpdateInfoUtilisateur(user_id, user);
 	}
 	
 

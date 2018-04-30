@@ -1,15 +1,15 @@
 package manager;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.criterion.Expression;
 import org.hibernate.criterion.Restrictions;
 
 import beans.Event;
+import beans.User;
 import utils.HibernateUtils;
 
 public class EventManager {
@@ -23,7 +23,9 @@ public class EventManager {
 			session.beginTransaction();
 			session.save(e);	
 			session.getTransaction().commit();
+			
 		}
+
 		
 		
 		public void supprimerEvent(int id) {
@@ -66,9 +68,13 @@ public class EventManager {
 			session.beginTransaction();
 			
 			Criteria crit = session.createCriteria(Event.class);
+			Date dt = new Date ();
 
-			ArrayList <Event> e = (ArrayList<Event>) crit.list();
+			//debut event
+			crit.add( Restrictions.ge("dateDebutEvenement", dt) );
 			
+			
+			ArrayList <Event> e = (ArrayList<Event>) crit.list();
 			
 			
 			session.getTransaction().commit();
@@ -77,16 +83,36 @@ public class EventManager {
 			return e;
 		}
 		
+		public ArrayList <Event> RechercheEvent() {
+			Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+			session.beginTransaction();
+			
+			Criteria crit = session.createCriteria(Event.class);
+			crit.add(Restrictions.like("activite", "volley"));
+			
+			ArrayList<Event> es = new ArrayList<Event> ();
+			es = (ArrayList<Event>) crit.list();
+
+
+			
+			
+			System.out.println(es.toString());
+			
+			session.getTransaction().commit();
+			HibernateUtils.sessionFactory.close();
+			return es;
+			
+		}
 		
-		public void AjoutParticipantEvent (int id, Event p1, int id_participant) {
+		public void AjoutParticipantEvent (int id_event, int id_participant) {
 			
 			Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
-			Event p = (Event) session.load(Event.class, id); //Chargement de l'event de la BDD à l'objet Event
-
-			p = p1;
-			p.setId(id);
-			p.setParticipants(p.getParticipants()+id_participant+",");
+			Event p = (Event) session.load(Event.class, id_event); //Chargement de l'event de la BDD à l'objet Event
+			p.setId(id_event);
+			p.setParticipants(p.getParticipants().trim());
+			Event p1 = p;
+			p1.setParticipants((p.getParticipants()+id_participant+",").trim());
 			p = (Event) session.merge(p1);
 
 			session.getTransaction().commit();
@@ -106,5 +132,13 @@ public class EventManager {
 		}
 		
 	
+		public java.sql.Date dateDuJour () {
+			
+			Date dateDuJour = new Date();
+			
+			java.sql.Date creationDate = new java.sql.Date(dateDuJour.getTime());
+				
+				 return creationDate;
+		}
 
 }
