@@ -1,5 +1,6 @@
 /hibernate.cfg.xml
 <<<<<<< HEAD
+<<<<<<< HEAD
 /beans/
 /com/
 /log4j.properties
@@ -9,3 +10,5 @@
 =======
 /com/
 >>>>>>> branche_yasu
+=======
+>>>>>>> dev-zeineb
