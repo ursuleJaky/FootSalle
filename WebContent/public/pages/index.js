@@ -111,7 +111,6 @@ $( document ).ready(function() {
     	return false;
     });
     
-<<<<<<< HEAD
     $("#creer_annonce").on("click", function(){
     	$('#modalCreationAnnonce').load('/FootSalle/vues/annonces.jsp', function(result){
     		$('#modalCreationAnnonce').modal({backdrop: 'static', keyboard: false, show :true});
@@ -120,7 +119,6 @@ $( document ).ready(function() {
     });
 });
 
-=======
     $("#connexionButton").on("click", function(){
     	console.log("connexionButton click")
     	$("#disconnect").val("OK");
@@ -134,14 +132,11 @@ $( document ).ready(function() {
     	$("#disconnect").val("OK");
     	$("#connect").val("KO");
     });
-});
-<<<<<<< Updated upstream
->>>>>>> 317b66c7308b32c7139d7e01fb43d3c1d6407e07
-=======
+
+
 
 $(".button_connexion").on("click", function(){
 	$('#modalConnexion').load('${pageContext.request.contextPath}/vues/connexion.jsp', function(result){
 		$('#modalConnexion').modal({backdrop: 'static', keyboard: false, show :true});
 	});
 });
->>>>>>> Stashed changes
