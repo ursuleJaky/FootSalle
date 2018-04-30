@@ -1,1 +1,6 @@
 /hibernate.cfg.xml
+/beans/
+/com/
+/manager/
+/test/
+/utils/
