@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import beans.User;
 
@@ -55,13 +57,18 @@ public class controleConnexion extends HttpServlet {
 		} else if ("OK".equals(request.getParameter("inscription"))) {
 			request.setAttribute("connect", "KO");
 			request.setAttribute("disconnect", "KO");
-			inscription(request, response);
+			try {
+				inscription(request, response);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			doGet(request, response);
 		}
 	}
 
-	private void inscription(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void inscription(HttpServletRequest request, HttpServletResponse response) throws IOException, JSONException {
 		//Récuperation du HTTP Post
 	    String email = request.getParameter( "email" );
         String motDePasse = request.getParameter( "motDePasse" );
@@ -71,19 +78,19 @@ public class controleConnexion extends HttpServlet {
         UserManager um = new UserManager();
         
         //--Check E-mail & pseudo
-        String message = null;
+        JSONObject data = new JSONObject();
         if(!um.CheckEmailPseudoUserExistence(email, pseudo)) {
-        	//--Ajout de l'utilisateur
+        	//--Ajout de l'utislisateur
             um.ajouterUtilisateur(new User(pseudo, email, motDePasse));
-            message = "Message succ�s";
+            data.put("status", "ok");
+            data.put("message", "Votre compte a bien été créé.");
         }else {
-        	 message = "Message erreur";
+            data.put("status", "nok");
+            data.put("message", "Erreur lors de l'inscription, pseudo ou email déjà existant.");
         }
-
-		JSONArray rep = new JSONArray();
-		rep.put(message);
-		rep.put("inscription");
-		response.getWriter().write(rep.toString());
+     
+        //Send response to client
+		response.getWriter().write(data.toString());
 	}	
 	
 	private void deconnexion(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -91,7 +98,7 @@ public class controleConnexion extends HttpServlet {
 		System.out.println("I am in deconnexion "+userSession.getAttribute("email"));
 		
 		userSession.removeAttribute("email");
-		System.out.println(userSession.getAttribute("email"));
+		userSession.removeAttribute("user_id");
 		userSession.invalidate();
 		connected = false;
 		JSONArray rep = new JSONArray();
@@ -107,12 +114,16 @@ public class controleConnexion extends HttpServlet {
         connected = uman.CheckUtilisateurConnexion(motDePasse, email);
         System.out.println("I am in connexion "+ connected);
 		if(connected == true) {
-	        userSession = request.getSession(true);
-			userSession.setAttribute("email", "it's me");
+			response.getWriter().write("yes");
+	        /*userSession = request.getSession(true);
+			userSession.setAttribute("user_id", );
 			JSONArray rep = new JSONArray();
 			rep.put(email);
 			rep.put("connected");
-			response.getWriter().write(rep.toString());
+			response.getWriter().write(rep.toString());*/
+		}else {
+			response.getWriter().write("nop");
+
 		}
 	} 
 }

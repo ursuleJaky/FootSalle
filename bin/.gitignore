@@ -1,7 +1,11 @@
 /hibernate.cfg.xml
+<<<<<<< HEAD
 /beans/
 /com/
 /log4j.properties
 /manager/
 /test/
 /utils/
+=======
+/com/
+>>>>>>> branche_yasu

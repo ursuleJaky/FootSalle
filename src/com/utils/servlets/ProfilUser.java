@@ -45,6 +45,7 @@ public class ProfilUser extends HttpServlet {
 		request.setAttribute("email", ((beans.User) user).getEmail());
 		request.setAttribute("dateNaissance", ((beans.User) user).getDateNaissance().toString());
 		request.setAttribute("adresse", ((beans.User) user).getAdresse());
+		request.setAttribute("ville", ((beans.User) user).getVille());
 		request.setAttribute("codePostal", ((beans.User) user).getCodePostal());
 		request.setAttribute("noteGlobale", ((beans.User) user).getNoteGlobale());
 		request.setAttribute("identifiantUtilisateur", ((beans.User) user).getIdentifiantUtilisateur());
@@ -70,6 +71,7 @@ public class ProfilUser extends HttpServlet {
 				request.getParameter("prenom"), 
 				request.getParameter("adresse"), 
 				request.getParameter("ville"), 
+				request.getParameter("email"),
 				request.getParameter("a_propos")
 		);	    
 		//Réponse retournée
@@ -77,7 +79,7 @@ public class ProfilUser extends HttpServlet {
 	}
 		
 	private void modifierInfoPerso(int user_id, String genre, String nom, String prenom, String adresse, 
-		String ville, String descriptionUtilisateur) {
+		String ville, String email, String descriptionUtilisateur) {
 		UserManager um = new UserManager();
 		
 		User user = (User) um.SelectInfoUtilisateur(user_id);
@@ -85,9 +87,8 @@ public class ProfilUser extends HttpServlet {
 		user.setNom(nom);
 		user.setPrenom(prenom);
 		user.setAdresse(adresse);
-		user.setEmail(adresse);
+		user.setEmail(email);
 		user.setVille(ville);
-		//u.setDateNaissance(dateNaissance);  // Pas encore gerer dans la modification
 		user.setDescriptionUtilisateur(descriptionUtilisateur.replaceAll("\\s+",""));
 		um.UpdateInfoUtilisateur(user_id, user);
 	}
