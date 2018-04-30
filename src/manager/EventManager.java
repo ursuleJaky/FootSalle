@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import beans.Event;
+import beans.User;
 import utils.HibernateUtils;
 
 public class EventManager {
@@ -80,15 +82,15 @@ public class EventManager {
 		}
 		
 		
-		public void AjoutParticipantEvent (int id_event, Event p1, int id_participant) {
+		public void AjoutParticipantEvent (int id_event, int id_participant) {
 			
 			Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
 			Event p = (Event) session.load(Event.class, id_event); //Chargement de l'event de la BDD à l'objet Event
-
-			p = p1;
 			p.setId(id_event);
-			p.setParticipants(p.getParticipants()+id_participant+",");
+			p.setParticipants(p.getParticipants().trim());
+			Event p1 = p;
+			p1.setParticipants((p.getParticipants()+id_participant+",").trim());
 			p = (Event) session.merge(p1);
 
 			session.getTransaction().commit();

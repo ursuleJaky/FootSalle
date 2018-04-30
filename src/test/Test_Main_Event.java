@@ -26,7 +26,9 @@ public class Test_Main_Event {
 		
 		//em.SelectInfoToutEvent();
 		
+		em.AjoutParticipantEvent(2,10);
 		
+		/*
 		ArrayList<Event> a = new ArrayList<Event>();
 		a= em.SelectInfoToutEvent();
 		for(Event a1: a) {
@@ -34,7 +36,7 @@ public class Test_Main_Event {
 		}
 		
 		System.out.println(em.SelectInfoEvent(1));
-		
+		*/
 		
 		
 		//em.ajouterEvent(e);
