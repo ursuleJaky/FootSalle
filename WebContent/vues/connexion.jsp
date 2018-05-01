@@ -64,15 +64,16 @@
                            </div>
                        </div>
                        <div class="form-group col-md-12">
-                           <div class="space_new"><a href="https://www.google.com" target="_blanck">Mot de passe oubliÃ©</a>
+                           <div class="space_new">
+                           		<a href="#" target="_blanck">Mot de passe oublié</a>
                            </div>
                        </div>
                     	<input id="connect" name="connect" type="hidden"/>
                    </form>
 	                  <div class="form-group">
 		                  <div class="col-md-offset-0 col-md-8">
-		                      <input id="connexionButton" class="btn btn-success btn btn-success" type="submit"
-		                             value="Se Connecter"/>
+		                      <input id="connexionButton" class="connexionButton btn btn-success" 
+		                      type="submit" value="Se Connecter"/>
 		                  </div>
 	               	 </div>
                 </div>
