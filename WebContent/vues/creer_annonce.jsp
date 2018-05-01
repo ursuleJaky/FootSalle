@@ -32,7 +32,7 @@
 									<option value="2">Tennis</option>
 									<option value="3">Handball</option>
 									<option value="3">Volleyball</option>
-									<option value="3">Pétanque</option>
+									<option value="3">Petanque</option>
 								</select>
 							</div>
 						</div>
