@@ -60,7 +60,6 @@ public class controleConnexion extends HttpServlet {
 			try {
 				inscription(request, response);
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
@@ -69,18 +68,18 @@ public class controleConnexion extends HttpServlet {
 	}
 
 	private void inscription(HttpServletRequest request, HttpServletResponse response) throws IOException, JSONException {
-		//Récuperation du HTTP Post
+		//R�cuperation du HTTP Post
 	    String email = request.getParameter( "email" );
         String motDePasse = request.getParameter( "motDePasse" );
         String pseudo = request.getParameter( "inscription_pseudo" );
         
-        //Création du model User
+        //Cr�ation du model User
         UserManager um = new UserManager();
         
-        //--Check E-mail & pseudo
+        //Check E-mail & pseudo
         JSONObject data = new JSONObject();
         if(!um.CheckEmailPseudoUserExistence(email, pseudo)) {
-        	//--Ajout de l'utislisateur
+        	//Ajout de l'utislisateur
             um.ajouterUtilisateur(new User(pseudo, email, motDePasse));
             data.put("status", "ok");
             data.put("message", "Votre compte a bien été créé.");
@@ -114,16 +113,12 @@ public class controleConnexion extends HttpServlet {
         connected = uman.CheckUtilisateurConnexion(motDePasse, email);
         System.out.println("I am in connexion "+ connected);
 		if(connected == true) {
-			response.getWriter().write("yes");
-	        /*userSession = request.getSession(true);
-			userSession.setAttribute("user_id", );
+	        userSession = request.getSession(true);
+			userSession.setAttribute("connected", "i'm connected");
 			JSONArray rep = new JSONArray();
 			rep.put(email);
 			rep.put("connected");
-			response.getWriter().write(rep.toString());*/
-		}else {
-			response.getWriter().write("nop");
-
+			response.getWriter().write(rep.toString());
 		}
 	} 
 }
