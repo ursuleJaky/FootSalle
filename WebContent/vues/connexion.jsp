@@ -24,7 +24,7 @@
                             <div class="form-group">
                                  <div class="col-md-12">
                                      <label for="inscription_am">E-MAIL</label>
-                                     <input name="email" placeholder="email" class="form-control" type="text"
+                                     <input name="email" placeholder="email" class="form-control" type="email"
                                             id="inscription_am" required/>
                                  </div>
                              </div>
@@ -32,7 +32,7 @@
                                 <div class="col-md-12">
                                     <label for="inscription_mdp">MOT DE PASSE</label>
                                     <input id="motDePasse" name="motDePasse" placeholder="Mot de passe"
-                                           class="form-control" type="password" required/>
+                                           class="form-control" type="password" minlength="8" required/>
                                     <input id="inscription" name="inscription" type="hidden"/>
                                 </div>
                             </div>                            
@@ -107,7 +107,7 @@
     </div>
 </div>
 
-<script type="text/javascript"
+<%-- <script type="text/javascript"
         src="${pageContext.request.contextPath}/public/global/plugins/jquery-3.3.1.min.js"></script>
 <script type="text/javascript"
         src="${pageContext.request.contextPath}/public/global/bootstrap/js/bootstrap.min.js"></script>
@@ -117,6 +117,6 @@
         src="${pageContext.request.contextPath}/public/global/plugins/jquery-validation/additional-methods.min.js"></script>
 <script type="text/javascript"
         src="${pageContext.request.contextPath}/public/global/plugins/toastr/toastr.min.js"></script>
-<script src="${pageContext.request.contextPath}/public/global/plugins/starr.js"></script>
+<script src="${pageContext.request.contextPath}/public/global/plugins/starr.js"></script> --%>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/public/pages/index.js"></script>

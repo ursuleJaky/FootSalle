@@ -1,69 +1,57 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>FootSalle</title>
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<meta charset="utf-8" />
-<title>Charte graphique</title>
+<%@include  file="/vues/header.jsp" %>
+	
+	
+<div class="slideshow-container">
 
-<meta content="Charte Graphique" name="description" />
-<meta content="Davy NANA" name="author" />
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="${pageContext.request.contextPath}/public/images/11.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
 
-<!-- stylesheet -->
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="${pageContext.request.contextPath}/public/images/22.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
 
-<link rel="stylesheet" type="text/css" href="../css/pages.css" />
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="${pageContext.request.contextPath}/public/images/33.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
 
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+</div>
+<br>
 
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/css?family=Lato:400,700,300" />
-<script type="text/javascript"
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-<!-- javascript -->
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../js/page.js"></script>
-
-<script type="text/javascript"
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNDFsPWL9fW9OFIzR0QQs_H8pCsmlP4DU&callback=myMap"></script>
-
-</head>
-
-<body class="pace-black">
-
-	<jsp:include page="header.jsp" />
-
-
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>		
+<!-- =======================Boucle globale sur les annonces============== -->					    
+<c:forEach items="${listeAnnonces}" var="current">
 	<div class="container_custom">
 		<div class="media">
 			<div class="align-self-start mr-2 mt-2">
-				<img class="gallerie_a img" src="../public/images/Users-User-Male-2-icon2.png"
+				<img class="gallerie_a img" src="${pageContext.request.contextPath}/public/images/Users-User-Male-2-icon2.png"
 					alt="logo utilisateur">
 				<div class="text_color_a">Pseudo User</div>
-				<div class="gallerie_b">2/10</div>
-				&nbsp; <img class="gallerie_b" src="../public/images/User-team.png"
+				<div class="gallerie_b">${current.nbPersonneInscrite}/${current.nbPersonneVoulu}</div>
+				&nbsp; <img class="gallerie_b" src="${pageContext.request.contextPath}/public/images/User-team.png"
 					alt="logo utilisateur">
 			</div>
 			<div class="media-body">
-				<h6 class="mt-0 mb-1">Titre de l'annonce</h6>
+				<h6 class="mt-0 mb-1">${current.activite}</h6>
 
 				<div class="text_content ml-0 mt-0 mb-0 form-group row align-right">
-					<div class="text_heure_date">01/01/1990</div>
+					<div class="text_heure_date">${current.dateDebutEvenement}</div>
 					&nbsp;&nbsp;
 					<div class="text_heure_date">15:00</div>
 					&nbsp;&nbsp;
-					<div class="text_heure_date">Mergignac</div>
+					<div class="text_heure_date">${current.localisationEvenement}</div>
 				</div>
-				<div class="text_content">La description servira a  attirer
-					l'attention sur l'annonce et inciter à  participer. La description
-					ne dépasse pas 200 caractères. Par exemple le texte suivant, avec
-					8 lignes max en xs (mobile)</div>
+				<div class="text_content">${current.description}</div>
 				<div class="btn-group btn-group-sm mb-2 mt-3" role="group">
 					<button type="button" class="btn btn-secondary">J'y vais</button>
 					<button type="button" class="btn btn-secondary">Voir plus</button>
@@ -72,19 +60,29 @@
 			</div>
 		</div>
 	</div>
+</c:forEach>
 
+<script>
+var slideIndex = 0;
+showSlides();
 
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000);
+}
+</script>
 
-</body>
+<jsp:include page="footer.jsp" />
 
-
-
-<footer>
-
-	<jsp:include page="footer.jsp" />
-</footer>
-
-
-
-
-</html>

@@ -149,7 +149,7 @@ public class UserManager {
 	    	return false;
 	    }	
 		
-	}	
+	}	 
 	
 	public Boolean CheckEmailPseudoUserExistence(String email, String pseudo) {
 	//Démarrage de la transaction
@@ -173,4 +173,13 @@ public class UserManager {
     return true;
     
 }	
+	public int getIdUser(String email) {
+		Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Query query = session.createQuery("from User where Email = :email").setParameter("email", email);
+	    User user = (User)query.uniqueResult(); 
+	    if(user == null) 
+	    	return -1;
+	    return user.getId();   
+	}	
 }

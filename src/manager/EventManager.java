@@ -74,6 +74,7 @@ public class EventManager {
 			crit.add( Restrictions.ge("dateDebutEvenement", dt) );
 			
 			
+			@SuppressWarnings("unchecked")
 			ArrayList <Event> e = (ArrayList<Event>) crit.list();
 			
 			

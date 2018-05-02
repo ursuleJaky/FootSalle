@@ -96,8 +96,7 @@ public class controleConnexion extends HttpServlet {
 		userSession = request.getSession(true);
 		System.out.println("I am in deconnexion "+userSession.getAttribute("email"));
 		
-		userSession.removeAttribute("email");
-		userSession.removeAttribute("user_id");
+		userSession.removeAttribute("userConnected");
 		userSession.invalidate();
 		connected = false;
 		JSONArray rep = new JSONArray();
@@ -114,7 +113,9 @@ public class controleConnexion extends HttpServlet {
         System.out.println("I am in connexion "+ connected);
 		if(connected == true) {
 	        userSession = request.getSession(true);
-			userSession.setAttribute("connected", "i'm connected");
+			userSession.setAttribute("userConnected", "OK");
+			userSession.setAttribute("emailUser", email);
+			userSession.setAttribute("idUser", uman.getIdUser(email));
 			JSONArray rep = new JSONArray();
 			rep.put(email);
 			rep.put("connected");

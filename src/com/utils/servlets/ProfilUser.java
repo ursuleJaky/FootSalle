@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.User;
 import manager.UserManager;
@@ -33,8 +34,10 @@ public class ProfilUser extends HttpServlet {
 		UserManager um = new UserManager();
 		
 		//-- Récupérer les informations du user pour les transmettre à la vue
-		User user = (User) um.SelectInfoUtilisateur(Integer.parseInt(request.getParameter("user_id")));
-		request.setAttribute("user_id", ((beans.User) user).getId());
+		HttpSession userSession = request.getSession(true);
+		int idUser = (int) userSession.getAttribute("idUser");
+		User user = (User) um.SelectInfoUtilisateur(idUser);
+		request.setAttribute("idUser", ((beans.User) user).getId());
 		request.setAttribute("nom", ((beans.User) user).getNom());
 		request.setAttribute("prenom", ((beans.User) user).getPrenom());
 		request.setAttribute("motDePasseUtilisateur", ((beans.User) user).getMotDePasseUtilisateur());
@@ -65,7 +68,7 @@ public class ProfilUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Récupérer l'id de l'utilisateur via la variable de session
 		modifierInfoPerso(
-				Integer.parseInt(request.getParameter("user_id")),
+				Integer.parseInt(request.getParameter("idUser")),
 				request.getParameter("civilite"), 
 				request.getParameter("nom"), 
 				request.getParameter("prenom"), 

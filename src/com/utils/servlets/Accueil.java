@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import beans.Event;
 import manager.EventManager;
 
-/**
- * Servlet implementation class Accueil
- */
 @WebServlet("/Accueil")
 public class Accueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,12 +21,22 @@ public class Accueil extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		EventManager em = new EventManager() ;
+		ArrayList <Event> events = em.SelectInfoToutEvent() ;
+		request.setAttribute("listeAnnonces", events);
+		for(int i = 0; i< events.size(); i++) {
+			System.out.println("Evenements " +i);
+		}
+		request.getRequestDispatcher("/vues/index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		EventManager em = new EventManager() ;
-		ArrayList <Event> events = em.SelectInfoToutEvent() ; 
+		ArrayList <Event> events = em.SelectInfoToutEvent() ;
+		for(int i = 0; i< events.size(); i++) {
+			System.out.println("Evenements " +i);
+		}
+		
 		request.setAttribute("listeAnnonces", events);
 		doGet(request, response);
 	}
