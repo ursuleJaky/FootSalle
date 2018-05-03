@@ -1,0 +1,13 @@
+public void evaluerAbonne (User u, String nouvelleNote) {
+
+	Float noteGlobaleCurrente = u.getNoteGlobale();
+	Float noteRecu = Float.valueOf(nouvelleNote);
+	
+	Float noteFinale = ((noteGlobaleCurrente*u.getNombreNotes())+noteRecu)/(u.getNombreNotes()+1);
+	u.setNoteGlobale(noteFinale);
+	// incrementer le nombre de notes recues
+	int nbrNotes = u.getNombreNotes();
+	u.setNombreNotes(nbrNotes+1);
+	
+	UpdateInfoUtilisateur(u.getId(), u);
+}
